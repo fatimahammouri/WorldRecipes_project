@@ -29,10 +29,9 @@ class Recipe(db.Model):
     recipe_name = db.Column(db.String(100))
     description = db.Column(db.Text)
     photo = db.Column(db.String(100))
-    cuisine_id = db.Column(db.Integer, db.ForeignKey("cuisines.cuisine_id"))
-    ingredient_id = db.column(db.Integer, db.ForeignKey("ingredients.ingredient_id"))
-
-    # ingredients= db.relatioship("ingredients")
+    
+    # cuisines = db.relatioship("cuisines")
+    # ingredients = db.relatioship("ingredients")
     def __repr__(self):
         return f'<<Recipe recipe_id={self.recipe_id} name={self.recipe_name}>>'
 ####################################################################################
@@ -77,6 +76,10 @@ class Ingredient_recipe(db.Model):
     ingredient = db.relationship("Ingredient", backref= "recipes")
     recipe = db.relationship("Recipe", backref="ingredients")
 
+    def __repr__(self):
+        return f'<<Ingredient_recipe ingredient={self.ingredient} recipe={self.recipe}>>'
+
+###################################################################################################       
 class recipe_cuisine(db.Model):
 
     __tablename__ = "recipe_cuisine"
@@ -87,6 +90,8 @@ class recipe_cuisine(db.Model):
     recipe = db.relationship("Recipe", backref="cuisines")
     cuisine = db.relationship("Cuisine", backref= "recipes")
 
+    def __repr__(self):
+        return f'<<Ingredient_recipe cuisine={self.cuisine} recipe={self.recipe}>>'
 
 def connect_to_db(flask_app, db_uri='postgresql:///recipes', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
