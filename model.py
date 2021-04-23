@@ -37,9 +37,35 @@ class Recipe(db.Model):
         return f'<<Recipe recipe_id={self.recipe_id} name={self.recipe_name}>>'
 ####################################################################################
 
+class Cuisine(db.Model):
+    """Cuisine"""
 
+    __tablename__ = "cuisines"
 
+    cuisine_id = db.Column(db.Integer, primary_key=True,
+                        autoincrement=True)
+    cuisine_name = db.Column(db.String(100))
+    
+    
+    def __repr__(self):
+        return f'<<Cuisine cuisine_id={self.cuisine_id} name={self.cuisine_name}>>'
 
+######################################################################################
+
+class Ingredient(db.Model):
+    """Ingredients Model"""
+
+    __tablename__ = "ingredients"
+
+    ingredient_id = db.Column(db.Integer, primary_key=True,
+                        autoincrement=True)
+    ingredient_name = db.Column(db.String(100))
+    
+    
+    def __repr__(self):
+        return f'<<Ingredient ingredient_id={self.ingredient_id} name={self.ingredient_name}>>'
+
+######################################################################################
 
 def connect_to_db(flask_app, db_uri='postgresql:///recipes', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
