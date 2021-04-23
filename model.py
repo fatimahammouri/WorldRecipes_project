@@ -32,7 +32,7 @@ class Recipe(db.Model):
     cuisine_id = db.Column(db.Integer, db.ForeignKey("cuisines.cuisine_id"))
     ingredient_id = db.column(db.Integer, db.ForeignKey("ingredients.ingredient_id"))
 
-
+    # ingredients= db.relatioship("ingredients")
     def __repr__(self):
         return f'<<Recipe recipe_id={self.recipe_id} name={self.recipe_name}>>'
 ####################################################################################
@@ -60,12 +60,33 @@ class Ingredient(db.Model):
     ingredient_id = db.Column(db.Integer, primary_key=True,
                         autoincrement=True)
     ingredient_name = db.Column(db.String(100))
-    
+    # recipes = db.relationship("recipes")
     
     def __repr__(self):
         return f'<<Ingredient ingredient_id={self.ingredient_id} name={self.ingredient_name}>>'
 
 ######################################################################################
+
+class Ingredient_recipe(db.Model):
+
+    __tablename__ = "ingredient_recipe"
+
+    ingredient_id = db.Column(db.Integer, db.ForeignKey("ingredients.ingredient_id"), primary_key=True)
+    recipe_id = db.Column(db.Integer, db.ForeignKey("recipes.recipe_id"),primary_key=True)
+
+    ingredient = db.relationship("Ingredient", backref= "recipes")
+    recipe = db.relationship("Recipe", backref="ingredients")
+
+class recipe_cuisine(db.Model):
+
+    __tablename__ = "recipe_cuisine"
+
+    cuisine_id = db.Column(db.Integer, db.ForeignKey("cuisines.cuisine_id"), primary_key=True)
+    recipe_id = db.Column(db.Integer, db.ForeignKey("recipes.recipe_id"),primary_key=True)
+
+    recipe = db.relationship("Recipe", backref="cuisines")
+    cuisine = db.relationship("Cuisine", backref= "recipes")
+
 
 def connect_to_db(flask_app, db_uri='postgresql:///recipes', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
