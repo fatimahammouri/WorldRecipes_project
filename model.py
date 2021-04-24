@@ -17,7 +17,7 @@ class User(db.Model):
     
     def __repr__(self):
         return f"<<User user_id={self.user_id} email={self.email}>>"
-####################################################################################
+###################################################################################################
 
 class Recipe(db.Model):
     """Recipes Table"""
@@ -34,7 +34,7 @@ class Recipe(db.Model):
     # ingredients = db.relatioship("ingredients")
     def __repr__(self):
         return f'<<Recipe recipe_id={self.recipe_id} name={self.recipe_name}>>'
-####################################################################################
+###################################################################################################
 
 class Cuisine(db.Model):
     """Cuisine"""
@@ -49,7 +49,7 @@ class Cuisine(db.Model):
     def __repr__(self):
         return f'<<Cuisine cuisine_id={self.cuisine_id} name={self.cuisine_name}>>'
 
-######################################################################################
+###################################################################################################
 
 class Ingredient(db.Model):
     """Ingredients Model"""
@@ -64,7 +64,7 @@ class Ingredient(db.Model):
     def __repr__(self):
         return f'<<Ingredient ingredient_id={self.ingredient_id} name={self.ingredient_name}>>'
 
-######################################################################################
+###################################################################################################
 
 class Ingredient_recipe(db.Model):
 
@@ -92,6 +92,11 @@ class recipe_cuisine(db.Model):
 
     def __repr__(self):
         return f'<<Ingredient_recipe cuisine={self.cuisine} recipe={self.recipe}>>'
+
+###################################################################################################
+
+
+
 
 def connect_to_db(flask_app, db_uri='postgresql:///recipes', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri

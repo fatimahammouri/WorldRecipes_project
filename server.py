@@ -17,6 +17,10 @@ API_KEY = os.environ['SPOON_KEY']
 def homepage():
     return render_template("homepage.html")
 
+# when creating end points, i will use
+# any paremeters needed Ex:keyword = request.args.get('keyword', '')
+# url = 'The URL for the end point'
+# payload = {'apikey': API_KEY}
 
 
 if __name__ == '__main__':
