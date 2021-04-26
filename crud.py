@@ -6,9 +6,9 @@ from model import (db, User, Recipe, Cuisine, Ingredient,
 
 """Defining our Create, Read, Update, Delete Functions"""
 
-def create_user(email, password):
+def create_user(email, password, username):
 
-    user = User(email=email, password=password)
+    user = User(email=email, password=password, username=username)
     db.session.add(user)
     db.session.commit()
 

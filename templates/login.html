@@ -3,18 +3,18 @@
 {% block body %}
 
 <div>
-    <form action="/login" >
+    <form action="/login" method="POST">
       <label> EMAIL </label>
-      <input type="text" name="email"> 
+      <input type="email" name="email"> 
       
       <label> PASSWORD </label>
-      <input type="text" name="password">
+      <input type="password" name="password">
 
       <input type="submit" value="SIGN IN">
     </form>
 </div>
     <form action="/register">
-      <label>Don't have an acount?</label>
+      <label>Don't have an account?</label>
       <input type="submit" value="SIGN UP!">
 
     </form>

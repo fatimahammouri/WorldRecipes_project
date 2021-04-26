@@ -2,7 +2,7 @@
 {% block title %} World Recipe {% endblock %}
 {% block body %}
     <div>
-        <form action="/" >
+        <form action="/user" method="POST">
             <label> USERNAME </label>
             <input type="text" name="username"> 
 
@@ -10,7 +10,7 @@
             <input type="email" name="email">
 
             <label> PASSWORD </label>
-            <input type="text" name="password">
+            <input type="password" name="password">
   
             <input type="submit" value="SIGN UP!">
           </form>
