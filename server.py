@@ -13,46 +13,28 @@ app.jinja_env.undefined = StrictUndefined
 
 # API_KEY = os.environ['SPOON_KEY'] 
 
-########################################################################
+@app.route("/login", methods=["GET", "POST"])
+def process_login():
+    """Process user login."""
 
-@app.route("/")
-def login():
     return render_template("login.html")
 
 ########################################################################
 
-@app.route('/register', methods=['POST'])
+@app.route("/register", methods=["GET", "POST"])
 def register_user():
-    """Create a new User"""
-    email = request.form.get('email')
-    password = request.form.get('password')
+    return render_template("register.html")
 
-    user = crud.get_user_by_email(email)
-    if user:
-        flash("Email already exist, Please try again.")
-    else:
-        crud.create_user(email, password)
-        flash("You are signed up !")
-    return redirect("/")
+########################################################################
 
+@app.route("/")
+def login():
+    return render_template("homepage.html")
+
+########################################################################
+    
 
 
-@app.route("/login", methods=["POST"])
-def process_login():
-    """Process user login."""
-
-    email = request.form.get("email")
-    password = request.form.get("password")
-
-    user = crud.get_user_by_email(email)
-    if not user or user.password != password:
-        flash("The email or password you entered is incorrect.")
-    else:
-        # Log in user by storing the user's email in session
-        session["user_email"] = user.email
-        flash(f"Welcome back, {user.email}!")
-
-    return redirect("/")
 
 # when creating end points, i will use
 # any paremeters needed Ex:keyword = request.args.get('keyword', '')

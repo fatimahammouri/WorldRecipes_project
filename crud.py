@@ -4,7 +4,7 @@ from model import (db, User, Recipe, Cuisine, Ingredient,
                 Ingredient_recipe, recipe_cuisine, connect_to_db)
 
 
-"""Defining our Create, Read, Update, Delete"""
+"""Defining our Create, Read, Update, Delete Functions"""
 
 def create_user(email, password):
 
@@ -50,6 +50,9 @@ def create_ingredient(ingredient_name):
 def get_user_by_email(email):
     
     return User.query.filter(User.email == email).first()
+
+#####################################################################
+
 
 if __name__== '__main__':
     from server import app
