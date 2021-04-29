@@ -16,6 +16,12 @@ def create_user(email, password, username):
 
 #####################################################################
 
+def get_user_by_email(email):
+    
+    return User.query.filter(User.email == email).first()
+
+#####################################################################
+
 def create_recipe(recipe_name, description, photo):
 
     recipe = Recipe(recipe_name=recipe_name, description=description,
@@ -46,10 +52,6 @@ def create_ingredient(ingredient_name):
     return ingredient
 
 #####################################################################
-
-def get_user_by_email(email):
-    
-    return User.query.filter(User.email == email).first()
 
 #####################################################################
 
