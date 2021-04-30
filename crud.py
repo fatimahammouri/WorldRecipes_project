@@ -22,9 +22,9 @@ def get_user_by_email(email):
 
 #####################################################################
 
-def create_recipe(recipe_name, instructions, image):
+def create_recipe(title, instructions, image):
 
-    recipe = Recipe(recipe_name=recipe_name, instructions=instructions,
+    recipe = Recipe(title=title, instructions=instructions,
                     image=image) 
     db.session.add(recipe)
     db.session.commit()
