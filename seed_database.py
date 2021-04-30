@@ -38,3 +38,7 @@ params = {'apiKey': "10908696a3b54d32b5925b490b9a43be",
 
 response = requests.get(url, params)
 data = response.json()
+
+for n in range(3):
+cuisine = data['recipes'][n]['cuisines']
+print(cuisine)
