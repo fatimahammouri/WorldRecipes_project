@@ -44,4 +44,8 @@ for n in range(3):
     print(cuisine)
     recipe_id = data['recipes'][n]['id']
     print (recipe_id)
+    description = data['recipes'][n]['instructions']
+    print(description)
+    photo = data['recipes'][n]['image']
+    print(photo)
     
