@@ -28,6 +28,7 @@ def process_login():
         # Log in user by storing the user's email in session
         # session["email"] = user.email
         flash(f"Welcome back, {user.email}!")
+        return redirect("/search")
 
     return redirect("/")
 
