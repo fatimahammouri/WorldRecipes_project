@@ -13,4 +13,10 @@ os.system('createdb recipes')
 model.connect_to_db(server.app)
 model.db.create_all()
 
-for n in range(10):
+####################################################################
+
+# create test users
+for n in range(5):
+    email = f'user{n}@test.com'
+    password = f'test{n}'
+    user = crud.create_user(email, password)
