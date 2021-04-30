@@ -52,8 +52,10 @@ def create_ingredient(ingredient_name):
     return ingredient
 
 #####################################################################
+
 def get_all_recipes():
-    
+    return Recipe.query.all()
+
 #####################################################################
 
 
