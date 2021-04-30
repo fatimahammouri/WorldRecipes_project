@@ -27,8 +27,8 @@ class Recipe(db.Model):
     recipe_id = db.Column(db.Integer, primary_key=True,
                         autoincrement=True)
     recipe_name = db.Column(db.String(100))
-    description = db.Column(db.Text)
-    photo = db.Column(db.String(100))
+    instructions = db.Column(db.Text)
+    image = db.Column(db.String(100))
     
     # cuisines = db.relatioship("cuisines")
     # ingredients = db.relatioship("ingredients")
