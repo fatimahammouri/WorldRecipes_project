@@ -55,7 +55,7 @@ def create_user():
     else:
         crud.create_user(email, password, username)
         flash("Account created! Please log in.")
-
+        return redirect("/")
     return redirect("/register")
 
 ########################################################################
