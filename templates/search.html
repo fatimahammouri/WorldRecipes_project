@@ -1,7 +1,18 @@
 {% extends 'base.html'%}
 {% block title %} World Recipe {% endblock %}
 {% block body %}
-    
+ 
+<div>
+    <form action="/search" method="POST">
+        <label> Search By Ingredient </label>
+        <input type="text" name="search_ingredient"> 
+
+        <label> Search By Cuisine</label>
+        <input type="text" name="search_cuisine">
+
+        <input type="submit" value="Search Recipe!">
+      </form>
+</div>
 
 
 {% endblock %}
