@@ -4,6 +4,8 @@ import json
 import crud 
 import model
 import server
+import requests 
+import pprint
 
 os.system('dropdb recipes')
 os.system('createdb recipes')
