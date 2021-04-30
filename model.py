@@ -26,7 +26,7 @@ class Recipe(db.Model):
 
     recipe_id = db.Column(db.Integer, primary_key=True,
                         autoincrement=True)
-    recipe_name = db.Column(db.String(100))
+    title = db.Column(db.String(100))
     instructions = db.Column(db.Text)
     image = db.Column(db.String(100))
     
