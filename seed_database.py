@@ -22,4 +22,4 @@ for n in range(5):
     email = f'user{n}@test.com'
     password = f'test{n}'
     username = f'user{n}'
-    user = crud.create_user(email, password, username)    
+    user = crud.create_user(email, password, username)   

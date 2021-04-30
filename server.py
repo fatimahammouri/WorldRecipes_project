@@ -66,15 +66,11 @@ def login():
 
 ########################################################################
     
-@app.route()
+@app.route("/search")
 def search_recipes():
-    return render_template("/search")
+    return render_template("search.html")
 
 
-# when creating end points, i will use
-# any paremeters needed Ex:keyword = request.args.get('keyword', '')
-# url = 'The URL for the end point'
-# payload = {'apikey': API_KEY}
 
 
 if __name__ == '__main__':
