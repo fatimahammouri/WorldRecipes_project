@@ -35,3 +35,5 @@ params = {'apiKey': "10908696a3b54d32b5925b490b9a43be",
                     'main course,italian', 
                     'main course,Middle Eastern'],
             'number' : 3}
+
+response = requests.get(url, params)
