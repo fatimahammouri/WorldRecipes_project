@@ -66,9 +66,9 @@ def login():
 
 ########################################################################
     
-@app.route("/search")
+@app.route()
 def search_recipes():
-    return render_template("search.html")
+    return render_template("/search")
 
 
 # when creating end points, i will use
