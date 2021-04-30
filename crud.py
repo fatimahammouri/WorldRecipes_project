@@ -58,6 +58,10 @@ def get_all_recipes():
 
 #####################################################################
 
+def get_all_ingredients():
+    return Ingredient.query.all()
+
+#####################################################################
 
 if __name__== '__main__':
     from server import app
