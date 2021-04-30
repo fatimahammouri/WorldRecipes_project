@@ -40,12 +40,12 @@ response = requests.get(url, params)
 data = response.json()
 
 for n in range(3):
-    cuisine = data['recipes'][n]['cuisines']
+    cuisine_name = data['recipes'][n]['cuisines'][0]
     print(cuisine)
     recipe_id = data['recipes'][n]['id']
     print (recipe_id)
-    description = data['recipes'][n]['instructions']
+    instructions = data['recipes'][n]['instructions']
     print(description)
-    photo = data['recipes'][n]['image']
+    image = data['recipes'][n]['image']
     print(photo)
     
