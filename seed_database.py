@@ -26,10 +26,10 @@ for n in range(5):
 
 ########################################################################
 
-# API_KEY = os.environ['SPOON_KEY'].... why is this not working ????
+API_KEY = os.environ['SPOON_KEY']
 url = 'https://api.spoonacular.com/recipes/random'
 
-params = {'apiKey': "10908696a3b54d32b5925b490b9a43be",
+params = {'apiKey': API_KEY,
             'tags' : [
                     'dessert,american', 
                     'main course,italian', 
