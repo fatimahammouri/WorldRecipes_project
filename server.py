@@ -73,6 +73,8 @@ def search_recipes():
 @app.route("/results")
 def show_results():
 
+    tags = request.args.get('cuisine','')
+
     return render_template("results.html")
 
 if __name__ == '__main__':
