@@ -41,11 +41,11 @@ data = response.json()
 
 for n in range(3):
     cuisine_name = data['recipes'][n]['cuisines'][0]
-    print(cuisine)
+    print(cuisine_name)
     recipe_id = data['recipes'][n]['id']
     print (recipe_id)
     instructions = data['recipes'][n]['instructions']
-    print(description)
+    print(instructions)
     image = data['recipes'][n]['image']
-    print(photo)
+    print(image)
     
