@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.secret_key = "recipe"
 app.jinja_env.undefined = StrictUndefined
 
-# API_KEY = os.environ['SPOON_KEY'] 
+API_KEY = os.environ['SPOON_KEY'] 
 
 @app.route("/login", methods=["POST"])
 def process_login():
@@ -69,7 +69,6 @@ def login():
 @app.route("/search")
 def search_recipes():
     return render_template("search.html")
-
 
 
 

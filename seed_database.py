@@ -30,10 +30,7 @@ API_KEY = os.environ['SPOON_KEY']
 url = 'https://api.spoonacular.com/recipes/random'
 
 params = {'apiKey': API_KEY,
-            'tags' : [
-                    'dessert,american', 
-                    'main course,italian', 
-                    'main course,Middle Eastern'],
+            'tags' : 'dessert,american',
             'number' : 3}
 
 response = requests.get(url, params)
