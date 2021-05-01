@@ -70,7 +70,10 @@ def login():
 def search_recipes():
     return render_template("search.html")
 
+@app.route("/results")
+def show_results():
 
+    return render_template("results.html")
 
 if __name__ == '__main__':
 
