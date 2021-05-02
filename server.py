@@ -82,8 +82,9 @@ def show_results():
 
     response = requests.get(url, params)
     data = response.json()
-    
+
     title = data['recipes'][0]['title'][0]
+    instructions = data['recipes'][0]['instructions']
 
     return render_template("results.html")
 
