@@ -53,3 +53,6 @@ ingredients_list = ['water', 'sugar', 'olive oil', 'flour', 'salt',
                     'chicken', 'beef', 'lamp meat', 'milk', 'eggs', 
                     'fish', 'garlic', 'apple', 'orange', 'banana',
                     'red onions', 'raw nuts', 'cheese']
+
+for ingredient in ingredients_list:
+    ingredient = crud.create_ingredient(ingredient)
