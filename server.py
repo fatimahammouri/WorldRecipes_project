@@ -82,13 +82,17 @@ def show_results():
                 'addRecipeInformation': True,
                 'instructionsRequired': True,
                 'cuisine':cuisine,
-                'number' : 1}
+                'number' : 3}
     
     response = requests.get(url, params)
     data = response.json()
 
-    results = data['results'][0]
-    recipe_results = parse_api.parse_recipe_details(results)
+    
+        results = data['results']
+        for recipe in results:
+            all_recipe_results = []
+            recipe_results = parse_api.parse_recipe_details(recipe)
+            all_recipe_results.append(recipe_results)
 
     return render_template("results.html", recipe_results=recipe_results)
 

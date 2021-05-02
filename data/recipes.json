@@ -1,798 +1,507 @@
 {'number': 1,
         'offset': 0,
-        'results': [{'aggregateLikes': 3689,
-                     'analyzedInstructions': [{'name': '',
-                                               'steps': [{'equipment': [{'id': 404771,
-                                                                         'image': 'food-processor.png',
-                                                                         'localizedName': 'food '
-                                                                                          'processor',
-                                                                         'name': 'food '
-                                                                                 'processor'}],
-                                                          'ingredients': [{'id': 10011135,
-                                                                           'image': 'cauliflower.jpg',
-                                                                           'localizedName': 'cauliflower '
-                                                                                            'florets',
-                                                                           'name': 'cauliflower '
-                                                                                   'florets'},
-                                                                          {'id': 10111135,
-                                                                           'image': 'cauliflower.jpg',
-                                                                           'localizedName': 'cauliflower '
-                                                                                            'rice',
-                                                                           'name': 'cauliflower '
-                                                                                   'rice'},
-                                                                          {'id': 11135,
-                                                                           'image': 'cauliflower.jpg',
-                                                                           'localizedName': 'cauliflower',
-                                                                           'name': 'cauliflower'},
-                                                                          {'id': 20028,
-                                                                           'image': 'couscous-cooked.jpg',
-                                                                           'localizedName': 'couscous',
-                                                                           'name': 'couscous'},
-                                                                          {'id': 20444,
-                                                                           'image': 'uncooked-white-rice.png',
-                                                                           'localizedName': 'rice',
-                                                                           'name': 'rice'}],
-                                                          'number': 1,
-                                                          'step': 'Remove the '
-                                                                  "cauliflower's "
-                                                                  'tough stem and '
-                                                                  'reserve for '
-                                                                  'another use. Using '
-                                                                  'a food processor, '
-                                                                  'pulse cauliflower '
-                                                                  'florets until they '
-                                                                  'resemble rice or '
-                                                                  'couscous. You '
-                                                                  'should end up with '
-                                                                  'around four cups '
-                                                                  'of "cauliflower '
-                                                                  'rice."'},
-                                                         {'equipment': [{'id': 404645,
-                                                                         'image': 'pan.png',
-                                                                         'localizedName': 'frying '
-                                                                                          'pan',
-                                                                         'name': 'frying '
-                                                                                 'pan'}],
-                                                          'ingredients': [{'id': 1001,
-                                                                           'image': 'butter-sliced.jpg',
-                                                                           'localizedName': 'butter',
-                                                                           'name': 'butter'},
-                                                                          {'id': 4582,
-                                                                           'image': 'vegetable-oil.jpg',
-                                                                           'localizedName': 'cooking '
-                                                                                            'oil',
-                                                                           'name': 'cooking '
-                                                                                   'oil'}],
-                                                          'number': 2,
-                                                          'step': 'Heat 1T butter and '
-                                                                  '1T oil in a large '
-                                                                  'skillet over '
-                                                                  'medium heat.'},
-                                                         {'equipment': [],
-                                                          'ingredients': [{'id': 11291,
-                                                                           'image': 'spring-onions.jpg',
-                                                                           'localizedName': 'green '
-                                                                                            'onions',
-                                                                           'name': 'green '
-                                                                                   'onions'},
-                                                                          {'id': 11215,
-                                                                           'image': 'garlic.png',
-                                                                           'localizedName': 'garlic',
-                                                                           'name': 'garlic'}],
-                                                          'number': 3,
-                                                          'step': 'Add garlic and the '
-                                                                  'white and light '
-                                                                  'green pieces of '
-                                                                  'scallion. Sauté '
-                                                                  'about a minute.'},
-                                                         {'equipment': [{'id': 404645,
-                                                                         'image': 'pan.png',
-                                                                         'localizedName': 'frying '
-                                                                                          'pan',
-                                                                         'name': 'frying '
-                                                                                 'pan'}],
-                                                          'ingredients': [{'id': 11135,
-                                                                           'image': 'cauliflower.jpg',
-                                                                           'localizedName': 'cauliflower',
-                                                                           'name': 'cauliflower'},
-                                                                          {'id': 0,
-                                                                           'image': '',
-                                                                           'localizedName': 'spread',
-                                                                           'name': 'spread'},
-                                                                          {'id': 4582,
-                                                                           'image': 'vegetable-oil.jpg',
-                                                                           'localizedName': 'cooking '
-                                                                                            'oil',
-                                                                           'name': 'cooking '
-                                                                                   'oil'}],
-                                                          'number': 4,
-                                                          'step': 'Add the '
-                                                                  'cauliflower to the '
-                                                                  'pan. Stir to coat '
-                                                                  'with oil, then '
-                                                                  'spread out in pan '
-                                                                  'and let sit; you '
-                                                                  'want it cook a bit '
-                                                                  'and to caramelize '
-                                                                  '(get a bit brown), '
-                                                                  'which will bring '
-                                                                  'out the sweetness. '
-                                                                  'After a couple of '
-                                                                  'minutes, stir and '
-                                                                  'spread out again.'},
-                                                         {'equipment': [{'id': 404645,
-                                                                         'image': 'pan.png',
-                                                                         'localizedName': 'frying '
-                                                                                          'pan',
-                                                                         'name': 'frying '
-                                                                                 'pan'}],
-                                                          'ingredients': [{'id': 4047,
-                                                                           'image': 'oil-coconut.jpg',
-                                                                           'localizedName': 'coconut '
-                                                                                            'oil',
-                                                                           'name': 'coconut '
-                                                                                   'oil'},
-                                                                          {'id': 1001,
-                                                                           'image': 'butter-sliced.jpg',
-                                                                           'localizedName': 'butter',
-                                                                           'name': 'butter'},
-                                                                          {'id': 0,
-                                                                           'image': '',
-                                                                           'localizedName': 'spread',
-                                                                           'name': 'spread'},
-                                                                          {'id': 20444,
-                                                                           'image': 'uncooked-white-rice.png',
-                                                                           'localizedName': 'rice',
-                                                                           'name': 'rice'}],
-                                                          'number': 5,
-                                                          'step': 'Add cold rice (it '
-                                                                  'separates easily, '
-                                                                  "so it won't clump "
-                                                                  'up during '
-                                                                  'cooking), plus the '
-                                                                  'additional '
-                                                                  'grapeseed and '
-                                                                  'coconut oil or '
-                                                                  'butter. Raise heat '
-                                                                  'to medium-high. '
-                                                                  'Toss everything '
-                                                                  'together and, '
-                                                                  'again, spread the '
-                                                                  'mixture out over '
-                                                                  'the whole pan and '
-                                                                  'press a bit into '
-                                                                  'the bottom.'},
-                                                         {'equipment': [],
-                                                          'ingredients': [{'id': 20444,
-                                                                           'image': 'uncooked-white-rice.png',
-                                                                           'localizedName': 'rice',
-                                                                           'name': 'rice'}],
-                                                          'length': {'number': 2,
-                                                                     'unit': 'minutes'},
-                                                          'number': 6,
-                                                          'step': 'Let it sit for '
-                                                                  'about two '
-                                                                  'minutes—so the '
-                                                                  'rice can get '
-                                                                  'toasted and a '
-                                                                  'little crispy.'},
-                                                         {'equipment': [],
-                                                          'ingredients': [{'id': 11090,
-                                                                           'image': 'broccoli.jpg',
-                                                                           'localizedName': 'broccoli',
-                                                                           'name': 'broccoli'},
-                                                                          {'id': 11304,
-                                                                           'image': 'peas.jpg',
-                                                                           'localizedName': 'peas',
-                                                                           'name': 'peas'}],
-                                                          'number': 7,
-                                                          'step': 'Add the peas and '
-                                                                  'broccoli and stir '
-                                                                  'again.'},
-                                                         {'equipment': [],
-                                                          'ingredients': [{'id': 4058,
-                                                                           'image': 'sesame-oil.png',
-                                                                           'localizedName': 'sesame '
-                                                                                            'oil',
-                                                                           'name': 'sesame '
-                                                                                   'oil'},
-                                                                          {'id': 16124,
-                                                                           'image': 'soy-sauce.jpg',
-                                                                           'localizedName': 'soy '
-                                                                                            'sauce',
-                                                                           'name': 'soy '
-                                                                                   'sauce'},
-                                                                          {'id': 20444,
-                                                                           'image': 'uncooked-white-rice.png',
-                                                                           'localizedName': 'rice',
-                                                                           'name': 'rice'}],
-                                                          'number': 8,
-                                                          'step': 'Drizzle soy sauce '
-                                                                  'and toasted sesame '
-                                                                  'oil over rice.Cook '
-                                                                  'for another minute '
-                                                                  'or so and turn off '
-                                                                  'heat.'},
-                                                         {'equipment': [{'id': 404645,
-                                                                         'image': 'pan.png',
-                                                                         'localizedName': 'frying '
-                                                                                          'pan',
-                                                                         'name': 'frying '
-                                                                                 'pan'}],
-                                                          'ingredients': [{'id': 12023,
-                                                                           'image': 'sesame-seeds.png',
-                                                                           'localizedName': 'sesame '
-                                                                                            'seeds',
-                                                                           'name': 'sesame '
-                                                                                   'seeds'},
-                                                                          {'id': 16124,
-                                                                           'image': 'soy-sauce.jpg',
-                                                                           'localizedName': 'soy '
-                                                                                            'sauce',
-                                                                           'name': 'soy '
-                                                                                   'sauce'},
-                                                                          {'id': 11291,
-                                                                           'image': 'spring-onions.jpg',
-                                                                           'localizedName': 'green '
-                                                                                            'onions',
-                                                                           'name': 'green '
-                                                                                   'onions'},
-                                                                          {'id': 5006,
-                                                                           'image': 'whole-chicken.jpg',
-                                                                           'localizedName': 'whole '
-                                                                                            'chicken',
-                                                                           'name': 'whole '
-                                                                                   'chicken'},
-                                                                          {'id': 18070,
-                                                                           'image': 'toast',
-                                                                           'localizedName': 'toast',
-                                                                           'name': 'toast'},
-                                                                          {'id': 20444,
-                                                                           'image': 'uncooked-white-rice.png',
-                                                                           'localizedName': 'rice',
-                                                                           'name': 'rice'},
-                                                                          {'id': 2047,
-                                                                           'image': 'salt.jpg',
-                                                                           'localizedName': 'salt',
-                                                                           'name': 'salt'}],
-                                                          'number': 9,
-                                                          'step': 'Add chopped '
-                                                                  'scallion tops and '
-                                                                  'toss.I like to '
-                                                                  'toast some sesame '
-                                                                  'seeds in a dry '
-                                                                  'pan; I sprinkle '
-                                                                  'these and some '
-                                                                  'more raw, chopped '
-                                                                  'scallion over the '
-                                                                  'top of the rice '
-                                                                  'for added flavor '
-                                                                  'and crunch.Season '
-                                                                  'to taste with salt '
-                                                                  "and, if you'd "
-                                                                  'like, more soy '
-                                                                  'sauce. Keep in '
-                                                                  'mind that if '
-                                                                  "you're serving "
-                                                                  'this with '
-                                                                  'something salty '
-                                                                  'and saucy (ie. '
-                                                                  'teriyaki chicken) '
-                                                                  'you may want to '
-                                                                  'hold off on adding '
-                                                                  'too much salt to '
-                                                                  'the fried '
-                                                                  'rice.'}]}],
-                     'cheap': False,
-                     'creditsText': 'Full Belly Sisters',
-                     'cuisines': ['Chinese', 'Asian'],
-                     'dairyFree': True,
-                     'diets': ['gluten free',
-                               'dairy free',
-                               'lacto ovo vegetarian',
-                               'vegan'],
-                     'dishTypes': ['side dish'],
-                     'extendedIngredients': [{'aisle': 'Produce',
-                                              'amount': 2.0,
-                                              'consistency': 'solid',
-                                              'id': 11090,
-                                              'image': 'broccoli.jpg',
-                                              'measures': {'metric': {'amount': 473.176,
-                                                                      'unitLong': 'milliliters',
-                                                                      'unitShort': 'ml'},
-                                                           'us': {'amount': 2.0,
-                                                                  'unitLong': 'cups',
-                                                                  'unitShort': 'cups'}},
-                                              'meta': ['cooked', 'chopped'],
-                                              'metaInformation': ['cooked', 'chopped'],
-                                              'name': 'broccoli',
-                                              'nameClean': 'broccoli',
-                                              'original': '2 cups cooked broccoli, '
-                                                          'chopped small',
-                                              'originalName': 'cooked broccoli, '
-                                                              'chopped small',
-                                              'originalString': '2 cups cooked '
-                                                                'broccoli, chopped '
-                                                                'small',
-                                              'unit': 'cups'},
-                                             {'aisle': 'Produce',
-                                              'amount': 1.0,
-                                              'consistency': 'solid',
-                                              'id': 11135,
-                                              'image': 'cauliflower.jpg',
-                                              'measures': {'metric': {'amount': 1.0,
-                                                                      'unitLong': 'head',
-                                                                      'unitShort': 'head'},
-                                                           'us': {'amount': 1.0,
-                                                                  'unitLong': 'head',
-                                                                  'unitShort': 'head'}},
-                                              'meta': ['raw'],
-                                              'metaInformation': ['raw'],
-                                              'name': 'cauliflower',
-                                              'nameClean': 'cauliflower',
-                                              'original': '1 head of cauliflower, raw',
-                                              'originalName': 'cauliflower, raw',
-                                              'originalString': '1 head of '
-                                                                'cauliflower, raw',
-                                              'unit': 'head'},
-                                             {'aisle': 'Health Foods;Baking',
-                                              'amount': 1.0,
-                                              'consistency': 'liquid',
-                                              'id': 4047,
-                                              'image': 'oil-coconut.jpg',
-                                              'measures': {'metric': {'amount': 1.0,
-                                                                      'unitLong': '',
-                                                                      'unitShort': ''},
-                                                           'us': {'amount': 1.0,
-                                                                  'unitLong': '',
-                                                                  'unitShort': ''}},
-                                              'meta': [],
-                                              'metaInformation': [],
-                                              'name': 'coconut oil',
-                                              'nameClean': 'coconut oil',
-                                              'original': '1 + 1 T coconut oil or '
-                                                          'butter',
-                                              'originalName': '1 T coconut oil or '
-                                                              'butter',
-                                              'originalString': '1 + 1 T coconut oil '
-                                                                'or butter',
-                                              'unit': ''},
-                                             {'aisle': 'Pasta and Rice',
-                                              'amount': 3.0,
-                                              'consistency': 'solid',
-                                              'id': 20041,
-                                              'image': 'rice-brown-cooked.png',
-                                              'measures': {'metric': {'amount': 709.764,
-                                                                      'unitLong': 'milliliters',
-                                                                      'unitShort': 'ml'},
-                                                           'us': {'amount': 3.0,
-                                                                  'unitLong': 'cups',
-                                                                  'unitShort': 'cups'}},
-                                              'meta': ['cold', 'cooked'],
-                                              'metaInformation': ['cold', 'cooked'],
-                                              'name': 'cooked brown rice',
-                                              'nameClean': 'cooked brown rice',
-                                              'original': '3 cups of cooked brown '
-                                                          'rice, cold',
-                                              'originalName': 'cooked brown rice, '
-                                                              'cold',
-                                              'originalString': '3 cups of cooked '
-                                                                'brown rice, cold',
-                                              'unit': 'cups'},
-                                             {'aisle': 'Produce',
-                                              'amount': 5.0,
-                                              'consistency': 'solid',
-                                              'id': 11215,
-                                              'image': 'garlic.png',
-                                              'measures': {'metric': {'amount': 5.0,
-                                                                      'unitLong': 'cloves',
-                                                                      'unitShort': 'cloves'},
-                                                           'us': {'amount': 5.0,
-                                                                  'unitLong': 'cloves',
-                                                                  'unitShort': 'cloves'}},
-                                              'meta': ['chopped'],
-                                              'metaInformation': ['chopped'],
-                                              'name': 'garlic',
-                                              'nameClean': 'garlic',
-                                              'original': '5 cloves of garlic, '
-                                                          'chopped',
-                                              'originalName': 'garlic, chopped',
-                                              'originalString': '5 cloves of garlic, '
-                                                                'chopped',
-                                              'unit': 'cloves'},
-                                             {'aisle': 'Oil, Vinegar, Salad Dressing',
-                                              'amount': 1.0,
-                                              'consistency': 'liquid',
-                                              'id': 4517,
-                                              'image': 'vegetable-oil.jpg',
-                                              'measures': {'metric': {'amount': 1.0,
-                                                                      'unitLong': '',
-                                                                      'unitShort': ''},
-                                                           'us': {'amount': 1.0,
-                                                                  'unitLong': '',
-                                                                  'unitShort': ''}},
-                                              'meta': [],
-                                              'metaInformation': [],
-                                              'name': 'grapeseed oil',
-                                              'nameClean': 'grape seed oil',
-                                              'original': '1 + 1 T grapeseed oil',
-                                              'originalName': '1 T grapeseed oil',
-                                              'originalString': '1 + 1 T grapeseed '
-                                                                'oil',
-                                              'unit': ''},
-                                             {'aisle': 'Ethnic Foods;Condiments',
-                                              'amount': 3.0,
-                                              'consistency': 'liquid',
-                                              'id': 16424,
-                                              'image': 'soy-sauce.jpg',
-                                              'measures': {'metric': {'amount': 3.0,
-                                                                      'unitLong': 'Tbsps',
-                                                                      'unitShort': 'Tbsps'},
-                                                           'us': {'amount': 3.0,
-                                                                  'unitLong': 'Tbsps',
-                                                                  'unitShort': 'Tbsps'}},
-                                              'meta': ['reduced-sodium'],
-                                              'metaInformation': ['reduced-sodium'],
-                                              'name': 'low sodium soy sauce',
-                                              'nameClean': 'lower sodium soy sauce',
-                                              'original': '3T reduced-sodium soy '
-                                                          'sauce',
-                                              'originalName': 'reduced-sodium soy '
-                                                              'sauce',
-                                              'originalString': '3T reduced-sodium '
-                                                                'soy sauce',
-                                              'unit': 'T'},
-                                             {'aisle': 'Produce',
-                                              'amount': 1.0,
-                                              'consistency': 'solid',
-                                              'id': 11304,
-                                              'image': 'peas.jpg',
-                                              'measures': {'metric': {'amount': 236.588,
-                                                                      'unitLong': 'milliliters',
-                                                                      'unitShort': 'ml'},
-                                                           'us': {'amount': 1.0,
-                                                                  'unitLong': 'cup',
-                                                                  'unitShort': 'cup'}},
-                                              'meta': ['frozen'],
-                                              'metaInformation': ['frozen'],
-                                              'name': 'peas',
-                                              'nameClean': 'green peas',
-                                              'original': '1 cup frozen peas',
-                                              'originalName': 'frozen peas',
-                                              'originalString': '1 cup frozen peas',
-                                              'unit': 'cup'},
-                                             {'aisle': 'Spices and Seasonings',
-                                              'amount': 8.0,
-                                              'consistency': 'solid',
-                                              'id': 2047,
-                                              'image': 'salt.jpg',
-                                              'measures': {'metric': {'amount': 8.0,
-                                                                      'unitLong': 'servings',
-                                                                      'unitShort': 'servings'},
-                                                           'us': {'amount': 8.0,
-                                                                  'unitLong': 'servings',
-                                                                  'unitShort': 'servings'}},
-                                              'meta': ['to taste'],
-                                              'metaInformation': ['to taste'],
-                                              'name': 'salt',
-                                              'nameClean': 'salt',
-                                              'original': 'salt, to taste',
-                                              'originalName': 'salt, to taste',
-                                              'originalString': 'salt, to taste',
-                                              'unit': 'servings'},
-                                             {'aisle': 'Produce',
-                                              'amount': 8.0,
-                                              'consistency': 'solid',
-                                              'id': 11291,
-                                              'image': 'spring-onions.jpg',
-                                              'measures': {'metric': {'amount': 8.0,
-                                                                      'unitLong': 'servings',
-                                                                      'unitShort': 'servings'},
-                                                           'us': {'amount': 8.0,
-                                                                  'unitLong': 'servings',
-                                                                  'unitShort': 'servings'}},
-                                              'meta': ['chopped', 'for garnish'],
-                                              'metaInformation': ['chopped',
-                                                                  'for garnish'],
-                                              'name': 'scallion',
-                                              'nameClean': 'spring onions',
-                                              'original': 'additional chopped '
-                                                          'scallion tops for garnish',
-                                              'originalName': 'additional chopped '
-                                                              'scallion tops for '
-                                                              'garnish',
-                                              'originalString': 'additional chopped '
-                                                                'scallion tops for '
-                                                                'garnish',
-                                              'unit': 'servings'},
-                                             {'aisle': 'Produce',
-                                              'amount': 7.0,
-                                              'consistency': 'solid',
-                                              'id': 11291,
-                                              'image': 'spring-onions.jpg',
-                                              'measures': {'metric': {'amount': 7.0,
-                                                                      'unitLong': '',
-                                                                      'unitShort': ''},
-                                                           'us': {'amount': 7.0,
-                                                                  'unitLong': '',
-                                                                  'unitShort': ''}},
-                                              'meta': ['dark',
-                                                       'green',
-                                                       'chopped',
-                                                       '(keep white/light ends '
-                                                       'separate from tops)'],
-                                              'metaInformation': ['dark',
-                                                                  'green',
-                                                                  'chopped',
-                                                                  '(keep white/light '
-                                                                  'ends separate from '
-                                                                  'tops)'],
-                                              'name': 'scallions',
-                                              'nameClean': 'spring onions',
-                                              'original': '7 scallions, chopped (keep '
-                                                          'white/light green ends '
-                                                          'separate from dark green '
-                                                          'tops)',
-                                              'originalName': 'scallions, chopped '
-                                                              '(keep white/light '
-                                                              'green ends separate '
-                                                              'from dark green tops)',
-                                              'originalString': '7 scallions, chopped '
-                                                                '(keep white/light '
-                                                                'green ends separate '
-                                                                'from dark green '
-                                                                'tops)',
-                                              'unit': ''},
-                                             {'aisle': 'Ethnic Foods',
-                                              'amount': 2.0,
-                                              'consistency': 'liquid',
-                                              'id': 4058,
-                                              'image': 'sesame-oil.png',
-                                              'measures': {'metric': {'amount': 2.0,
-                                                                      'unitLong': 'teaspoons',
-                                                                      'unitShort': 'tsps'},
-                                                           'us': {'amount': 2.0,
-                                                                  'unitLong': 'teaspoons',
-                                                                  'unitShort': 'tsps'}},
-                                              'meta': ['toasted'],
-                                              'metaInformation': ['toasted'],
-                                              'name': 'sesame oil',
-                                              'nameClean': 'sesame oil',
-                                              'original': '2t toasted sesame oil',
-                                              'originalName': 'toasted sesame oil',
-                                              'originalString': '2t toasted sesame '
-                                                                'oil',
-                                              'unit': 't'},
-                                             {'aisle': 'Ethnic Foods;Spices and '
-                                                       'Seasonings',
-                                              'amount': 8.0,
-                                              'consistency': 'solid',
-                                              'id': 12023,
-                                              'image': 'sesame-seeds.png',
-                                              'measures': {'metric': {'amount': 8.0,
-                                                                      'unitLong': 'servings',
-                                                                      'unitShort': 'servings'},
-                                                           'us': {'amount': 8.0,
-                                                                  'unitLong': 'servings',
-                                                                  'unitShort': 'servings'}},
-                                              'meta': ['toasted'],
-                                              'metaInformation': ['toasted'],
-                                              'name': 'sesame seeds',
-                                              'nameClean': 'sesame seeds',
-                                              'original': 'toasted sesame seeds, '
-                                                          'optional',
-                                              'originalName': 'toasted sesame seeds, '
-                                                              'optional',
-                                              'originalString': 'toasted sesame '
-                                                                'seeds, optional',
-                                              'unit': 'servings'}],
-                     'gaps': 'no',
-                     'glutenFree': True,
-                     'healthScore': 76.0,
-                     'id': 716426,
-                     'image': 'https://spoonacular.com/recipeImages/716426-312x231.jpg',
-                     'imageType': 'jpg',
-                     'license': 'CC BY-SA 3.0',
-                     'likes': 0,
-                     'lowFodmap': False,
-                     'missedIngredientCount': 9,
-                     'missedIngredients': [{'aisle': 'Produce',
-                                            'amount': 2.0,
-                                            'extendedName': 'cooked broccoli',
-                                            'id': 11090,
-                                            'image': 'https://spoonacular.com/cdn/ingredients_100x100/broccoli.jpg',
-                                            'meta': ['cooked', 'chopped'],
-                                            'metaInformation': ['cooked', 'chopped'],
-                                            'name': 'broccoli',
-                                            'original': '2 cups cooked broccoli, '
-                                                        'chopped small',
-                                            'originalName': 'cooked broccoli, chopped '
-                                                            'small',
-                                            'originalString': '2 cups cooked '
-                                                              'broccoli, chopped '
-                                                              'small',
-                                            'unit': 'cups',
-                                            'unitLong': 'cups',
-                                            'unitShort': 'cup'},
-                                           {'aisle': 'Produce',
-                                            'amount': 1.0,
-                                            'extendedName': 'raw cauliflower',
-                                            'id': 11135,
-                                            'image': 'https://spoonacular.com/cdn/ingredients_100x100/cauliflower.jpg',
-                                            'meta': ['raw'],
-                                            'metaInformation': ['raw'],
-                                            'name': 'cauliflower',
-                                            'original': '1 head of cauliflower, raw',
-                                            'originalName': 'cauliflower, raw',
-                                            'originalString': '1 head of cauliflower, '
-                                                              'raw',
-                                            'unit': 'head',
-                                            'unitLong': 'head',
-                                            'unitShort': 'head'},
-                                           {'aisle': 'Pasta and Rice',
-                                            'amount': 3.0,
-                                            'id': 20041,
-                                            'image': 'https://spoonacular.com/cdn/ingredients_100x100/rice-brown-cooked.png',
-                                            'meta': ['cold', 'cooked'],
-                                            'metaInformation': ['cold', 'cooked'],
-                                            'name': 'cooked brown rice',
-                                            'original': '3 cups of cooked brown rice, '
-                                                        'cold',
-                                            'originalName': 'cooked brown rice, cold',
-                                            'originalString': '3 cups of cooked brown '
-                                                              'rice, cold',
-                                            'unit': 'cups',
-                                            'unitLong': 'cups',
-                                            'unitShort': 'cup'},
-                                           {'aisle': 'Produce',
-                                            'amount': 5.0,
-                                            'id': 11215,
-                                            'image': 'https://spoonacular.com/cdn/ingredients_100x100/garlic.png',
-                                            'meta': ['chopped'],
-                                            'metaInformation': ['chopped'],
-                                            'name': 'garlic',
-                                            'original': '5 cloves of garlic, chopped',
-                                            'originalName': 'garlic, chopped',
-                                            'originalString': '5 cloves of garlic, '
-                                                              'chopped',
-                                            'unit': 'cloves',
-                                            'unitLong': 'cloves',
-                                            'unitShort': 'cloves'},
-                                           {'aisle': 'Ethnic Foods;Condiments',
-                                            'amount': 3.0,
-                                            'id': 16424,
-                                            'image': 'https://spoonacular.com/cdn/ingredients_100x100/soy-sauce.jpg',
-                                            'meta': ['reduced-sodium'],
-                                            'metaInformation': ['reduced-sodium'],
-                                            'name': 'low sodium soy sauce',
-                                            'original': '3T reduced-sodium soy sauce',
-                                            'originalName': 'reduced-sodium soy sauce',
-                                            'originalString': '3T reduced-sodium soy '
-                                                              'sauce',
-                                            'unit': 'T',
-                                            'unitLong': 'tablespoons',
-                                            'unitShort': 'Tbsp'},
-                                           {'aisle': 'Produce',
-                                            'amount': 1.0,
-                                            'extendedName': 'frozen peas',
-                                            'id': 11304,
-                                            'image': 'https://spoonacular.com/cdn/ingredients_100x100/peas.jpg',
-                                            'meta': ['frozen'],
-                                            'metaInformation': ['frozen'],
-                                            'name': 'peas',
-                                            'original': '1 cup frozen peas',
-                                            'originalName': 'frozen peas',
-                                            'originalString': '1 cup frozen peas',
-                                            'unit': 'cup',
-                                            'unitLong': 'cup',
-                                            'unitShort': 'cup'},
-                                           {'aisle': 'Produce',
-                                            'amount': 8.0,
-                                            'id': 11291,
-                                            'image': 'https://spoonacular.com/cdn/ingredients_100x100/spring-onions.jpg',
-                                            'meta': ['chopped', 'for garnish'],
-                                            'metaInformation': ['chopped',
-                                                                'for garnish'],
-                                            'name': 'scallion',
-                                            'original': 'additional chopped scallion '
-                                                        'tops for garnish',
-                                            'originalName': 'additional chopped '
-                                                            'scallion tops for '
-                                                            'garnish',
-                                            'originalString': 'additional chopped '
-                                                              'scallion tops for '
-                                                              'garnish',
-                                            'unit': 'servings',
-                                            'unitLong': 'servings',
-                                            'unitShort': 'servings'},
-                                           {'aisle': 'Produce',
-                                            'amount': 7.0,
-                                            'extendedName': 'green dark scallions',
-                                            'id': 11291,
-                                            'image': 'https://spoonacular.com/cdn/ingredients_100x100/spring-onions.jpg',
-                                            'meta': ['dark',
-                                                     'green',
-                                                     'chopped',
-                                                     '(keep white/light ends separate '
-                                                     'from tops)'],
-                                            'metaInformation': ['dark',
-                                                                'green',
-                                                                'chopped',
-                                                                '(keep white/light '
-                                                                'ends separate from '
-                                                                'tops)'],
-                                            'name': 'scallions',
-                                            'original': '7 scallions, chopped (keep '
-                                                        'white/light green ends '
-                                                        'separate from dark green '
-                                                        'tops)',
-                                            'originalName': 'scallions, chopped (keep '
-                                                            'white/light green ends '
-                                                            'separate from dark green '
-                                                            'tops)',
-                                            'originalString': '7 scallions, chopped '
-                                                              '(keep white/light '
-                                                              'green ends separate '
-                                                              'from dark green tops)',
-                                            'unit': '',
-                                            'unitLong': '',
-                                            'unitShort': ''},
-                                           {'aisle': 'Ethnic Foods;Spices and '
-                                                     'Seasonings',
-                                            'amount': 8.0,
-                                            'id': 12023,
-                                            'image': 'https://spoonacular.com/cdn/ingredients_100x100/sesame-seeds.png',
-                                            'meta': ['toasted'],
-                                            'metaInformation': ['toasted'],
-                                            'name': 'sesame seeds',
-                                            'original': 'toasted sesame seeds, '
-                                                        'optional',
-                                            'originalName': 'toasted sesame seeds, '
-                                                            'optional',
-                                            'originalString': 'toasted sesame seeds, '
-                                                              'optional',
-                                            'unit': 'servings',
-                                            'unitLong': 'servings',
-                                            'unitShort': 'servings'}],
-                     'occasions': [],
-                     'pricePerServing': 112.39,
-                     'readyInMinutes': 30,
-                     'servings': 8,
-                     'sourceName': 'Full Belly Sisters',
-                     'sourceUrl': 'http://fullbellysisters.blogspot.com/2012/01/cauliflower-fried-rice-more-veggies.html',
-                     'spoonacularScore': 99.0,
-                     'spoonacularSourceUrl': 'https://spoonacular.com/cauliflower-brown-rice-and-vegetable-fried-rice-716426',
-                     'summary': 'Cauliflower, Brown Rice, and Vegetable Fried Rice '
-                                'might be a good recipe to expand your side dish '
-                                'recipe box. Watching your figure? This gluten free, '
-                                'dairy free, lacto ovo vegetarian, and vegan recipe '
-                                'has <b>192 calories</b>, <b>7g of protein</b>, and '
-                                '<b>6g of fat</b> per serving. For <b>$1.12 per '
-                                'serving</b>, this recipe <b>covers 19%</b> of your '
-                                'daily requirements of vitamins and minerals. This '
-                                'recipe serves 8. This recipe from '
-                                'fullbellysisters.blogspot.com has 3689 fans. This '
-                                'recipe is typical of Chinese cuisine. From '
-                                'preparation to the plate, this recipe takes about '
-                                '<b>30 minutes</b>. Head to the store and pick up '
-                                'peas, broccoli, salt, and a few other things to make '
-                                'it today. Overall, this recipe earns an <b>awesome '
-                                'spoonacular score of 100%</b>. Users who liked this '
-                                'recipe also liked <a '
-                                'href="https://spoonacular.com/recipes/vegetable-fried-brown-rice-36199">Vegetable '
-                                'Fried Brown Rice</a>, <a '
-                                'href="https://spoonacular.com/recipes/vegetable-fried-cauliflower-rice-933261">Vegetable '
-                                'Fried Cauliflower Rice</a>, and <a '
-                                'href="https://spoonacular.com/recipes/easy-vegetable-fried-brown-rice-with-egg-802042">Easy '
-                                'Vegetable Fried Brown Rice with Egg</a>.',
-                     'sustainable': False,
-                     'title': 'Cauliflower, Brown Rice, and Vegetable Fried Rice',
-                     'unusedIngredients': [],
-                     'usedIngredientCount': 0,
-                     'usedIngredients': [],
-                     'vegan': True,
-                     'vegetarian': True,
-                     'veryHealthy': True,
-                     'veryPopular': True,
-                     'weightWatcherSmartPoints': 4}],
-        'totalResults': 5017}
+        'results': [{'aggregateLikes': 689,
+                'analyzedInstructions': [{'name': '',
+                                          'steps': [{'equipment': [{'id': 404726,
+                                                                    'image': 'blender.png',
+                                                                    'localizedName': 'blender',
+                                                                    'name': 'blender'}],
+                                                     'ingredients': [{'id': 1116,
+                                                                      'image': 'plain-yogurt.jpg',
+                                                                      'localizedName': 'yogurt',
+                                                                      'name': 'yogurt'}],
+                                                     'number': 1,
+                                                     'step': 'Take some yogurt '
+                                                             'in your favorite '
+                                                             'flavor and add 1 '
+                                                             'container to your '
+                                                             'blender.'},
+                                                    {'equipment': [],
+                                                     'ingredients': [{'id': 10018617,
+                                                                      'image': 'graham-crackers.jpg',
+                                                                      'localizedName': 'graham '
+                                                                                       'cracker '
+                                                                                       'crumbs',
+                                                                      'name': 'graham '
+                                                                              'cracker '
+                                                                              'crumbs'},
+                                                                     {'id': 16223,
+                                                                      'image': 'soy-milk.jpg',
+                                                                      'localizedName': 'soymilk',
+                                                                      'name': 'soymilk'},
+                                                                     {'id': 1009054,
+                                                                      'image': 'berries-mixed.jpg',
+                                                                      'localizedName': 'berries',
+                                                                      'name': 'berries'},
+                                                                     {'id': 9040,
+                                                                      'image': 'bananas.jpg',
+                                                                      'localizedName': 'banana',
+                                                                      'name': 'banana'}],
+                                                     'number': 2,
+                                                     'step': 'Add in the '
+                                                             'berries, banana, '
+                                                             'and soy milk and '
+                                                             'blend. Top your '
+                                                             'glass with a few '
+                                                             'graham cracker '
+                                                             'crumbs and '
+                                                             'serve.'}]}],
+                'cheap': False,
+                'cookingMinutes': 0,
+                'creditsText': 'Jen West',
+                'cuisines': [],
+                'dairyFree': False,
+                'diets': ['lacto ovo vegetarian'],
+                'dishTypes': ['morning meal', 'brunch', 'breakfast'],
+                'extendedIngredients': [{'aisle': 'Produce',
+                                         'amount': 0.25,
+                                         'consistency': 'solid',
+                                         'id': 9040,
+                                         'image': 'bananas.jpg',
+                                         'measures': {'metric': {'amount': 59.147,
+                                                                 'unitLong': 'milliliters',
+                                                                 'unitShort': 'ml'},
+                                                      'us': {'amount': 0.25,
+                                                             'unitLong': 'cups',
+                                                             'unitShort': 'cups'}},
+                                         'meta': ['mashed'],
+                                         'metaInformation': ['mashed'],
+                                         'name': 'banana',
+                                         'nameClean': 'banana',
+                                         'original': '¼ cup mashed banana',
+                                         'originalName': 'mashed banana',
+                                         'originalString': '¼ cup mashed banana',
+                                         'unit': 'cup'},
+                                        {'aisle': 'Sweet Snacks;Baking',
+                                         'amount': 2.0,
+                                         'consistency': 'solid',
+                                         'id': 10018617,
+                                         'image': 'graham-crackers.jpg',
+                                         'measures': {'metric': {'amount': 2.0,
+                                                                 'unitLong': 'Tbsps',
+                                                                 'unitShort': 'Tbsps'},
+                                                      'us': {'amount': 2.0,
+                                                             'unitLong': 'Tbsps',
+                                                             'unitShort': 'Tbsps'}},
+                                         'meta': [],
+                                         'metaInformation': [],
+                                         'name': 'graham cracker crumbs',
+                                         'nameClean': 'graham cracker crumbs',
+                                         'original': '2 tbsp graham cracker '
+                                                     'crumbs',
+                                         'originalName': 'graham cracker crumbs',
+                                         'originalString': '2 tbsp graham '
+                                                           'cracker crumbs',
+                                         'unit': 'tbsp'},
+                                        {'aisle': 'Milk, Eggs, Other Dairy',
+                                         'amount': 1.0,
+                                         'consistency': 'liquid',
+                                         'id': 16223,
+                                         'image': 'soy-milk.jpg',
+                                         'measures': {'metric': {'amount': 236.588,
+                                                                 'unitLong': 'milliliters',
+                                                                 'unitShort': 'ml'},
+                                                      'us': {'amount': 1.0,
+                                                             'unitLong': 'cup',
+                                                             'unitShort': 'cup'}},
+                                         'meta': [],
+                                         'metaInformation': [],
+                                         'name': 'soy milk',
+                                         'nameClean': 'soymilk',
+                                         'original': '1 cup soy milk',
+                                         'originalName': 'soy milk',
+                                         'originalString': '1 cup soy milk',
+                                         'unit': 'cup'},
+                                        {'aisle': 'Produce',
+                                         'amount': 0.5,
+                                         'consistency': 'solid',
+                                         'id': 9316,
+                                         'image': 'strawberries.png',
+                                         'measures': {'metric': {'amount': 118.294,
+                                                                 'unitLong': 'milliliters',
+                                                                 'unitShort': 'ml'},
+                                                      'us': {'amount': 0.5,
+                                                             'unitLong': 'cups',
+                                                             'unitShort': 'cups'}},
+                                         'meta': [],
+                                         'metaInformation': [],
+                                         'name': 'strawberries',
+                                         'nameClean': 'strawberries',
+                                         'original': '½ cup strawberries',
+                                         'originalName': 'strawberries',
+                                         'originalString': '½ cup strawberries',
+                                         'unit': 'cup'},
+                                        {'aisle': 'Milk, Eggs, Other Dairy',
+                                         'amount': 1.0,
+                                         'consistency': 'liquid',
+                                         'id': 1119,
+                                         'image': 'vanilla-yogurt.png',
+                                         'measures': {'metric': {'amount': 1.0,
+                                                                 'unitLong': 'container',
+                                                                 'unitShort': 'container'},
+                                                      'us': {'amount': 1.0,
+                                                             'unitLong': 'container',
+                                                             'unitShort': 'container'}},
+                                         'meta': [],
+                                         'metaInformation': [],
+                                         'name': 'vanilla yogurt',
+                                         'nameClean': 'vanilla yogurt',
+                                         'original': '1 container vanilla yogurt',
+                                         'originalName': 'vanilla yogurt',
+                                         'originalString': '1 container vanilla '
+                                                           'yogurt',
+                                         'unit': 'container'}],
+                'gaps': 'no',
+                'glutenFree': False,
+                'healthScore': 63.0,
+                'id': 715497,
+                'image': 'https://spoonacular.com/recipeImages/715497-312x231.jpg',
+                'imageType': 'jpg',
+                'likes': 0,
+                'lowFodmap': False,
+                'missedIngredientCount': 5,
+                'missedIngredients': [{'aisle': 'Produce',
+                                       'amount': 0.25,
+                                       'id': 9040,
+                                       'image': 'https://spoonacular.com/cdn/ingredients_100x100/bananas.jpg',
+                                       'meta': ['mashed'],
+                                       'metaInformation': ['mashed'],
+                                       'name': 'banana',
+                                       'original': '¼ cup mashed banana',
+                                       'originalName': 'mashed banana',
+                                       'originalString': '¼ cup mashed banana',
+                                       'unit': 'cup',
+                                       'unitLong': 'cups',
+                                       'unitShort': 'cup'},
+                                      {'aisle': 'Sweet Snacks;Baking',
+                                       'amount': 2.0,
+                                       'id': 10018617,
+                                       'image': 'https://spoonacular.com/cdn/ingredients_100x100/graham-crackers.jpg',
+                                       'meta': [],
+                                       'metaInformation': [],
+                                       'name': 'graham cracker crumbs',
+                                       'original': '2 tbsp graham cracker crumbs',
+                                       'originalName': 'graham cracker crumbs',
+                                       'originalString': '2 tbsp graham cracker '
+                                                         'crumbs',
+                                       'unit': 'tbsp',
+                                       'unitLong': 'tablespoons',
+                                       'unitShort': 'Tbsp'},
+                                      {'aisle': 'Milk, Eggs, Other Dairy',
+                                       'amount': 1.0,
+                                       'id': 16223,
+                                       'image': 'https://spoonacular.com/cdn/ingredients_100x100/soy-milk.jpg',
+                                       'meta': [],
+                                       'metaInformation': [],
+                                       'name': 'soy milk',
+                                       'original': '1 cup soy milk',
+                                       'originalName': 'soy milk',
+                                       'originalString': '1 cup soy milk',
+                                       'unit': 'cup',
+                                       'unitLong': 'cup',
+                                       'unitShort': 'cup'},
+                                      {'aisle': 'Produce',
+                                       'amount': 0.5,
+                                       'id': 9316,
+                                       'image': 'https://spoonacular.com/cdn/ingredients_100x100/strawberries.png',
+                                       'meta': [],
+                                       'metaInformation': [],
+                                       'name': 'strawberries',
+                                       'original': '½ cup strawberries',
+                                       'originalName': 'strawberries',
+                                       'originalString': '½ cup strawberries',
+                                       'unit': 'cup',
+                                       'unitLong': 'cups',
+                                       'unitShort': 'cup'},
+                                      {'aisle': 'Milk, Eggs, Other Dairy',
+                                       'amount': 1.0,
+                                       'id': 1119,
+                                       'image': 'https://spoonacular.com/cdn/ingredients_100x100/vanilla-yogurt.png',
+                                       'meta': [],
+                                       'metaInformation': [],
+                                       'name': 'vanilla yogurt',
+                                       'original': '1 container vanilla yogurt',
+                                       'originalName': 'vanilla yogurt',
+                                       'originalString': '1 container vanilla '
+                                                         'yogurt',
+                                       'unit': 'container',
+                                       'unitLong': 'container',
+                                       'unitShort': 'container'}],
+                'occasions': [],
+                'preparationMinutes': 5,
+                'pricePerServing': 204.29,
+                'readyInMinutes': 5,
+                'servings': 1,
+                'sourceName': 'Pink When',
+                'sourceUrl': 'http://www.pinkwhen.com/berry-banana-breakfast-smoothie/',
+                'spoonacularScore': 99.0,
+                'spoonacularSourceUrl': 'https://spoonacular.com/berry-banana-breakfast-smoothie-715497',
+                'summary': 'If you have around <b>5 minutes</b> to spend in the '
+                           'kitchen, Berry Banana Breakfast Smoothie might be a '
+                           'tremendous <b>lacto ovo vegetarian</b> recipe to '
+                           'try. This recipe makes 1 servings with <b>501 '
+                           'calories</b>, <b>21g of protein</b>, and <b>11g of '
+                           'fat</b> each. For <b>$2.19 per serving</b>, this '
+                           'recipe <b>covers 32%</b> of your daily requirements '
+                           'of vitamins and minerals. 688 people found this '
+                           'recipe to be tasty and satisfying. It is brought to '
+                           'you by Pink When. Head to the store and pick up '
+                           'graham crackers, soy milk, banana, and a few other '
+                           'things to make it today. It works well as a morn '
+                           'meal. Overall, this recipe earns a <b>super '
+                           'spoonacular score of 100%</b>. If you like this '
+                           'recipe, take a look at these similar recipes: <a '
+                           'href="https://spoonacular.com/recipes/berry-banana-breakfast-smoothie-249239">Berry '
+                           'Banana Breakfast Smoothie</a>, <a '
+                           'href="https://spoonacular.com/recipes/berry-and-banana-oat-breakfast-smoothie-626817">Berry '
+                           'and Bananan Oat Breakfast Smoothie</a>, and <a '
+                           'href="https://spoonacular.com/recipes/berry-breakfast-smoothie-774875">Berry '
+                           'Breakfast Smoothie</a>.',
+                'sustainable': False,
+                'title': 'Berry Banana Breakfast Smoothie',
+                'unusedIngredients': [],
+                'usedIngredientCount': 0,
+                'usedIngredients': [],
+                'vegan': False,
+                'vegetarian': True,
+                'veryHealthy': True,
+                'veryPopular': True,
+                'weightWatcherSmartPoints': 15},
+               {'aggregateLikes': 19,
+                'analyzedInstructions': [{'name': '',
+                                          'steps': [{'equipment': [{'id': 404752,
+                                                                    'image': 'stock-pot.jpg',
+                                                                    'localizedName': 'pot',
+                                                                    'name': 'pot'}],
+                                                     'ingredients': [{'id': 4053,
+                                                                      'image': 'olive-oil.jpg',
+                                                                      'localizedName': 'olive '
+                                                                                       'oil',
+                                                                      'name': 'olive '
+                                                                              'oil'}],
+                                                     'number': 1,
+                                                     'step': 'Heat the olive oil '
+                                                             'in a large pot '
+                                                             'over medium heat.'},
+                                                    {'equipment': [],
+                                                     'ingredients': [{'id': 11233,
+                                                                      'image': 'kale.jpg',
+                                                                      'localizedName': 'kale',
+                                                                      'name': 'kale'}],
+                                                     'number': 2,
+                                                     'step': 'Add the kale and '
+                                                             'cover.Stir '
+                                                             'occasionally until '
+                                                             'the volume of the '
+                                                             'kale is reduced by '
+                                                             'half. Uncover.'},
+                                                    {'equipment': [],
+                                                     'ingredients': [{'id': 2053,
+                                                                      'image': 'vinegar-(white).jpg',
+                                                                      'localizedName': 'vinegar',
+                                                                      'name': 'vinegar'},
+                                                                     {'id': 11215,
+                                                                      'image': 'garlic.png',
+                                                                      'localizedName': 'garlic',
+                                                                      'name': 'garlic'}],
+                                                     'number': 3,
+                                                     'step': 'Add garlic and '
+                                                             'basalmic.Allow to '
+                                                             'cook for about '
+                                                             'another 30 seconds '
+                                                             'or so, mixing well '
+                                                             'so that the garlic '
+                                                             'and vinegar are '
+                                                             'well distributed.'},
+                                                    {'equipment': [],
+                                                     'ingredients': [],
+                                                     'number': 4,
+                                                     'step': 'Serve hot.'}]}],
+                'cheap': False,
+                'creditsText': 'Foodista.com – The Cooking Encyclopedia Everyone '
+                               'Can Edit',
+                'cuisines': [],
+                'dairyFree': True,
+                'diets': ['gluten free',
+                          'dairy free',
+                          'paleolithic',
+                          'lacto ovo vegetarian',
+                          'primal',
+                          'vegan'],
+                'dishTypes': ['side dish'],
+                'extendedIngredients': [{'aisle': 'Oil, Vinegar, Salad Dressing',
+                                         'amount': 3.0,
+                                         'consistency': 'liquid',
+                                         'id': 2069,
+                                         'image': 'balsamic-vinegar.jpg',
+                                         'measures': {'metric': {'amount': 3.0,
+                                                                 'unitLong': 'Tbsps',
+                                                                 'unitShort': 'Tbsps'},
+                                                      'us': {'amount': 3.0,
+                                                             'unitLong': 'Tbsps',
+                                                             'unitShort': 'Tbsps'}},
+                                         'meta': [],
+                                         'metaInformation': [],
+                                         'name': 'balsamic vinegar',
+                                         'nameClean': 'balsamic vinegar',
+                                         'original': '3 tablespoons balsamic '
+                                                     'vinegar',
+                                         'originalName': 'balsamic vinegar',
+                                         'originalString': '3 tablespoons '
+                                                           'balsamic vinegar',
+                                         'unit': 'tablespoons'},
+                                        {'aisle': 'Produce',
+                                         'amount': 1.0,
+                                         'consistency': 'solid',
+                                         'id': 11215,
+                                         'image': 'garlic.png',
+                                         'measures': {'metric': {'amount': 1.0,
+                                                                 'unitLong': 'clove',
+                                                                 'unitShort': 'clove'},
+                                                      'us': {'amount': 1.0,
+                                                             'unitLong': 'clove',
+                                                             'unitShort': 'clove'}},
+                                         'meta': ['minced'],
+                                         'metaInformation': ['minced'],
+                                         'name': 'garlic',
+                                         'nameClean': 'garlic',
+                                         'original': '1 clove garlic, minced',
+                                         'originalName': 'garlic, minced',
+                                         'originalString': '1 clove garlic, '
+                                                           'minced',
+                                         'unit': 'clove'},
+                                        {'aisle': 'Produce',
+                                         'amount': 1.0,
+                                         'consistency': 'solid',
+                                         'id': 11233,
+                                         'image': 'kale.jpg',
+                                         'measures': {'metric': {'amount': 1.0,
+                                                                 'unitLong': 'bunch',
+                                                                 'unitShort': 'bunch'},
+                                                      'us': {'amount': 1.0,
+                                                             'unitLong': 'bunch',
+                                                             'unitShort': 'bunch'}},
+                                         'meta': ['chopped'],
+                                         'metaInformation': ['chopped'],
+                                         'name': 'kale',
+                                         'nameClean': 'kale',
+                                         'original': '1 bunch curly kale, stems '
+                                                     'removed and chopped',
+                                         'originalName': 'curly kale, stems '
+                                                         'removed and chopped',
+                                         'originalString': '1 bunch curly kale, '
+                                                           'stems removed and '
+                                                           'chopped',
+                                         'unit': 'bunch'},
+                                        {'aisle': 'Oil, Vinegar, Salad Dressing',
+                                         'amount': 2.0,
+                                         'consistency': 'liquid',
+                                         'id': 4053,
+                                         'image': 'olive-oil.jpg',
+                                         'measures': {'metric': {'amount': 2.0,
+                                                                 'unitLong': 'servings',
+                                                                 'unitShort': 'servings'},
+                                                      'us': {'amount': 2.0,
+                                                             'unitLong': 'servings',
+                                                             'unitShort': 'servings'}},
+                                         'meta': [],
+                                         'metaInformation': [],
+                                         'name': 'olive oil',
+                                         'nameClean': 'olive oil',
+                                         'original': 'Olive oil',
+                                         'originalName': 'Olive oil',
+                                         'originalString': 'Olive oil',
+                                         'unit': 'servings'}],
+                'gaps': 'no',
+                'glutenFree': True,
+                'healthScore': 93.0,
+                'id': 644387,
+                'image': 'https://spoonacular.com/recipeImages/644387-312x231.jpg',
+                'imageType': 'jpg',
+                'license': 'CC BY 3.0',
+                'likes': 0,
+                'lowFodmap': False,
+                'missedIngredientCount': 3,
+                'missedIngredients': [{'aisle': 'Oil, Vinegar, Salad Dressing',
+                                       'amount': 3.0,
+                                       'id': 2069,
+                                       'image': 'https://spoonacular.com/cdn/ingredients_100x100/balsamic-vinegar.jpg',
+                                       'meta': [],
+                                       'metaInformation': [],
+                                       'name': 'balsamic vinegar',
+                                       'original': '3 tablespoons balsamic '
+                                                   'vinegar',
+                                       'originalName': 'balsamic vinegar',
+                                       'originalString': '3 tablespoons balsamic '
+                                                         'vinegar',
+                                       'unit': 'tablespoons',
+                                       'unitLong': 'tablespoons',
+                                       'unitShort': 'Tbsp'},
+                                      {'aisle': 'Produce',
+                                       'amount': 1.0,
+                                       'id': 11215,
+                                       'image': 'https://spoonacular.com/cdn/ingredients_100x100/garlic.png',
+                                       'meta': ['minced'],
+                                       'metaInformation': ['minced'],
+                                       'name': 'garlic',
+                                       'original': '1 clove garlic, minced',
+                                       'originalName': 'garlic, minced',
+                                       'originalString': '1 clove garlic, minced',
+                                       'unit': 'clove',
+                                       'unitLong': 'clove',
+                                       'unitShort': 'clove'},
+                                      {'aisle': 'Produce',
+                                       'amount': 1.0,
+                                       'id': 11233,
+                                       'image': 'https://spoonacular.com/cdn/ingredients_100x100/kale.jpg',
+                                       'meta': ['chopped'],
+                                       'metaInformation': ['chopped'],
+                                       'name': 'kale',
+                                       'original': '1 bunch curly kale, stems '
+                                                   'removed and chopped',
+                                       'originalName': 'curly kale, stems '
+                                                       'removed and chopped',
+                                       'originalString': '1 bunch curly kale, '
+                                                         'stems removed and '
+                                                         'chopped',
+                                       'unit': 'bunch',
+                                       'unitLong': 'bunch',
+                                       'unitShort': 'bunch'}],
+                'occasions': [],
+                'pricePerServing': 69.09,
+                'readyInMinutes': 45,
+                'servings': 2,
+                'sourceName': 'Foodista',
+                'sourceUrl': 'http://www.foodista.com/recipe/J2FTJBF7/garlicky-kale',
+                'spoonacularScore': 99.0,
+                'spoonacularSourceUrl': 'https://spoonacular.com/garlicky-kale-644387',
+                'summary': 'Garlicky Kale might be just the side dish you are '
+                           'searching for. This caveman, gluten free, primal, '
+                           'and whole 30 recipe serves 2 and costs <b>69 cents '
+                           'per serving</b>. One serving contains <b>179 '
+                           'calories</b>, <b>3g of protein</b>, and <b>15g of '
+                           'fat</b>. A few people made this recipe, and 17 would '
+                           'say it hit the spot. If you have olive oil, garlic, '
+                           'curly kale, and a few other ingredients on hand, you '
+                           'can make it. From preparation to the plate, this '
+                           'recipe takes around <b>45 minutes</b>. All things '
+                           'considered, we decided this recipe <b>deserves a '
+                           'spoonacular score of 99%</b>. This score is awesome. '
+                           'Try <a '
+                           'href="https://spoonacular.com/recipes/garlicky-kale-248759">Garlicky '
+                           'Kale</a>, <a '
+                           'href="https://spoonacular.com/recipes/garlicky-kale-14910">Garlicky '
+                           'Kale</a>, and <a '
+                           'href="https://spoonacular.com/recipes/garlicky-kale-crostini-15010">Garlicky '
+                           'Kale Crostini</a> for similar recipes.',
+                'sustainable': False,
+                'title': 'Garlicky Kale',
+                'unusedIngredients': [],
+                'usedIngredientCount': 0,
+                'usedIngredients': [],
+                'vegan': True,
+                'vegetarian': True,
+                'veryHealthy': True,
+                'veryPopular': False,
+                'weightWatcherSmartPoints': 5}],
+                'totalResults': 5017}
