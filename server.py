@@ -7,6 +7,8 @@ import requests
 from pprint import pformat, pprint
 import os
 
+import parse_api
+
 app = Flask(__name__)
 app.secret_key = "recipe"
 app.jinja_env.undefined = StrictUndefined
