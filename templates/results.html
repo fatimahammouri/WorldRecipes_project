@@ -2,19 +2,21 @@
 {% block title %} World Recipe {% endblock %}
 {% block body %}
 
+{% for recipe in all_recipe_results %}
 <div>
-  <h2> {{ recipe_results['title'] }}</h2>
+  <h2> {{ recipe['title'] }}</h2>
   <p> 
-    {{ recipe_results['servings'] }} - 
-    {{ recipe_results['readyInMinutes'] }} 
+    {{ recipe['servings'] }} - 
+    {{ recipe['readyInMinutes'] }} 
    </p>
    <p>
-     {{ recipe_results['instructions'] }}
+     {{ recipe['instructions'] }}
    </p>
 
-   <a href="{{recipe_results['sourceUrl']}}">recipe source</a>
+   <a href="{{recipe['sourceUrl']}}">recipe source</a>
 
-  <img src="{{recipe_results['image']}}">
+  <img src="{{recipe['image']}}">
 </div> 
+{% endfor %}
   
   {% endblock %}

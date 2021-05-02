@@ -25,7 +25,7 @@ for n in range(5):
     user = crud.create_user(email, password, username)   
 
 ########################################################################
-
+# testing around the API responses
 API_KEY = os.environ['SPOON_KEY']
 url = 'https://api.spoonacular.com/recipes/random'
 

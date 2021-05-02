@@ -88,11 +88,13 @@ def show_results():
     data = response.json()
 
     
-        results = data['results']
-        for recipe in results:
-            all_recipe_results = []
-            recipe_results = parse_api.parse_recipe_details(recipe)
-            all_recipe_results.append(recipe_results)
+    results = data['results']
+    all_recipe_results = []
+    for recipe in results:
+        
+        recipe_results = parse_api.parse_recipe_details(recipe)
+        all_recipe_results.append(recipe_results)
+    # print(all_recipe_results)
 
     return render_template("results.html", all_recipe_results=all_recipe_results)
 
