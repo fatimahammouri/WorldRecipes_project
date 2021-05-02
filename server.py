@@ -94,7 +94,7 @@ def show_results():
             recipe_results = parse_api.parse_recipe_details(recipe)
             all_recipe_results.append(recipe_results)
 
-    return render_template("results.html", recipe_results=recipe_results)
+    return render_template("results.html", all_recipe_results=all_recipe_results)
 
 if __name__ == '__main__':
 
