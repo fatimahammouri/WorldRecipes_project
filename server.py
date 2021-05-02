@@ -74,16 +74,16 @@ def search_recipes():
 
 @app.route("/results")
 def show_results():
-
+    cuisine = request.args.get('cuisine')
 
     url = 'https://api.spoonacular.com/recipes/complexSearch'
     params = {'apiKey': API_KEY,
-               'fillIngredients'=true,
-                'addRecipeInformation'=true,
-                'instructionsRequired'=true,
+               'fillIngredients': True,
+                'addRecipeInformation': True,
+                'instructionsRequired': True,
                 'cuisine':cuisine,
                 'number' : 1}
-
+    
     response = requests.get(url, params)
     data = response.json()
 
