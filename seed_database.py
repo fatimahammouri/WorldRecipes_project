@@ -26,23 +26,23 @@ for n in range(5):
 
 ########################################################################
 # testing around the API responses
-API_KEY = os.environ['SPOON_KEY']
-url = 'https://api.spoonacular.com/recipes/random'
+# API_KEY = os.environ['SPOON_KEY']
+# url = 'https://api.spoonacular.com/recipes/random'
 
-params = {'apiKey': API_KEY,
-            'tags' : 'dessert,american',
-            'number' : 3}
+# params = {'apiKey': API_KEY,
+#             'tags' : 'dessert,american',
+#             'number' : 3}
 
-response = requests.get(url, params)
-data = response.json()
+# response = requests.get(url, params)
+# data = response.json()
 
-for n in range(3):
-    cuisine_name = data['recipes'][n]['cuisines'][0]
-    print(cuisine_name)
-    recipe_id = data['recipes'][n]['id']
-    print (recipe_id)
-    instructions = data['recipes'][n]['instructions']
-    print(instructions)
-    image = data['recipes'][n]['image']
-    print(image)
+# for n in range(3):
+#     cuisine_name = data['recipes'][n]['cuisines'][0]
+#     print(cuisine_name)
+#     recipe_id = data['recipes'][n]['id']
+#     print (recipe_id)
+#     instructions = data['recipes'][n]['instructions']
+#     print(instructions)
+#     image = data['recipes'][n]['image']
+#     print(image)
     
