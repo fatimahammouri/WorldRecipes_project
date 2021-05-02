@@ -87,9 +87,8 @@ def show_results():
     response = requests.get(url, params)
     data = response.json()
 
-    title = data['recipes'][0]['title']
-    instructions = data['recipes'][0]['instructions']
-    image = data['recipes'][0]['image']
+    results = data['results']
+    recipe_results = parse_api.parse_recipe_details(results)
 
     return render_template("results.html", title=title, image=image,
                             instructions=instructions)
