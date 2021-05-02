@@ -2,6 +2,19 @@
 {% block title %} World Recipe {% endblock %}
 {% block body %}
 
-   
+<div>
+  <h2> {{ recipe_results['title'] }}</h2>
+  <p> 
+    {{ recipe_results['servings'] }} - 
+    {{ recipe_results['readyInMinutes'] }} 
+   </p>
+   <p>
+     {{ recipe_results['instructions'] }}
+   </p>
+
+   <a href="{{recipe_results['sourceUrl']}}">recipe source</a>
+
+  <img src="{{recipe_results['image']}}">
+</div> 
   
   {% endblock %}
