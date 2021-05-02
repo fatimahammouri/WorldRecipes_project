@@ -85,6 +85,7 @@ def show_results():
 
     title = data['recipes'][0]['title'][0]
     instructions = data['recipes'][0]['instructions']
+    image = data['recipes'][0]['image']
 
     return render_template("results.html")
 
