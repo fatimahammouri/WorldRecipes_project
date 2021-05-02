@@ -90,8 +90,7 @@ def show_results():
     results = data['results']
     recipe_results = parse_api.parse_recipe_details(results)
 
-    return render_template("results.html", title=title, image=image,
-                            instructions=instructions)
+    return render_template("results.html", recipe_results)
 
 if __name__ == '__main__':
 
