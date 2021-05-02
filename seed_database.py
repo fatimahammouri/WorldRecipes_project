@@ -56,3 +56,10 @@ ingredients_list = ['water', 'sugar', 'olive oil', 'flour', 'salt',
 
 for ingredient in ingredients_list:
     ingredient = crud.create_ingredient(ingredient)
+
+########################################################################
+
+# seed Cuisines
+cuisines_list = ['american', 'african', 'caribbean', 'chinese', 
+                'european', 'cajun', 'french', 'greek', 'indian',
+                'italian', 'mediterranean', 'mexican', 'thai']   
