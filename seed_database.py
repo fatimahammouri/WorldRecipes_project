@@ -45,4 +45,11 @@ for n in range(5):
 #     print(instructions)
 #     image = data['recipes'][n]['image']
 #     print(image)
-    
+########################################################################
+
+# seed ingredients
+ingredients_list = ['water', 'sugar', 'olive oil', 'flour', 'salt',
+                    'black pepper', 'rice', 'cooking oil', 'vinegar', 
+                    'chicken', 'beef', 'lamp meat', 'milk', 'eggs', 
+                    'fish', 'garlic', 'apple', 'orange', 'banana',
+                    'red onions', 'raw nuts', 'cheese']
