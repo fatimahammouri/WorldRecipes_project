@@ -87,10 +87,10 @@ def show_results():
     response = requests.get(url, params)
     data = response.json()
 
-    results = data['results']
+    results = data['results'][0]
     recipe_results = parse_api.parse_recipe_details(results)
 
-    return render_template("results.html", recipe_results)
+    return render_template("results.html", recipe_results=recipe_results)
 
 if __name__ == '__main__':
 
