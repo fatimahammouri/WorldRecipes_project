@@ -76,8 +76,11 @@ def show_results():
 
     url = 'https://api.spoonacular.com/recipes/complexSearch'
     params = {'apiKey': API_KEY,
-                'tags' : tags,
-                'number' : 3}
+               'fillIngredients'=true,
+                'addRecipeInformation'=true,
+                'instructionsRequired'=true,
+                'cuisine':cuisine,
+                'number' : 1}
 
     response = requests.get(url, params)
     data = response.json()
