@@ -2,5 +2,4 @@
 
 from model import connect_to_db
 import requests
-from pprint import pformat, pprint
-
+from pprint import pformat, pprint  

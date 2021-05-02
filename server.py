@@ -73,9 +73,8 @@ def search_recipes():
 @app.route("/results")
 def show_results():
 
-    tags = request.args.get('cuisine','')
 
-    url = 'https://api.spoonacular.com/recipes/random'
+    url = 'https://api.spoonacular.com/recipes/complexSearch'
     params = {'apiKey': API_KEY,
                 'tags' : tags,
                 'number' : 3}
