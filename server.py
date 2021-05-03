@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, session, redirect
+from flask import Flask, render_template, request, flash, session, redirect, jsonify
 from model import connect_to_db
 import crud
 from jinja2 import StrictUndefined
@@ -8,6 +8,7 @@ from pprint import pformat, pprint
 import os
 
 import parse_api
+
 
 app = Flask(__name__)
 app.secret_key = "recipe"
@@ -72,9 +73,9 @@ def login():
 def search_recipes():
     return render_template("search.html")
 
-@app.route("/results")
-def show_results():
-    cuisine = request.args.get('cuisine')
+@app.route("/results/<cuisine>")
+def show_results(cuisine):
+    
 
     url = 'https://api.spoonacular.com/recipes/complexSearch'
     params = {'apiKey': API_KEY,
@@ -86,17 +87,21 @@ def show_results():
     
     response = requests.get(url, params)
     data = response.json()
-
-    
     results = data['results']
+
     all_recipe_results = []
+
     for recipe in results:
         
         recipe_results = parse_api.parse_recipe_details(recipe)
         all_recipe_results.append(recipe_results)
-    # print(all_recipe_results)
 
-    return render_template("results.html", all_recipe_results=all_recipe_results)
+    print(all_recipe_results)
+    return jsonify(all_recipe_results)
+
+    # return render_template("results.html", all_recipe_results=all_recipe_results)
+
+
 
 if __name__ == '__main__':
 
