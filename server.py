@@ -65,7 +65,7 @@ def create_user():
 ########################################################################
 @app.route("/")
 def login():
-    return render_template("login.html")
+    return render_template("homepage.html")
 
 ########################################################################
     
