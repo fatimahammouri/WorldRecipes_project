@@ -1,5 +1,13 @@
 "use strict";
 
+//components
+function Homepage(){
+    return(
+        <div>
+            <h1>Hello Recipes</h1>
+        </div>    
+    );
+}
 // we'll start by creating App - Main componant 
 function App(props){
     return(
@@ -20,7 +28,7 @@ function App(props){
                 <ReactRouterDOM.switch>
                     
                     <ReactRouterDOM.Route exact path="/home">
-                        <Homepgae />
+                        <Homepage />
                     </ReactRouterDOM.Route>
 
                     <ReactRouterDOM.Route exact path="/recipes">
