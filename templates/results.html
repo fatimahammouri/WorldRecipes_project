@@ -11,8 +11,11 @@
    </p>
    <p>
      {{ recipe['instructions'] }}
-   </p>
 
+   </p>
+   {% for ing in recipe['ingredients'] %}
+    <p> {{ing}} </p>
+   {% endfor %}
    <a href="{{recipe['sourceUrl']}}">recipe source</a>
 
   <img src="{{recipe['image']}}">

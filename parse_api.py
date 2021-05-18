@@ -10,7 +10,7 @@ def parse_recipe_details(complex_results):
 
 
     recipe_details = {}
-
+    ingredients = []
     recipe_details['title'] = complex_results['title']
     # recipe_details['instructions'] = complex_results['instructions']
     recipe_details['image'] = complex_results['image']
@@ -21,6 +21,11 @@ def parse_recipe_details(complex_results):
     for each_step in complex_results['analyzedInstructions'][0]['steps']:
         instructions = each_step['step']
         recipe_details['instructions'] = instructions
-
+    
+    for each_ingredient in complex_results["extendedIngredients"]:
+        ingredient = each_ingredient["originalString"]
+        ingredients.append(ingredient)
+    # print(ingredients)   
+    recipe_details["ingredients"] = ingredients
 
     return recipe_details

@@ -97,9 +97,9 @@ def show_results(cuisine):
         all_recipe_results.append(recipe_results)
 
     print(all_recipe_results)
-    return jsonify(all_recipe_results)
+    # return jsonify(all_recipe_results)
 
-    # return render_template("results.html", all_recipe_results=all_recipe_results)
+    return render_template("results.html", all_recipe_results=all_recipe_results)
 
 
 
