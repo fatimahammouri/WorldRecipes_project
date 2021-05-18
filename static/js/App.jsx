@@ -1,13 +1,22 @@
 "use strict";
 
 //components
-function Homepage(){
+function Homepage(props){
     return(
         <div>
             <h1>Hello Recipes</h1>
         </div>    
     );
 }
+
+function Recipes(props){
+    return(
+        <div>
+            Recipes from API will be here
+        </div>
+    );
+}
+
 // we'll start by creating App - Main componant 
 function App(props){
     return(
