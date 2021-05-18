@@ -9,13 +9,7 @@ function Homepage(props){
     );
 }
 
-function Recipes(props){
-    return(
-        <div>
-            Recipes from API will be here
-        </div>
-    );
-}
+
 
 function CreateRecipes() {
     return(
