@@ -1,8 +1,7 @@
 "use strict";
 
 function Recipe(props){
-    const { title, servings, readyInMinutes,
-            instructions, image, ingredients, sourceUrl }
+    const { title, servings, readyInMinutes,instructions, image, ingredients, sourceUrl } = props;
     return(
         <div>
             <h2> {title} </h2>
