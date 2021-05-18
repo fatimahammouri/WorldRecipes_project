@@ -41,3 +41,12 @@ function Recipes(props){
         
     );
 }
+
+function CreateRecipes(props){
+    const [title, setTitle] = React.useState("");
+    const [cuisine, setCuisine] = React.useState("");
+    const [servings, setServings] = React.useState(0);
+    const [readyInMinutes, setReadyInMinutes] = React.useState(0);
+    const [ingredients, setIngredients] = React.useState([]);
+    const [instructions, setInstructions] = React.useState("");
+}
