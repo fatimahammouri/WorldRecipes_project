@@ -26,10 +26,4 @@ for cuisine in cuisines_list:
     cuisine = crud.create_cuisine(cuisine)  
 
 # ####################################################################
-
-# #create test users
-# for n in range(5):
-#     email = f'user{n}@test.com'
-#     password = f'test{n}'
-#     username = f'user{n}'
-#     user = crud.create_user(email, password, username)   
+  
