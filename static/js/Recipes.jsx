@@ -16,6 +16,7 @@ function Recipe(props){
 }
 
 function Recipes(props){
+    const [recipeData, setRecipeData] = React.useState(null);
     return(
         <div>
             Recipes from API will be here
