@@ -80,7 +80,7 @@ def add_recipe():
     return {
         "success": True,
         "cardAdded": {
-            "recipe_id" : new_recipe.recipe_id
+            "recipe_id" : new_recipe.recipe_id,
             "title": new_recipe.title,
             "cuisine": new_recipe.cuisine,
             "servings": new_recipe.servings,

@@ -48,6 +48,22 @@ function CreateRecipes(props){
     const [readyInMinutes, setReadyInMinutes] = React.useState(0);
     const [ingredients, setIngredients] = React.useState([]);
     const [instructions, setInstructions] = React.useState("");
+
+    function addNewRecipe() {
+      fetch("/add_recipe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json",},
+        body: JSON.stringify({ title, cuisine, servings, 
+                              readyInMinutes, ingredients, instructions}),
+      })
+      .then((response) => {
+          response.json().then((jsonResponse) => {
+          const { recipeAdded: { recipe_id, title, cuisine, servings, 
+                  readyInMinutes, ingredients, instructions } } = jsonResponse; 
+        });
+      });
+    }
+    
 return (
     <React.Fragment>
       <h2> Create a recipe </h2>
