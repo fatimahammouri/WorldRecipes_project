@@ -57,7 +57,36 @@ def all_recipes():
     # print(all_recipe_results)
     return jsonify(all_recipe_results)
 
-    
+@app.route("/add_recipe" , methods=["POST"])
+def add_recipe():
+    title = request.get_json().get("title")
+    cuisine = request.get_json().get("cuisine")
+    servings = request.get_json().get("servings")
+    ready_in_minutes = request.get_json().get("readyInMinutes")
+    ingredients = request.get_json().get("ingredients")
+    instructions = request.get_json().get("instructions")
+
+    new_recipe = Recipe(title=title, 
+                        cuisine=cuisine,
+                        servings=servings, 
+                        ready_in_minutes=ready_in_minutes,
+                        ingredients=ingredients,
+                        instructions=instructions)
+    db.session.add(new_recipe)
+    db.session.commit()
+    db.session.refresh(new_recipe)
+    return {
+        "success": True,
+        "cardAdded": {
+            "title": new_recipe.title,
+            "cuisine": new_recipe.cuisine,
+            "servings": new_recipe.servings,
+            "ready_in_minutes": new_recipe.ready_in_minutes,
+            "ingredients": new_recipe.ingredients,
+            "instructions": new_recipe.instructions
+        },
+    }       
+
 
 
 
