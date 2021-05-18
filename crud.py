@@ -1,6 +1,6 @@
 """C R U D Operation Functions"""
 
-from model import (db, User, Recipe, Cuisine, connect_to_db)
+from model import (db, Recipe, Cuisine, connect_to_db)
 
 
 """Defining our Create, Read, Update, Delete Functions"""
