@@ -59,6 +59,8 @@ def all_recipes():
 
 @app.route("/add_recipe" , methods=["POST"])
 def add_recipe():
+    # data = request.get_json()
+    # title = data.title etc etc........ 
     title = request.get_json().get("title")
     cuisine = request.get_json().get("cuisine")
     servings = request.get_json().get("servings")
@@ -78,6 +80,7 @@ def add_recipe():
     return {
         "success": True,
         "cardAdded": {
+            "recipe_id" : new_recipe.recipe_id
             "title": new_recipe.title,
             "cuisine": new_recipe.cuisine,
             "servings": new_recipe.servings,
