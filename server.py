@@ -1,13 +1,13 @@
 from flask import Flask, render_template, request, flash, session, redirect, jsonify
+from jinja2 import StrictUndefined
 from model import connect_to_db
 import crud
-from jinja2 import StrictUndefined
-
 import requests
-from pprint import pformat, pprint
-import os
-
-import parse_api
+import parse_function
+import model
+app = Flask(__name__)
+app.secret_key = "recipe"
+app.jinja_env.undefined = StrictUndefined
 
 
 app = Flask(__name__)
