@@ -42,15 +42,15 @@ class Recipe(db.Model):
 ###################################################################################################
 
 class Cuisine(db.Model):
-    """Cuisine"""
-
-    __tablename__ = "cuisines"
+    """Cuisines table"""
+    
+    __tablename__ = 'cuisines'
 
     cuisine_id = db.Column(db.Integer, primary_key=True,
-                        autoincrement=True)
-    cuisine_name = db.Column(db.String(100))
-    
-    
+    autoincrement=True)
+    cuisine_name = db.Column(db.String(50))
+
+
     def __repr__(self):
         return f'<<Cuisine cuisine_id={self.cuisine_id} name={self.cuisine_name}>>'
 
