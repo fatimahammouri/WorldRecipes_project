@@ -16,18 +16,21 @@ app.jinja_env.undefined = StrictUndefined
 
 API_KEY = os.environ['SPOON_KEY'] 
 
-
-
 ########################################################################
-@app.route("/")
-def login():
-    return render_template("homepage.html")
 
-########################################################################
-    
-@app.route("/search")
-def search_recipes():
-    return render_template("search.html")
+@app.route('/')
+@app.route('/<path>')
+def route(path=''):
+
+    return render_template('index.html')
+
+
+@app.route('/<path>/<code>')
+def nested_route(path, code):
+
+    return render_template('index.html')
+
+
 
 @app.route("/results/<cuisine>")
 def show_results(cuisine):
