@@ -43,7 +43,7 @@ function App(props){
                    </li>
                </ul>
            </nav>
-                <ReactRouterDOM.switch>
+                <ReactRouterDOM.Switch>
                     
                     <ReactRouterDOM.Route exact path="/home">
                         <Homepage />
@@ -57,7 +57,7 @@ function App(props){
                         <CreateRecipes />
                     </ReactRouterDOM.Route>
 
-                </ReactRouterDOM.switch>
+                </ReactRouterDOM.Switch>
        </ReactRouterDOM.BrowserRouter> 
     );
 }
