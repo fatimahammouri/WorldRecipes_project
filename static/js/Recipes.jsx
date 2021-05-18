@@ -17,6 +17,11 @@ function Recipe(props){
 
 function Recipes(props){
     const [recipeData, setRecipeData] = React.useState(null);
+    React.useEffect(() => {
+        fetch('/api/recipes')
+        .then(response => response.json())
+        .then(recipeData => setRecipeData(recipeData))
+      }, [])
     return(
         <div>
             Recipes from API will be here
