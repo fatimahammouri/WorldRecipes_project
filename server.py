@@ -16,51 +16,7 @@ app.jinja_env.undefined = StrictUndefined
 
 API_KEY = os.environ['SPOON_KEY'] 
 
-@app.route("/login", methods=["POST"])
-def process_login():
-    """Process user login."""
 
-    email = request.form.get("email")
-    password = request.form.get("password")
-
-    user = crud.get_user_by_email(email)
-    print(user)
-    if not user or user.password != password:
-        flash("The email or password you entered was incorrect.")
-    else:
-        # Log in user by storing the user's email in session
-        # session["email"] = user.email
-        flash(f"Welcome back, {user.email}!")
-        return redirect("/search")
-
-    return redirect("/")
-
-########################################################################
-
-@app.route("/register", methods=["GET"])
-def register_user():
-    """Render Register Page"""
-
-    return render_template("register.html")
-
-########################################################################
-
-@app.route("/user", methods=["POST"])
-def create_user():
-    """Create a new user"""
-    email = request.form["email"]
-    password = request.form["password"]
-    username = request.form["username"]
-
-    user = crud.get_user_by_email(email)
-    print(user)
-    if user:
-        flash("This Email already exist. Try again.")
-    else:
-        crud.create_user(email, password, username)
-        flash("Account created! Please log in.")
-        return redirect("/")
-    return redirect("/register")
 
 ########################################################################
 @app.route("/")
