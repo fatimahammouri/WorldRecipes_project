@@ -49,4 +49,41 @@ function CreateRecipes(props){
     const [readyInMinutes, setReadyInMinutes] = React.useState(0);
     const [ingredients, setIngredients] = React.useState([]);
     const [instructions, setInstructions] = React.useState("");
+return (
+    <React.Fragment>
+      <h2> Create a recipe </h2>
+
+      <label> Recipe Title </label>
+      <input id="titleInput" value={title}
+        onChange={(event) => setTitle(event.target.value)}
+      ></input>
+      
+      <label> Recipe Cuisine </label>
+      <input id="cuisineInput" value={cuisine}
+        onChange={(event) => setCuisine(event.target.value)}
+      ></input>
+
+      <label> Servings Number </label>
+      <input id="servingsInput" value={servings} type="number"
+        onChange={(event) => setServings(event.target.value)}
+      ></input>
+     
+      <label> Minutes to be ready </label>
+      <input id="readyInMinutes" value={readyInMinutes} type="number"
+        onChange={(event) => setReadyInMinutes(event.target.value)}
+      ></input>
+      
+      <label> Needed Ingredients </label>
+      <input id="ingredientsInput" value={ingredients}
+        onChange={(event) => setIngredients(event.target.value)}
+      ></input>
+      
+      <label> instructions </label>
+      <input id="instructionsInput" value={instructions} type="text"
+        onChange={(event) => setInstructions(event.target.value)}
+      ></input>
+      
+      <button> Add my Recipe </button>
+    </React.Fragment>
+  );
 }
