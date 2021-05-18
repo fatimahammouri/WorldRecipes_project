@@ -5,20 +5,6 @@ db = SQLAlchemy()
 
 
 
-class User(db.Model):
-    """Users Table"""
-
-    __tablename__ = "users"
-
-    user_id = db.Column(db.Integer, primary_key=True,
-                        autoincrement=True)
-    email = db.Column(db.String(50), unique=True)
-    password = db.Column(db.String(50))
-    username = db.Column(db.String(50))
-    def __repr__(self):
-        return f"<<User user_id={self.user_id} email={self.email}>>"
-###################################################################################################
-
 class Recipe(db.Model):
     """Recipes Table"""
 
@@ -73,6 +59,19 @@ if __name__ == '__main__':
 
 ###################################################################################################
 
+# class User(db.Model):
+#     """Users Table"""
+
+#     __tablename__ = "users"
+
+#     user_id = db.Column(db.Integer, primary_key=True,
+#                         autoincrement=True)
+#     email = db.Column(db.String(50), unique=True)
+#     password = db.Column(db.String(50))
+#     username = db.Column(db.String(50))
+#     def __repr__(self):
+#         return f"<<User user_id={self.user_id} email={self.email}>>"
+###################################################################################################
 # class Ingredient(db.Model):
 #     """Ingredients Model"""
 
