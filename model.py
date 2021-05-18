@@ -43,7 +43,7 @@ class Recipe(db.Model):
 
 class Cuisine(db.Model):
     """Cuisines table"""
-    
+
     __tablename__ = 'cuisines'
 
     cuisine_id = db.Column(db.Integer, primary_key=True,
@@ -53,6 +53,23 @@ class Cuisine(db.Model):
 
     def __repr__(self):
         return f'<<Cuisine cuisine_id={self.cuisine_id} name={self.cuisine_name}>>'
+
+    def connect_to_db(flask_app, db_uri='postgresql:///recipe', echo=True):
+        flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+        flask_app.config['SQLALCHEMY_ECHO'] = echo
+        flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+        db.app = flask_app
+        db.init_app(flask_app)
+
+        print('Connected to the db!')
+
+
+if __name__ == '__main__':
+    from server import app
+
+
+    connect_to_db(app)
 
 ###################################################################################################
 
@@ -99,23 +116,3 @@ class Cuisine(db.Model):
 #         return f'<<Ingredient_recipe cuisine={self.cuisine} recipe={self.recipe}>>'
 
 ###################################################################################################
-
-
-
-
-def connect_to_db(flask_app, db_uri='postgresql:///recipes', echo=True):
-    flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
-    flask_app.config['SQLALCHEMY_ECHO'] = echo
-    flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-    db.app = flask_app
-    db.init_app(flask_app)
-
-    print('Connected to the db!')
-
-
-if __name__ == '__main__':
-    from server import app
-
-
-    connect_to_db(app)
