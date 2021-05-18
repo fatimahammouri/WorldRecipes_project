@@ -16,19 +16,18 @@ function Recipe(props){
 }
 
 function Recipes(props){
-    const [recipeData, setRecipeData] = React.useState(null);
+    const [recipeData, setRecipeData] = React.useState(null)
     React.useEffect(() => {
-        fetch('/api/recipes')
+      fetch('/api/recipes')
         .then(response => response.json())
         .then(recipeData => setRecipeData(recipeData))
-      }, [])
-
-      if (!recipeData) {
-          return (<div> Loading... </div>)
-      }
+    }, [])
+    if (!recipeData) {
+      return <div>Loading...</div>
+    }
 
     return(
-        recipeData.map(recipe =>
+      recipeData.map(recipe =>
         <Recipe 
         title={recipe.title}
         servings={recipe.servings}

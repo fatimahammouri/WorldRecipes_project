@@ -11,14 +11,14 @@ function Homepage(props){
 
 
 
-function CreateRecipes() {
-    return(
-        <div>
-            Create Recipe
-        </div>
-    );
+// function CreateRecipes() {
+//     return(
+//         <div>
+//             Create Recipe
+//         </div>
+//     );
     
-  }
+//   }
 
 // we'll start by creating App - Main componant 
 function App(props){
@@ -30,7 +30,7 @@ function App(props){
                         <ReactRouterDOM.Link to="/home">Home</ReactRouterDOM.Link>
                    </li>
                    <li>
-                        <ReactRouterDOM.Link to="/recipes">Recipes from people</ReactRouterDOM.Link>
+                        <ReactRouterDOM.Link to="/recipes">Recipes</ReactRouterDOM.Link>
                    </li>
                    <li>
                         <ReactRouterDOM.Link to="/create_recipes">Create Recipes</ReactRouterDOM.Link>

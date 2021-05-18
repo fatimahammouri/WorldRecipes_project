@@ -4,7 +4,7 @@ from model import connect_to_db
 import crud
 import requests
 import os
-import model
+import parse_api
 app = Flask(__name__)
 app.secret_key = "recipe"
 app.jinja_env.undefined = StrictUndefined
