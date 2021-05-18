@@ -31,7 +31,12 @@ def create_cuisine(cuisine_name):
 #####################################################################
 
 def get_all_cuisines():
-    return Cuisine.query.all()
+
+    cuisine_list = []
+
+    for cuisine in Cuisine.query.all():
+        cuisine_list.append(cuisine.cuisine_name)
+    return cuisine_list
 
 #####################################################################
 
