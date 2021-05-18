@@ -1,31 +1,18 @@
 """C R U D Operation Functions"""
 
-from model import (db, User, Recipe, Cuisine, Ingredient,
-                Ingredient_recipe, recipe_cuisine, connect_to_db)
+from model import (db, User, Recipe, Cuisine, connect_to_db)
 
 
 """Defining our Create, Read, Update, Delete Functions"""
 
-def create_user(email, password, username):
-
-    user = User(email=email, password=password, username=username)
-    db.session.add(user)
-    db.session.commit()
-
-    return user
-
-#####################################################################
-
-def get_user_by_email(email):
-    
-    return User.query.filter(User.email == email).first()
-
-#####################################################################
-
-def create_recipe(title, instructions, image):
-
-    recipe = Recipe(title=title, instructions=instructions,
-                    image=image) 
+def create_recipe(title, image, servings, ready_in_minutes, instructions, ingredients, cuisine_id):
+    recipe = Recipe(title=title, 
+                    image=image, 
+                    servings=servings, 
+                    ready_in_minutes=ready_in_minutes,
+                    instructions=instructions,
+                    ingredients=ingredients, 
+                    cuisine_id=cuisine_id)
     db.session.add(recipe)
     db.session.commit()
 
@@ -43,13 +30,8 @@ def create_cuisine(cuisine_name):
 
 #####################################################################
 
-def create_ingredient(ingredient_name):
-
-    ingredient = Ingredient(ingredient_name=ingredient_name) 
-    db.session.add(ingredient)
-    db.session.commit()
-
-    return ingredient
+def get_all_cuisines():
+    return Cuisine.query.all()
 
 #####################################################################
 
@@ -57,16 +39,26 @@ def get_all_recipes():
     return Recipe.query.all()
 
 #####################################################################
-
-def get_all_ingredients():
-    return Ingredient.query.all()
-
-#####################################################################
-
-def get_all_cuisines():
-    return Cuisine.query.all()
-
+def get_cuisine_id_from_name(cuisine_name):
+    cuisine = Cuisine.query.filter(Cuisine.cuisine_name == cuisine_name).first()
+    return cuisine.cuisine_id
 
 if __name__== '__main__':
     from server import app
     connect_to_db(app)
+
+# def create_user(email, password, username):
+
+#     user = User(email=email, password=password, username=username)
+#     db.session.add(user)
+#     db.session.commit()
+
+#     return user
+
+# #####################################################################
+
+# def get_user_by_email(email):
+    
+#     return User.query.filter(User.email == email).first()
+
+# #####################################################################
