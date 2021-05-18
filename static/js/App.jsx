@@ -1,20 +1,20 @@
 "use strict";
 
 // we'll start by creating App - Main componant 
-function App(){
+function App(props){
     return(
        <ReactRouterDOM.BrowserRouter>
            <nav>
                <ul>
-                   <lil>
+                   <li>
                         <ReactRouterDOM.Link to="/home">Home</ReactRouterDOM.Link>
-                   </lil>
-                   <lil>
+                   </li>
+                   <li>
                         <ReactRouterDOM.Link to="/recipes">Recipes from people</ReactRouterDOM.Link>
-                   </lil>
-                   <lil>
+                   </li>
+                   <li>
                         <ReactRouterDOM.Link to="/create_recipes">Create Recipes</ReactRouterDOM.Link>
-                   </lil>
+                   </li>
                </ul>
            </nav>
                 <ReactRouterDOM.switch>

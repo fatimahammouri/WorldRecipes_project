@@ -3,7 +3,7 @@ from jinja2 import StrictUndefined
 from model import connect_to_db
 import crud
 import requests
-import parse_function
+import os
 import model
 app = Flask(__name__)
 app.secret_key = "recipe"
