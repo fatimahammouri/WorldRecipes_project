@@ -63,7 +63,7 @@ function CreateRecipes(props){
         });
       });
     }
-    
+
 return (
     <React.Fragment>
       <h2> Create a recipe </h2>
@@ -98,7 +98,7 @@ return (
         onChange={(event) => setInstructions(event.target.value)}
       ></input>
       
-      <button> Add my Recipe </button>
+      <button onClick={addNewRecipe}> Add my Recipe </button>
     </React.Fragment>
   );
 }
