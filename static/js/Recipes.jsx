@@ -23,6 +23,10 @@ function Recipes(props){
         .then(recipeData => setRecipeData(recipeData))
       }, [])
 
+      if (!recipeData) {
+          return (<div> Loading... </div>)
+      }
+
     return(
         recipeData.map(recipe =>
         <Recipe 
