@@ -22,8 +22,18 @@ function Recipes(props){
         .then(response => response.json())
         .then(recipeData => setRecipeData(recipeData))
       }, [])
+
     return(
-        recipeData.map(<Recipe />)
+        recipeData.map(recipe =>
+        <Recipe 
+        title={recipe.title}
+        servings={recipe.servings}
+        readyInMinutes={recipe.readyInMinutes}
+        instructions={recipe.instructions}
+        ingredients={recipe.ingredients}
+        sourceUrl={recipe.sourceUrl}
+        image={recipe.image}
+        />)
         
     );
 }
