@@ -23,8 +23,7 @@ function Recipes(props){
         .then(recipeData => setRecipeData(recipeData))
       }, [])
     return(
-        <div>
-            Recipes from API will be here
-        </div>
+        recipeData.map(<Recipe />)
+        
     );
 }
