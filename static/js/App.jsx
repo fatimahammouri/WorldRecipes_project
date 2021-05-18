@@ -17,6 +17,15 @@ function Recipes(props){
     );
 }
 
+function CreateRecipes() {
+    return(
+        <div>
+            Create Recipe
+        </div>
+    );
+    
+  }
+
 // we'll start by creating App - Main componant 
 function App(props){
     return(
