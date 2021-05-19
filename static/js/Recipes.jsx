@@ -7,14 +7,22 @@ Nav, Media, Row, Col, Modal, Alert, Toast, Card, Spinner, LinkButton} = ReactBoo
 function Recipe(props){
     const { title, servings, readyInMinutes,instructions, image, ingredients, sourceUrl } = props;
     return(
-        <div>
-            <h2> {title} </h2>
-            <p> {servings} - {readyInMinutes} </p>
-            <p> {instructions} - {ingredients} </p>
-            <a href={sourceUrl}>recipe source</a>
-            <img src={image} />
+        // <div>
+        //     <h2> {title} </h2>
+        //     <p> {servings} - {readyInMinutes} </p>
+        //     <p> {instructions} - {ingredients} </p>
+        //     <a href={sourceUrl}>recipe source</a>
+        //     <img src={image} />
         
-        </div> 
+        // </div> 
+        <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={image} />
+                <Card.Body>
+                <Card.Title>{title}</Card.Title>
+                <Card.Text> {servings} - {readyInMinutes}</Card.Text>
+                <Button><a href={sourceUrl}> RECIPE SOURCE </a></Button>
+                </Card.Body>
+        </Card>
 
     )
 }
