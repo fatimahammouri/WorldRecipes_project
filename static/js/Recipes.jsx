@@ -35,7 +35,11 @@ function Recipes(props){
         .then(recipeData => setRecipeData(recipeData))
     }, [])
     if (!recipeData) {
-      return <div>Loading...</div>
+      return (
+        <Spinner animation="border" role="status">
+            <span className="sr-only">Loading...</span>
+        </Spinner>
+        )
     }
 
     return(
