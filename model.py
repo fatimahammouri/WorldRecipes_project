@@ -13,15 +13,16 @@ class Recipe(db.Model):
     recipe_id = db.Column(db.Integer, primary_key=True,
                         autoincrement=True)
     title = db.Column(db.String)
-    image = db.Column(db.String)
+    # image = db.Column(db.String)
     servings = db.Column(db.Integer)
     ready_in_minutes = db.Column(db.Integer)
     instructions = db.Column(db.Text)
     ingredients = db.Column(db.Text)
-    cuisine_id = db.Column(db.Integer,
-                         db.ForeignKey("cuisines.cuisine_id"),
-                         primary_key=True)
-    cuisine = db.relationship('Cuisine', backref='recipes')
+    cuisine = db.Column(db.String)
+    # cuisine_id = db.Column(db.Integer,
+                        #  db.ForeignKey("cuisines.cuisine_id"),
+                        #  primary_key=True)
+    # cuisine = db.relationship('Cuisine', backref='recipes')
     
     def __repr__(self):
         return f'<<Recipe recipe_id={self.recipe_id} name={self.recipe_name}>>'
