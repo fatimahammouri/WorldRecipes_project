@@ -76,7 +76,7 @@ def add_recipe():
     db.session.refresh(new_recipe)
     return {
         "success": True,
-        "cardAdded": {
+        "recipeAdded": {
             "recipe_id" : new_recipe.recipe_id,
             "title": new_recipe.title,
             "cuisine": new_recipe.cuisine,
@@ -87,7 +87,27 @@ def add_recipe():
         },
     }       
 
+@app.route("/recipes_cards.json")
+def get_recipes_json():
+    
 
+    recipe_cards = Recipe.query.all()
+    recipe_cards_list = []
+
+    for r in recipe_cards:
+        recipe_cards_list.append(
+            {
+            "recipe_id" : r.recipe_id,
+            "title": r.title,
+            "cuisine": r.cuisine,
+            "servings": r.servings,
+            "ready_in_minutes": r.ready_in_minutes,
+            "ingredients": r.ingredients,
+            "instructions": r.instructions
+            }
+        )
+
+    return {"cards": recipe_cards_list}
 
 
 if __name__ == '__main__':

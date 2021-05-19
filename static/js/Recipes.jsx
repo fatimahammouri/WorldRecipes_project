@@ -56,10 +56,12 @@ function CreateRecipes(props){
         body: JSON.stringify({ title, cuisine, servings, 
                               readyInMinutes, ingredients, instructions}),
       })
-      .then((response) => {
+      .then((response) => { 
           response.json().then((jsonResponse) => {
           const { recipeAdded: { recipe_id, title, cuisine, servings, 
-                  readyInMinutes, ingredients, instructions } } = jsonResponse; 
+                  readyInMinutes, ingredients, instructions } } = jsonResponse;
+          props.addCard(recipe_id, title, cuisine, servings, readyInMinutes,
+                          ingredients, instructions);
         });
       });
     }
@@ -102,3 +104,60 @@ return (
     </React.Fragment>
   );
 }
+
+function RecipeDb(props){
+  const {title, cuisine, servings, 
+    readyInMinutes, ingredients, instructions } = props;
+  return(
+      <div>
+          <h2> {title} </h2>
+          <p>  {cuisine} - {servings} - {readyInMinutes} - {ingredients}-{instructions}</p>
+      </div> 
+
+  )
+}
+
+
+function RecipeCardContainer() {
+  const [cards, setCards] = React.useState([]);
+
+  function addCard(recipe_id, title, cuisine, servings, readyInMinutes,
+                          ingredients, instructions) {
+    const newCard = { recipe_id, title, cuisine, servings, readyInMinutes,
+                      ingredients, instructions}; 
+    const currentCards = [...cards]; 
+    setCards([...currentCards, newCard]);
+  }
+
+  React.useEffect(() => {
+    fetch("/recipes_cards.json")
+      .then((response) => response.json())
+      .then((data) => setCards(data.cards));
+  }, []);
+
+  const recipesCards = [];
+
+  for (const currentCard of cards) {
+    recipesCards.push(
+      <RecipeDb
+        key={currentCard.recipe_id}
+        title={currentCard.title}
+        cuisine={currentCard.cuisine}
+        servings={currentCard.servings}
+        readyInMinutes={currentCard.readyInMinutes}
+        ingredients={currentCard.ingredients}
+        instructions={currentCard.instructions}
+      />
+    );
+  }
+
+  return (
+    <React.Fragment>
+      <CreateRecipes addCard={addCard} />
+      <h2>Recipes cards</h2>
+      <div>{recipesCards}</div>
+    </React.Fragment>
+  );
+}
+
+ReactDOM.render(<RecipeCardContainer />, document.getElementById("container"));
