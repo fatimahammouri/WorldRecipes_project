@@ -1,5 +1,9 @@
 "use strict";
 
+const Img = ReactBootstrap.Image;
+const {Container, Button, ButtonGroup, Navbar, Form, NavDropdown,
+Nav, Media, Row, Col, Modal, Alert, Toast, Card, Spinner} = ReactBootstrap;
+
 //components
 function Homepage(props){
     return(
