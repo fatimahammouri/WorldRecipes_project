@@ -66,7 +66,7 @@ function CreateRecipes(props){
       });
     }
 
-return (
+  return (
     <React.Fragment>
       <h2> Create a recipe </h2>
 
@@ -160,4 +160,4 @@ function RecipeCardContainer() {
   );
 }
 
-ReactDOM.render(<RecipeCardContainer />, document.getElementById("container"));
+// ReactDOM.render(<RecipeCardContainer />, document.getElementById("root"));
