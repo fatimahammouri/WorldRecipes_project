@@ -8,7 +8,7 @@ Nav, Media, Row, Col, Modal, Alert, Toast, Card, Spinner} = ReactBootstrap;
 function Homepage(props){
     return(
         <div>
-            <h1>Hello Recipes</h1>
+            <h1>DiveRcipy</h1>
         </div>    
     );
 }
