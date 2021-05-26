@@ -9,6 +9,7 @@ function Homepage(props){
     return(
         <div>
             <h1>DiveRcipy</h1>
+            <CuisineList/>
         </div>    
     );
 }

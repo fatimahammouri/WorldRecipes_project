@@ -27,6 +27,61 @@ function Recipe(props){
     )
 }
 
+
+function CuisineList(props){
+  const [cuisineList, setCuisineList] = React.useState([]);
+  const [currentRecipes, setCurrentRecipes] = React.useState([]);
+  React.useEffect(()=>{
+  fetch("/cuisines.json")
+  .then(response => response.json()) // js object ["", ""]
+  .then ((jresponse) => setCuisineList(jresponse.name))
+  }, [])
+
+  function getCuisine(cuisine){
+    
+    fetch(`/api/recipes/${cuisine}`)
+    .then(response => response.json())
+    .then(data => setCurrentRecipes(data))
+  }
+    
+   return(
+     <React.Fragment>
+     <ul>
+       {cuisineList.map(cuisine =>  <button onClick={()=> getCuisine(cuisine)}> {cuisine} </button>)}
+     </ul> 
+     {currentRecipes.map(recipe =>  <Recipe {...recipe}/>  )}
+     </React.Fragment> 
+      )
+
+}
+
+// function Cuisine(props){
+//   const {cuisine} = props;
+//   return (
+//    <li>{cuisine} </li> 
+//   )
+// }
+//return (<Cuisine cuisine={a}/>).... ????????? WHY not working?????
+
+// function CuisineList(props){
+//     const [cuisineList, setCuisineList] = React.useState([])
+//     React.useEffect(()=>{
+//       fetch("/cuisines.json")
+//       .then(response => response.json()) // js object ["", ""]
+//       .then ((jresponse) => setCuisineList(jresponse))
+//     }, [])  
+//       const cuisines = [];
+//       for(const c of cuisineList){
+//         cuisines.push(c)
+//       }
+//       console.log(cuisines)
+//       console.log("HELOLLOOLOLO")
+//       console.log(cuisineList)
+//       return(
+//         cuisines.map()   
+//       )   
+// }
+
 function Recipes(props){
     const [recipeData, setRecipeData] = React.useState(null)
     React.useEffect(() => {
@@ -74,8 +129,11 @@ function CreateRecipes(props){
       })
       .then((response) => { 
           response.json().then((jsonResponse) => {
-          const { recipeAdded: { recipe_id, title, cuisine, servings, 
-                  readyInMinutes, ingredients, instructions } } = jsonResponse;
+          const recipe = jsonResponse.recipeAdded;
+
+          const {  recipe_id, title, cuisine, servings, 
+                  readyInMinutes, ingredients, instructions  } = recipe;
+
           props.addCard(recipe_id, title, cuisine, servings, readyInMinutes,
                           ingredients, instructions);
         });

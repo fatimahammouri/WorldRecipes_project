@@ -28,16 +28,24 @@ def nested_route(path, code):
     return render_template('index.html')
 
 
-
-@app.route("/api/recipes")
-def all_recipes():
+@app.route("/cuisines.json")
+def get_cuisines():
     
+    cuisine_list = crud.get_all_cuisines()
+    # return  jsonify(cuisine_list)
+    # print(cuisine_json)
+    return {"name": cuisine_list}
+    
+
+@app.route("/api/recipes/<cuisine>")
+def all_recipes(cuisine):
+
     url = 'https://api.spoonacular.com/recipes/complexSearch'
     params = {'apiKey': API_KEY,
                'fillIngredients': True,
                 'addRecipeInformation': True,
                 'instructionsRequired': True,
-                
+                'cuisine' : cuisine,
                 'number' : 10}
     
     response = requests.get(url, params)
@@ -51,7 +59,7 @@ def all_recipes():
         recipe_results = parse_api.parse_recipe_details(recipe)
         all_recipe_results.append(recipe_results)
 
-    # print(all_recipe_results)
+    print(all_recipe_results)
     return jsonify(all_recipe_results)
 
 @app.route("/add_recipe" , methods=["POST"])
