@@ -13,7 +13,7 @@ class Recipe(db.Model):
     recipe_id = db.Column(db.Integer, primary_key=True,
                         autoincrement=True)
     title = db.Column(db.String)
-    # image = db.Column(db.String)
+    image = db.Column(db.String)
     servings = db.Column(db.Integer)
     ready_in_minutes = db.Column(db.Integer)
     instructions = db.Column(db.Text)

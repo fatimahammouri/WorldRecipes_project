@@ -82,35 +82,6 @@ function CuisineList(props){
 //       )   
 // }
 
-function Recipes(props){
-    const [recipeData, setRecipeData] = React.useState(null)
-    React.useEffect(() => {
-      fetch('/api/recipes')
-        .then(response => response.json())
-        .then(recipeData => setRecipeData(recipeData))
-    }, [])
-    if (!recipeData) {
-      return (
-        <Spinner animation="border" role="status">
-            <span className="sr-only">Loading...</span>
-        </Spinner>
-        )
-    }
-
-    return(
-      recipeData.map(recipe =>
-        <Recipe 
-        title={recipe.title}
-        servings={recipe.servings}
-        readyInMinutes={recipe.readyInMinutes}
-        instructions={recipe.instructions}
-        ingredients={recipe.ingredients}
-        sourceUrl={recipe.sourceUrl}
-        image={recipe.image}
-        />)
-        
-    );
-}
 
 function CreateRecipes(props){
     const [title, setTitle] = React.useState("");
@@ -119,13 +90,15 @@ function CreateRecipes(props){
     const [readyInMinutes, setReadyInMinutes] = React.useState(0);
     const [ingredients, setIngredients] = React.useState([]);
     const [instructions, setInstructions] = React.useState("");
+    const [imageFile, setImageFile] = React.useState(undefined)
 
     function addNewRecipe() {
+      // let currentFile = imageFile[0];
       fetch("/add_recipe", {
         method: "POST",
         headers: { "Content-Type": "application/json",},
         body: JSON.stringify({ title, cuisine, servings, 
-                              readyInMinutes, ingredients, instructions}),
+                              readyInMinutes, ingredients, instructions, imageFile}),
       })
       .then((response) => { 
           response.json().then((jsonResponse) => {
@@ -172,6 +145,11 @@ function CreateRecipes(props){
       <label> instructions </label>
       <input id="instructionsInput" value={instructions} type="text"
         onChange={(event) => setInstructions(event.target.value)}
+      ></input>
+
+      <label> image </label>
+      <input  value={imageFile} type="file" name="imageFile"
+        onChange={(event) => setImageFile(event.target.files[0].name)}
       ></input>
       
       <button onClick={addNewRecipe}> Add my Recipe </button>

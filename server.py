@@ -39,7 +39,6 @@ def get_cuisines():
 
 @app.route("/api/recipes/<cuisine>")
 def all_recipes(cuisine):
-
     url = 'https://api.spoonacular.com/recipes/complexSearch'
     params = {'apiKey': API_KEY,
                'fillIngredients': True,
@@ -72,13 +71,15 @@ def add_recipe():
     ready_in_minutes = request.get_json().get("readyInMinutes")
     ingredients = request.get_json().get("ingredients")
     instructions = request.get_json().get("instructions")
+    image_file = request.get_json().get("imageFile")
 
     new_recipe = Recipe(title=title, 
                         cuisine=cuisine,
                         servings=servings, 
                         ready_in_minutes=ready_in_minutes,
                         ingredients=ingredients,
-                        instructions=instructions)
+                        instructions=instructions,
+                        image=image_file)
     db.session.add(new_recipe)
     db.session.commit()
     db.session.refresh(new_recipe)
@@ -91,7 +92,8 @@ def add_recipe():
             "servings": new_recipe.servings,
             "ready_in_minutes": new_recipe.ready_in_minutes,
             "ingredients": new_recipe.ingredients,
-            "instructions": new_recipe.instructions
+            "instructions": new_recipe.instructions,
+            "image" : new_recipe.image_file
         },
     }       
 
@@ -116,6 +118,35 @@ def get_recipes_json():
         )
 
     return {"cards": recipe_cards_list}
+
+#################################################################################
+@app.route("/api/recipe/<rtype>")
+def type_recipes(type):
+# https://api.spoonacular.com/recipes/complexSearch?apiKey=10908696a3b54d32b5925b490b9a43be&fillIngredients=true&addRecipeInformation=true&instructionsRequired=true&type='salad'&number=3
+    url = 'https://api.spoonacular.com/recipes/complexSearch'
+    params = {'apiKey': API_KEY,
+               'fillIngredients': False,
+                'addRecipeInformation': True,
+                'instructionsRequired': False,
+                'type' : rtype,
+                'number' : 5}
+
+
+    response = requests.get(url, params)
+    data = response.json()
+    results = data["results"]
+    
+    recipes_by_type = []
+    for r in range(len(results)):
+        recipe = {}
+        recipe["title"] = results[r]["title"]
+        recipe["image"] = results[r]["image"]
+        recipe["summary"] = results[r]["summary"]
+        recipe["sourceUrl"] = results[r]["sourceUrl"]
+        # print(title)
+        recipes_by_type.append(recipe)
+    # print(recipes_by_type)
+    return jsonify(recipes_by_type)
 
 
 if __name__ == '__main__':

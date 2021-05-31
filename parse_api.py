@@ -29,3 +29,17 @@ def parse_recipe_details(complex_results):
     recipe_details["ingredients"] = ingredients
 
     return recipe_details
+
+
+# res = {"results":
+# [
+# {"id":729366,"title":"Plantain Salad","image":"https://spoonacular.com/recipeImages/729366-312x231.jpg","imageType":"jpg"},
+# {"id":782600,"title":"Quinoa Salad with Vegetables and Cashews","image":"https://spoonacular.com/recipeImages/782600-312x231.jpg","imageType":"jpg"},
+# {"id":715540,"title":"Summer Berry Salad","image":"https://spoonacular.com/recipeImages/715540-312x231.jpg","imageType":"jpg"}
+# ]
+# }
+# data = res["results"]
+# # print(data)
+# for r in range(len(data)):
+#     title = data[r]["title"]
+#     print(title)

@@ -8,7 +8,7 @@ Nav, Media, Row, Col, Modal, Alert, Toast, Card, Spinner} = ReactBootstrap;
 function Homepage(props){
     return(
         <div>
-            <h1>DiveRcipy</h1>
+            <h1>Home Page Logo</h1>
             <CuisineList/>
         </div>    
     );
