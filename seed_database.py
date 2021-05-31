@@ -28,4 +28,11 @@ for cuisine in cuisines_list:
     cuisine = crud.create_cuisine(cuisine)  
 
 # ####################################################################
-# seeding types  
+# seeding types 
+
+types_list = ['main course', 'appetizer', 'dessert',
+                'salad', 'side dish', 'drink',  
+                'breakfast','snack', 'soup']
+
+for rtype in types_list:
+    rtype = crud.create_type(rtype)  
