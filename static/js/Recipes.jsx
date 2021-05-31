@@ -7,14 +7,7 @@ Nav, Media, Row, Col, Modal, Alert, Toast, Card, Spinner, LinkButton} = ReactBoo
 function Recipe(props){
     const { title, servings, readyInMinutes,instructions, image, ingredients, sourceUrl } = props;
     return(
-        // <div>
-        //     <h2> {title} </h2>
-        //     <p> {servings} - {readyInMinutes} </p>
-        //     <p> {instructions} - {ingredients} </p>
-        //     <a href={sourceUrl}>recipe source</a>
-        //     <img src={image} />
-        
-        // </div> 
+   
         <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={image} />
                 <Card.Body>
@@ -55,32 +48,6 @@ function CuisineList(props){
 
 }
 
-// function Cuisine(props){
-//   const {cuisine} = props;
-//   return (
-//    <li>{cuisine} </li> 
-//   )
-// }
-//return (<Cuisine cuisine={a}/>).... ????????? WHY not working?????
-
-// function CuisineList(props){
-//     const [cuisineList, setCuisineList] = React.useState([])
-//     React.useEffect(()=>{
-//       fetch("/cuisines.json")
-//       .then(response => response.json()) // js object ["", ""]
-//       .then ((jresponse) => setCuisineList(jresponse))
-//     }, [])  
-//       const cuisines = [];
-//       for(const c of cuisineList){
-//         cuisines.push(c)
-//       }
-//       console.log(cuisines)
-//       console.log("HELOLLOOLOLO")
-//       console.log(cuisineList)
-//       return(
-//         cuisines.map()   
-//       )   
-// }
 
 function Recipes(props){
     const [recipeData, setRecipeData] = React.useState(null)
@@ -242,4 +209,3 @@ function RecipeCardContainer() {
   );
 }
 
-// ReactDOM.render(<RecipeCardContainer />, document.getElementById("root"));
