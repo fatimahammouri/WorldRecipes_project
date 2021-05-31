@@ -45,7 +45,7 @@ def all_recipes(cuisine):
                 'addRecipeInformation': True,
                 'instructionsRequired': True,
                 'cuisine' : cuisine,
-                'number' : 10}
+                'number' : 20}
     
     response = requests.get(url, params)
     data = response.json()
@@ -58,7 +58,7 @@ def all_recipes(cuisine):
         recipe_results = parse_api.parse_recipe_details(recipe)
         all_recipe_results.append(recipe_results)
 
-    print(all_recipe_results)
+    # print(all_recipe_results)
     return jsonify(all_recipe_results)
 
 @app.route("/add_recipe" , methods=["POST"])
@@ -121,7 +121,7 @@ def get_recipes_json():
 
 #################################################################################
 @app.route("/api/recipe/<rtype>")
-def type_recipes(type):
+def type_recipes(rtype):
 # https://api.spoonacular.com/recipes/complexSearch?apiKey=10908696a3b54d32b5925b490b9a43be&fillIngredients=true&addRecipeInformation=true&instructionsRequired=true&type='salad'&number=3
     url = 'https://api.spoonacular.com/recipes/complexSearch'
     params = {'apiKey': API_KEY,
@@ -129,7 +129,7 @@ def type_recipes(type):
                 'addRecipeInformation': True,
                 'instructionsRequired': False,
                 'type' : rtype,
-                'number' : 5}
+                'number' : 15}
 
 
     response = requests.get(url, params)

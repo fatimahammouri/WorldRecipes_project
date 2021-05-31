@@ -40,6 +40,9 @@ function App(props){
                    <li>
                         <ReactRouterDOM.Link to="/create_recipes">Create Recipes</ReactRouterDOM.Link>
                    </li>
+                   <li>
+                        <ReactRouterDOM.Link to="/Recipes_by_type">Search recipes by Type</ReactRouterDOM.Link>
+                   </li>
                </ul>
            </nav>
                 <ReactRouterDOM.Switch>
@@ -54,6 +57,10 @@ function App(props){
 
                     <ReactRouterDOM.Route exact path="/create_recipes">
                         <RecipeCardContainer />
+                    </ReactRouterDOM.Route>
+
+                    <ReactRouterDOM.Route exact path="/Recipes_by_type">
+                        <Types />
                     </ReactRouterDOM.Route>
 
                 </ReactRouterDOM.Switch>
