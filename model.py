@@ -42,6 +42,20 @@ class Cuisine(db.Model):
         return f'<<Cuisine cuisine_id={self.cuisine_id} name={self.cuisine_name}>>'
 
 
+class Type(db.Model):
+    """table for recipes Types"""
+
+    __tablename__ = 'types'
+
+    type_id = db.Column(db.Integer, primary_key=True,
+                        autoincrement=True)
+    
+    type_name = db.Column(db.String(50))
+
+    def __repr__(self):
+        return f'<<Type type_id={self.type_id} name={self.type_name}>>'
+        
+
 def connect_to_db(flask_app, db_uri='postgresql:///recipe', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
     flask_app.config['SQLALCHEMY_ECHO'] = echo
