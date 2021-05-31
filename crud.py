@@ -1,6 +1,6 @@
 """C R U D Operation Functions"""
 
-from model import (db, Recipe, Cuisine, connect_to_db)
+from model import (db, Recipe, Cuisine, Type, connect_to_db)
 
 
 """Defining our Create, Read, Update, Delete Functions"""
@@ -36,7 +36,7 @@ def create_type(type_name):
     db.session.add(rtype)
     db.session.commit()
     return rtype
-    
+
 #####################################################################
 
 def get_all_cuisines():
