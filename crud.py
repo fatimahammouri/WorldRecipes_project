@@ -30,6 +30,15 @@ def create_cuisine(cuisine_name):
 
 #####################################################################
 
+def create_type(type_name):
+    rtype = Type(type_name=type_name)
+
+    db.session.add(rtype)
+    db.session.commit()
+    return rtype
+    
+#####################################################################
+
 def get_all_cuisines():
 
     cuisine_list = []
