@@ -57,6 +57,19 @@ def get_cuisine_id_from_name(cuisine_name):
     cuisine = Cuisine.query.filter(Cuisine.cuisine_name == cuisine_name).first()
     return cuisine.cuisine_id
 
+#####################################################################
+
+def get_all_types():
+    
+    types_list = []
+
+    for rtype in Type.query.all():
+        types_list.append(rtype.type_name)
+    
+    return types_list
+
+
+
 if __name__== '__main__':
     from server import app
     connect_to_db(app)
