@@ -148,6 +148,15 @@ def type_recipes(type):
     # print(recipes_by_type)
     return jsonify(recipes_by_type)
 
+#################################################################################
+
+@app.route("/types.json")
+def get_types():
+    
+    types_list = crud.get_all_types()
+    
+    return {"name": types_list}
+
 
 if __name__ == '__main__':
 

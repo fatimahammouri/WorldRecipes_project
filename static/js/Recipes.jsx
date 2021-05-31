@@ -82,6 +82,36 @@ function CuisineList(props){
 //       )   
 // }
 
+function Recipes(props){
+    const [recipeData, setRecipeData] = React.useState(null)
+    React.useEffect(() => {
+      fetch(`/api/recipes/${rtype}`)
+        .then(response => response.json())
+        .then(recipeData => setRecipeData(recipeData))
+    }, [])
+
+    if (!recipeData) {
+      return (
+        <Spinner animation="border" role="status">
+            <span className="sr-only">Loading...</span>
+        </Spinner>
+        )
+    }
+
+    return(
+      recipeData.map(recipe =>
+        <Recipe 
+        title={recipe.title}
+        servings={recipe.servings}
+        readyInMinutes={recipe.readyInMinutes}
+        instructions={recipe.instructions}
+        ingredients={recipe.ingredients}
+        sourceUrl={recipe.sourceUrl}
+        image={recipe.image}
+        />)
+        
+    );
+}
 
 function CreateRecipes(props){
     const [title, setTitle] = React.useState("");
