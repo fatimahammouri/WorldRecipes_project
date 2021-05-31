@@ -9,7 +9,7 @@ function Homepage(props){
     return(
         <div>
             <h1>Home Page Logo</h1>
-            <CuisineList/>
+            
         </div>    
     );
 }
@@ -35,13 +35,13 @@ function App(props){
                         <ReactRouterDOM.Link to="/home">Home</ReactRouterDOM.Link>
                    </li>
                    <li>
-                        <ReactRouterDOM.Link to="/recipes">Recipes</ReactRouterDOM.Link>
+                        <ReactRouterDOM.Link to="/recipes_by_cuisine">Recipes By Cuisines</ReactRouterDOM.Link>
                    </li>
                    <li>
                         <ReactRouterDOM.Link to="/create_recipes">Create Recipes</ReactRouterDOM.Link>
                    </li>
                    <li>
-                        <ReactRouterDOM.Link to="/Recipes_by_type">Search recipes by Type</ReactRouterDOM.Link>
+                        <ReactRouterDOM.Link to="/recipes_by_type">Search recipes by Type</ReactRouterDOM.Link>
                    </li>
                </ul>
            </nav>
@@ -51,15 +51,15 @@ function App(props){
                         <Homepage />
                     </ReactRouterDOM.Route>
 
-                    <ReactRouterDOM.Route exact path="/recipes">
-                        <Recipes /> 
+                    <ReactRouterDOM.Route exact path="/recipes_by_cuisine">
+                        <CuisineList />
                     </ReactRouterDOM.Route>
 
                     <ReactRouterDOM.Route exact path="/create_recipes">
                         <RecipeCardContainer />
                     </ReactRouterDOM.Route>
 
-                    <ReactRouterDOM.Route exact path="/Recipes_by_type">
+                    <ReactRouterDOM.Route exact path="/recipes_by_type">
                         <Types />
                     </ReactRouterDOM.Route>
 
