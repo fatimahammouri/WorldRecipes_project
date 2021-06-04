@@ -5,7 +5,7 @@ import crud
 import requests
 import os
 import parse_api
-
+import cloudinary.uploader
 
 app = Flask(__name__)
 app.secret_key = "recipe"
@@ -13,6 +13,8 @@ app.jinja_env.undefined = StrictUndefined
 
 API_KEY = os.environ['SPOON_KEY'] 
 
+CLOUDINARY_KEY = os.environ['CLOUDINARY_KEY']
+CLOUDINARY_KEY_SECRET = os.environ['CLOUDINARY_SECRET']
 ########################################################################
 
 @app.route('/')
@@ -72,6 +74,18 @@ def add_recipe():
     ingredients = request.get_json().get("ingredients")
     instructions = request.get_json().get("instructions")
     image_file = request.get_json().get("imageFile")
+    print(image_file)
+
+    if image_file:
+        result = cloudinary.uploader.upload(image_file,
+                    api_key=CLOUDINARY_KEY,
+                    api_secret=CLOUDINARY_KEY_SECRET,
+                    cloud_name='dplmlgxqq')
+
+        image = result['secure_url']
+    else:
+        image = None
+
 
     new_recipe = Recipe(title=title, 
                         cuisine=cuisine,
@@ -79,7 +93,7 @@ def add_recipe():
                         ready_in_minutes=ready_in_minutes,
                         ingredients=ingredients,
                         instructions=instructions,
-                        image=image_file)
+                        image=image)
     db.session.add(new_recipe)
     db.session.commit()
     db.session.refresh(new_recipe)
@@ -93,7 +107,7 @@ def add_recipe():
             "ready_in_minutes": new_recipe.ready_in_minutes,
             "ingredients": new_recipe.ingredients,
             "instructions": new_recipe.instructions,
-            "image" : new_recipe.image_file
+            "image" : new_recipe.image
         },
     }       
 
@@ -113,7 +127,8 @@ def get_recipes_json():
             "servings": r.servings,
             "ready_in_minutes": r.ready_in_minutes,
             "ingredients": r.ingredients,
-            "instructions": r.instructions
+            "instructions": r.instructions,
+            "image": r.image
             }
         )
 

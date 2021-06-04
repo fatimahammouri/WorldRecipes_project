@@ -5,25 +5,46 @@ function CreateRecipes(props){
     const [readyInMinutes, setReadyInMinutes] = React.useState(0);
     const [ingredients, setIngredients] = React.useState([]);
     const [instructions, setInstructions] = React.useState("");
-    const [imageFile, setImageFile] = React.useState(undefined)
 
-    function addNewRecipe() {
-      // let currentFile = imageFile[0];
-      fetch("/add_recipe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json",},
-        body: JSON.stringify({ title, cuisine, servings, 
-                              readyInMinutes, ingredients, instructions, imageFile}),
-      })
-      .then((response) => { 
+    // image uploaded (user File Input)
+    const [fileInput, setFileInput] = React.useState("");
+    const [previewSource, setPreviewSource] = React.useState()
+
+    // function to handle when the user inputs(uploads) an image
+    const handleFileInputChange = (event) => {
+        const file = event.target.files[0];    // grab the (one)file from that input
+        previewFile(file);                    // call function to preview the file
+    }
+    const previewFile = (file) => {
+      const reader = new FileReader();    // built-in JS API 
+      reader.readAsDataURL(file);        // converts the img file to a String
+      reader.onloadend = () => {
+        setPreviewSource(reader.result);
+      }
+    } 
+
+    function handleSubmitForm() {
+      console.log("submitting");
+      if(!previewSource) return;
+      addNewRecipe(previewSource);
+    }
+    
+    function addNewRecipe(base64EncodedImage) {
+      let imageFile =  base64EncodedImage
+      fetch("/add_recipe", 
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json",},
+          body: JSON.stringify({ title, cuisine, servings, readyInMinutes, ingredients, instructions, imageFile}),
+        }
+
+      ) .then((response) => { 
           response.json().then((jsonResponse) => {
           const recipe = jsonResponse.recipeAdded;
 
-          const {  recipe_id, title, cuisine, servings, 
-                  readyInMinutes, ingredients, instructions  } = recipe;
+          const {  recipe_id, title, cuisine, servings, readyInMinutes, ingredients, instructions, image } = recipe;
 
-          props.addCard(recipe_id, title, cuisine, servings, readyInMinutes,
-                          ingredients, instructions);
+          props.addCard(recipe_id, title, cuisine, servings, readyInMinutes, ingredients, instructions, image);
         });
       });
     }
@@ -58,28 +79,38 @@ function CreateRecipes(props){
       ></input>
       
       <label> instructions </label>
-      <input id="instructionsInput" value={instructions} type="text"
+      <textarea id="instructionsInput" value={instructions} type="text"
         onChange={(event) => setInstructions(event.target.value)}
-      ></input>
+      />
 
       <label> image </label>
-      <input  value={imageFile} type="file" name="imageFile"
-        onChange={(event) => setImageFile(event.target.files[0].name)}
+      <input  value={fileInput} type="file" name="file"
+        onChange={handleFileInputChange}
       ></input>
       
-      <button onClick={addNewRecipe}> Add my Recipe </button>
+      <button onClick={handleSubmitForm}> Add my Recipe </button>
+
+      {previewSource && (
+                <img 
+                  src={previewSource}
+                  style={{ height : '200px' }}
+                /> )
+      }
     </React.Fragment>
   );
 }
 
 function RecipeDb(props){
-  const {title, cuisine, servings, 
-    readyInMinutes, ingredients, instructions } = props;
+  const {title, cuisine, servings, readyInMinutes, ingredients, instructions, image } = props;
   return(
-      <div>
-          <h2> {title} </h2>
-          <p>  {cuisine} - {servings} - {readyInMinutes} - {ingredients}-{instructions}</p>
-      </div> 
+    <Card style={{ width: '14rem' }}>
+      <Card.Img variant="top" src={image} />
+      <Card.Body>
+      <Card.Title>{title}</Card.Title>
+      <Card.Text> {servings} - {readyInMinutes} - {ingredients}</Card.Text>
+      <Button>{cuisine}</Button>
+      </Card.Body>
+    </Card> 
 
   )
 }
@@ -88,10 +119,10 @@ function RecipeDb(props){
 function RecipeCardContainer() {
   const [cards, setCards] = React.useState([]);
 
-  function addCard(recipe_id, title, cuisine, servings, readyInMinutes,
-                          ingredients, instructions) {
+  function addCard(recipe_id, title, cuisine, servings, readyInMinutes, ingredients, instructions, image) 
+  {
     const newCard = { recipe_id, title, cuisine, servings, readyInMinutes,
-                      ingredients, instructions}; 
+                      ingredients, instructions, image}; 
     const currentCards = [...cards]; 
     setCards([...currentCards, newCard]);
   }
@@ -102,6 +133,13 @@ function RecipeCardContainer() {
       .then((data) => setCards(data.cards));
   }, []);
 
+  // if (!data) {
+  //   return (
+  //     <Spinner animation="border" role="status">
+  //         <span className="sr-only">Loading...</span>
+  //     </Spinner>
+  //     )
+  // }
   const recipesCards = [];
 
   for (const currentCard of cards) {
@@ -114,6 +152,7 @@ function RecipeCardContainer() {
         readyInMinutes={currentCard.readyInMinutes}
         ingredients={currentCard.ingredients}
         instructions={currentCard.instructions}
+        image={currentCard.image}
       />
     );
   }
