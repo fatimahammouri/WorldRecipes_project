@@ -28,7 +28,24 @@ function CreateRecipes(props){
       if(!previewSource) return;
       addNewRecipe(previewSource);
     }
-    
+
+    // const handleIngredientInputChange = (event) => {
+    //   let ingredientAdded = event.target.value; 
+    //   return ingredientAdded;
+    // }
+    // function handleAddIngredient(val){
+    //   let ingArray = [];
+    //   console.log("adding an ingredient to the list");
+    //   ingArray.push(ingredientAdded);
+        
+    // }
+    function handleIngredientInputChange(ingredientArray){
+      console.log(ingredientArray);
+      setIngredients(ingredientArray)
+    }  
+      
+  
+
     function addNewRecipe(base64EncodedImage) {
       let imageFile =  base64EncodedImage
       fetch("/add_recipe", 
@@ -52,42 +69,43 @@ function CreateRecipes(props){
   return (
     <React.Fragment>
       <h2> Create a recipe </h2>
-
+        <br />
       <label> Recipe Title </label>
       <input id="titleInput" value={title}
         onChange={(event) => setTitle(event.target.value)}
       ></input>
-      
+        <br />
       <label> Recipe Cuisine </label>
       <input id="cuisineInput" value={cuisine}
         onChange={(event) => setCuisine(event.target.value)}
       ></input>
-
+        <br />
       <label> Servings Number </label>
       <input id="servingsInput" value={servings} type="number"
         onChange={(event) => setServings(event.target.value)}
       ></input>
-     
+        <br />
       <label> Minutes to be ready </label>
       <input id="readyInMinutes" value={readyInMinutes} type="number"
         onChange={(event) => setReadyInMinutes(event.target.value)}
       ></input>
+        <br />
+
+        
+      <IngredientWidget inputChange={handleIngredientInputChange}/>
       
-      <label> Needed Ingredients </label>
-      <input id="ingredientsInput" value={ingredients}
-        onChange={(event) => setIngredients(event.target.value)}
-      ></input>
-      
+  
+        
       <label> instructions </label>
       <textarea id="instructionsInput" value={instructions} type="text"
         onChange={(event) => setInstructions(event.target.value)}
       />
-
+        <br />
       <label> image </label>
       <input  value={fileInput} type="file" name="file"
         onChange={handleFileInputChange}
       ></input>
-      
+        <br />
       <button onClick={handleSubmitForm}> Add my Recipe </button>
 
       {previewSource && (
@@ -164,4 +182,30 @@ function RecipeCardContainer() {
       <div>{recipesCards}</div>
     </React.Fragment>
   );
+}
+
+function IngredientWidget(props){
+  const [numberOfInputs, setNumberOfInputs] = React.useState(1);
+  const callFunction = () => {props.inputChange(allArray)}
+  console.log(props);
+  const inputElements = [];
+
+  function handleInputIngredient(value){
+    let allInputsArray = [];
+    allInputsArray.push(value);
+    return allInputsArray
+  }
+  let allArray = []
+  for (let i=0; i < numberOfInputs; i++){
+    inputElements.push(<input key={i} className="ingredientInputs" onChange={(event) => allArray.push(event.target.value)}></input>)
+  }
+  return (<div>
+            <label> Needed Ingredients </label>
+            
+            {inputElements}
+            
+            <button onClick={() =>{setNumberOfInputs(numberOfInputs + 1)}}> + </button>
+            <button onClick={() =>{setNumberOfInputs(numberOfInputs - 1)}} > - </button>
+            <button onClick={callFunction}>Add Ingredient </button>
+          </div>)
 }
