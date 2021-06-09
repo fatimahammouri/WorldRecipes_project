@@ -7,10 +7,14 @@ Nav, Media, Row, Col, Modal, Alert, Toast, Card, Spinner} = ReactBootstrap;
 //components
 function Homepage(props){
     return(
+        <Container fluid>
+        <Row>
         <div>
             <h1>Home Page Logo</h1>
             
-        </div>    
+        </div> 
+        </Row>
+        </Container>  
     );
 }
 
@@ -21,6 +25,8 @@ function Homepage(props){
 function App(props){
     return(
        <ReactRouterDOM.BrowserRouter>
+        <Container fluid>
+            <Row>
            <nav>
                <ul>
                    <li>
@@ -37,6 +43,8 @@ function App(props){
                    </li>
                </ul>
            </nav>
+           </Row>
+        </Container>
                 <ReactRouterDOM.Switch>
                     
                     <ReactRouterDOM.Route exact path="/home">
@@ -57,6 +65,7 @@ function App(props){
 
                 </ReactRouterDOM.Switch>
        </ReactRouterDOM.BrowserRouter> 
+         
     );
 }
 

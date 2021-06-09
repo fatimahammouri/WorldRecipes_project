@@ -5,49 +5,44 @@ function CreateRecipes(props){
     const [readyInMinutes, setReadyInMinutes] = React.useState(0);
     const [ingredients, setIngredients] = React.useState([]);
     const [instructions, setInstructions] = React.useState("");
-
     // image uploaded (user File Input)
-    const [fileInput, setFileInput] = React.useState("");
-    const [previewSource, setPreviewSource] = React.useState()
+    const [fileInput, setFileInput] = React.useState();
+    
 
     // function to handle when the user inputs(uploads) an image
     const handleFileInputChange = (event) => {
         const file = event.target.files[0];    // grab the (one)file from that input
-        previewFile(file);                    // call function to preview the file
+        updateFile(file);                    // call function to preview the file
     }
-    const previewFile = (file) => {
+    const updateFile = (file) => {
       const reader = new FileReader();    // built-in JS API 
       reader.readAsDataURL(file);        // converts the img file to a String
       reader.onloadend = () => {
-        setPreviewSource(reader.result);
+        setFileInput(reader.result);
       }
     } 
 
+
     function handleSubmitForm() {
       console.log("submitting");
-      if(!previewSource) return;
-      addNewRecipe(previewSource);
+      if(!fileInput) return;
+      addNewRecipe(fileInput);
     }
-
-    // const handleIngredientInputChange = (event) => {
-    //   let ingredientAdded = event.target.value; 
-    //   return ingredientAdded;
-    // }
-    // function handleAddIngredient(val){
-    //   let ingArray = [];
-    //   console.log("adding an ingredient to the list");
-    //   ingArray.push(ingredientAdded);
-        
-    // }
-    function handleIngredientInputChange(ingredientArray){
-      console.log(ingredientArray);
-      setIngredients(ingredientArray)
-    }  
       
-  
 
     function addNewRecipe(base64EncodedImage) {
       let imageFile =  base64EncodedImage
+
+      let allIngredientsArray=[]
+      let inputList = document.querySelectorAll(".ingredientInputs");
+
+      for (let input of inputList) {
+        let value = input.value;
+        allIngredientsArray.push(value)
+      }
+
+      setIngredients(allIngredientsArray)
+
       fetch("/add_recipe", 
         {
           method: "POST",
@@ -68,52 +63,37 @@ function CreateRecipes(props){
 
   return (
     <React.Fragment>
+
       <h2> Create a recipe </h2>
-        <br />
+        
       <label> Recipe Title </label>
-      <input id="titleInput" value={title}
-        onChange={(event) => setTitle(event.target.value)}
-      ></input>
-        <br />
+        <input id="titleInput" value={title}
+        onChange={(event) => setTitle(event.target.value)}></input>
+       
       <label> Recipe Cuisine </label>
-      <input id="cuisineInput" value={cuisine}
-        onChange={(event) => setCuisine(event.target.value)}
-      ></input>
-        <br />
+        <input id="cuisineInput" value={cuisine}
+        onChange={(event) => setCuisine(event.target.value)}></input>
+       
       <label> Servings Number </label>
-      <input id="servingsInput" value={servings} type="number"
-        onChange={(event) => setServings(event.target.value)}
-      ></input>
-        <br />
+        <input id="servingsInput" value={servings} type="number"
+        onChange={(event) => setServings(event.target.value)}></input>
+       
       <label> Minutes to be ready </label>
-      <input id="readyInMinutes" value={readyInMinutes} type="number"
-        onChange={(event) => setReadyInMinutes(event.target.value)}
-      ></input>
-        <br />
-
-        
-      <IngredientWidget inputChange={handleIngredientInputChange}/>
+        <input id="readyInMinutes" value={readyInMinutes} type="number"
+        onChange={(event) => setReadyInMinutes(event.target.value)}></input>
+         
+      <IngredientWidget />
       
-  
-        
       <label> instructions </label>
-      <textarea id="instructionsInput" value={instructions} type="text"
-        onChange={(event) => setInstructions(event.target.value)}
-      />
-        <br />
+        <textarea id="instructionsInput" value={instructions} type="text"
+        onChange={(event) => setInstructions(event.target.value)} />
+       
       <label> image </label>
-      <input  value={fileInput} type="file" name="file"
-        onChange={handleFileInputChange}
-      ></input>
-        <br />
+        <input  type="file" 
+        onChange={handleFileInputChange}></input>
+        
       <button onClick={handleSubmitForm}> Add my Recipe </button>
-
-      {previewSource && (
-                <img 
-                  src={previewSource}
-                  style={{ height : '200px' }}
-                /> )
-      }
+  
     </React.Fragment>
   );
 }
@@ -186,18 +166,21 @@ function RecipeCardContainer() {
 
 function IngredientWidget(props){
   const [numberOfInputs, setNumberOfInputs] = React.useState(1);
-  const callFunction = () => {props.inputChange(allArray)}
-  console.log(props);
+  // const callFunction = () => {
+  //   let allArray=[]
+  //   inputList = document.querySelectorAll(".ingredientInputs");
+  //   for (let i of inputList) {
+  //     let value = i.value;
+  //     allArray.push(value)
+  //   }
+  //   props.inputChange(allArray)
+  // }
+  // console.log(props);
+
   const inputElements = [];
 
-  function handleInputIngredient(value){
-    let allInputsArray = [];
-    allInputsArray.push(value);
-    return allInputsArray
-  }
-  let allArray = []
   for (let i=0; i < numberOfInputs; i++){
-    inputElements.push(<input key={i} className="ingredientInputs" onChange={(event) => allArray.push(event.target.value)}></input>)
+    inputElements.push(<input key={i} className="ingredientInputs" ></input>)
   }
   return (<div>
             <label> Needed Ingredients </label>
@@ -206,6 +189,6 @@ function IngredientWidget(props){
             
             <button onClick={() =>{setNumberOfInputs(numberOfInputs + 1)}}> + </button>
             <button onClick={() =>{setNumberOfInputs(numberOfInputs - 1)}} > - </button>
-            <button onClick={callFunction}>Add Ingredient </button>
+            
           </div>)
 }
