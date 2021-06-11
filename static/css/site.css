@@ -1,0 +1,11 @@
+body{
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/static/images/gab-pili-hcykktXYK0w-unsplash.jpg") ;
+  -webkit-background-size: cover;
+	background-size: cover; 
+  position: relative;
+  height: 100vh; 
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2em;
+}
+
