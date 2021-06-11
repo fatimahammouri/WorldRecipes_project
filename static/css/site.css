@@ -45,4 +45,32 @@ h1{
   color:  #3a9691;
 }
 
+.welcome-text {
+	position: absolute;
+	width: 600px;
+	height: 300px;
+	margin: 20% 30%;
+	text-align: center;
+}
+.welcome-text h1 {
+	text-align: center;
+	color: #3a9691;
+	text-transform: uppercase;
+	font-size: 60px;
+}
+.welcome-text h1 span {
+	color: #c3c3c3;
+}
+.welcome-text a {
+	border: 3px solid #c3c3c3;
+	padding: 10px 25px;
+	text-decoration: none;
+	/* text-transform: uppercase; */
+	font-size: 30px;
+	margin-top: 20px;
+	display: inline-block;
+	color: #c3c3c3;
+}
+
+
 
