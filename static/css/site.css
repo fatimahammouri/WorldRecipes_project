@@ -72,5 +72,12 @@ h1{
 	color: #c3c3c3;
 }
 
+.welcome-text a:hover {
+	background:#333; 
+	color: #3a9691;
+	border: 0 solid #333;
+  /* transition-duration: 0.2s; */	
+}
+
 
 
