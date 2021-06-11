@@ -7,16 +7,16 @@ Nav, Media, Row, Col, Modal, Alert, Toast, Card, Spinner} = ReactBootstrap;
 //components
 function Homepage(props){
     return(
-        <Container fluid>
         <Row>
-            <Col>
-                <div class="welcome-text">
+            <Container fluid>
+                
+                <div class="welcome-text" >
                     <h1>ReC<span>iPy</span></h1>
                     <a href="/recipes_by_cuisine">Explore recipes</a>
                 </div>
-            </Col>
-        </Row>
-        </Container>  
+            
+            </Container>
+        </Row>  
     );
 }
 
