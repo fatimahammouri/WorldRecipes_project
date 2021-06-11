@@ -8,4 +8,15 @@ body{
   font-family: 'Poppins', sans-serif;
   font-size: 1.2em;
 }
+h1{
+  font-size: 22px;
+  font-weight: bold;
+  color: #3a9691;
+}
+
+#logoImg{
+  margin: 0.05em 2em;
+  float: left; 
+}
+
 
