@@ -19,4 +19,12 @@ h1{
   float: left; 
 }
 
+.navigation{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-style: none;
+  margin: 1.5em 1em;
+}
 
