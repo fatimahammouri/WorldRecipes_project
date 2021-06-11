@@ -24,7 +24,9 @@ function Types(props){
             </ul>
           </Row>
           <Row>
-            {currentRecipes.map(recipe =>  <Recipe {...recipe}/>  )}
+            <div class="grid">
+              {currentRecipes.map(recipe =>  <Recipe {...recipe}/>  )}
+            </div>
           </Row>
        </Container>
        </React.Fragment> 
