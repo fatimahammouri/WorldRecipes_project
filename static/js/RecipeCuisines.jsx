@@ -1,22 +1,40 @@
 "use strict";
 
 const Img = ReactBootstrap.Image;
-const {Container, Button, ButtonGroup, Navbar, Form, NavDropdown,
-Nav, Media, Row, Col, Modal, Alert, Toast, Card, Spinner, LinkButton} = ReactBootstrap;
+const {Container, Button, ButtonGroup, Navbar, Form, NavDropdown,CardDeck,
+Nav, Media, Row, Col, Modal, Alert, Toast, Card, Spinner, LinkButton, CardGroup} = ReactBootstrap;
 
 function Recipe(props){
     const { title, servings, readyInMinutes,instructions, image, ingredients, sourceUrl } = props;
     return(
-   
-        <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={image} />
-                <Card.Body>
+        
+        <Container fluid style={{margin:'auto'}}>
+            <Card  className="text-center" style={{ width:'20rem'}}>
+            <Card.Img variant="top" src={image} style={{filter:'brightness(95%)'}} />
+              
+              <Card.Body >
                 <Card.Title>{title}</Card.Title>
-                <Card.Text> {servings} - {readyInMinutes}</Card.Text>
-                <Button><a href={sourceUrl}> RECIPE SOURCE </a></Button>
-                </Card.Body>
-        </Card>
-
+                <Card.Text >
+                {/* <span >Serving Size { servings}</span>
+                <span>Cook Time  {readyInMinutes}</span> */}
+                <span class ="cardlink">
+                  <a  href={sourceUrl}> RECIPE SOURCE </a>
+                </span>
+                </Card.Text>
+              </Card.Body>
+              
+            </Card>
+          </Container>
+        
+        
+//     <Card style={{ width: '18rem' }}>
+//     <Card.Img variant="top" src={image} />
+//     <Card.Body>
+//     <Card.Title>{title}</Card.Title>
+//     <Card.Text> {servings} - {readyInMinutes}</Card.Text>
+//     <Button><a href={sourceUrl}> RECIPE SOURCE </a></Button>
+//     </Card.Body>
+// </Card>
     )
 }
 
@@ -39,10 +57,14 @@ function CuisineList(props){
     
    return(
      <React.Fragment>
-     <ul>
-       {cuisineList.map(cuisine =>  <button onClick={()=> getCuisine(cuisine)}> {cuisine} </button>)}
-     </ul> 
-     {currentRecipes.map(recipe =>  <Recipe {...recipe}/>  )}
+    <Row>
+      <ul>
+        {cuisineList.map(cuisine =>  <button onClick={()=> getCuisine(cuisine)}> {cuisine} </button>)}
+      </ul>
+     </Row>
+      <div class="grid">
+        {currentRecipes.map(recipe =>  <Recipe {...recipe}/>  )}
+      </div>
      </React.Fragment> 
       )
 
