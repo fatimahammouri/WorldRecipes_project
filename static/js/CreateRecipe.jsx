@@ -20,7 +20,7 @@ function CreateRecipes(props){
       reader.onloadend = () => {
         setFileInput(reader.result);
       }
-    } 
+    }  
 
 
     function handleSubmitForm() {
