@@ -4,37 +4,39 @@ body{
 	background-size: cover; 
   position: relative;
   height: 100vh; 
-
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2em;
-}
-h1{
-  font-size: 22px;
-  font-weight: bold;
-  color: #3a9691;
+  color: #C3C3C3;
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.4em;
 }
 
-#logoImg{
-  margin: 0.05em 2em;
+
+#logo{
+  margin: 0.05em 0.7em;
   float: left; 
 }
 
-.navigation{
+.navbar{
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   font-style: none;
-  margin: 1.5em 1em;
+  margin: 1em 1em;
+  
 }
-
-.navLitem{
-  float: left;
+ul.nav{
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  text-align: center;
+}
+.navLitem , .navLitem h1{
+  /* flex: auto; */
   display: block;
   color: #C3C3C3;
-  text-align: center;
-  padding: 16px;
+  margin: 0.7em 3em;
   text-decoration: none;
+ 
 }
 
 .link{
@@ -46,11 +48,6 @@ h1{
 }
 
 .welcome-text {
-	/* position: absolute;
-	width: 600px;
-	height: 300px;
-	margin: 20% 30%;
-	text-align: center; */
   position: absolute;
   width: 300px;
   height: 200px;
@@ -63,28 +60,35 @@ h1{
 .welcome-text h1 {
 	text-align: center;
 	color: #3a9691;
-	text-transform: uppercase;
 	font-size: 60px;
+  margin :0.5em 0.05em ;
 }
 .welcome-text h1 span {
 	color: #c3c3c3;
 }
+.welcome-text h3{
+  text-align: center;
+}
 .welcome-text a {
-	border: 3px solid #c3c3c3;
-	padding: 10px 25px;
-	text-decoration: none;
-	/* text-transform: uppercase; */
-	font-size: 30px;
-	margin-top: 20px;
-	display: inline-block;
+	background:#333; 
 	color: #c3c3c3;
-  position: absolute;
+  text-decoration: none;
+  border-radius: 0.50rem;
+  margin :0.5em ;
+  padding: 0.5em; 
 }
 .welcome-text a:hover {
 	background:#333; 
 	color: #3a9691;
-	border: 0 solid #333;
+	
   /* transition-duration: 0.2s; */	
+}
+
+h1{
+  font-size: 2rem;
+  font-family: 'Dancing Script';
+  font-weight: bold;
+  color: #3a9691;
 }
 
 .grid {
@@ -93,6 +97,8 @@ h1{
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   align-items: center; 
+  align-content: start;  /* block axis = y axis */
+  justify-content: space-between; /* inline axis = x axis */
 }
 .text-center{
   background:#333;
@@ -109,7 +115,13 @@ h1{
   color:  #c3c3c3; 
 }
 
-
+.footer{
+  margin: 0 auto;
+  background: none; 
+}
+.footer *{
+  margin: 0 0.5em ;
+}
 
 
 

@@ -8,8 +8,8 @@ function Recipe(props){
     const { title, servings, readyInMinutes,instructions, image, ingredients, sourceUrl } = props;
     return(
         
-        <Container fluid style={{margin:'auto'}}>
-            <Card  className="text-center" style={{ width:'20rem'}}>
+        
+            <Card  className="card" >
             <Card.Img variant="top" src={image} style={{filter:'brightness(95%)'}} />
               
               <Card.Body >
@@ -24,8 +24,6 @@ function Recipe(props){
               </Card.Body>
               
             </Card>
-          </Container>
-        
         
 //     <Card style={{ width: '18rem' }}>
 //     <Card.Img variant="top" src={image} />
@@ -48,6 +46,10 @@ function CuisineList(props){
   .then ((jresponse) => setCuisineList(jresponse.name))
   }, [])
 
+  React.useEffect(()=>{
+    getCuisine ("american")
+    }, [])
+
   function getCuisine(cuisine){
     
     fetch(`/api/recipes/${cuisine}`)
@@ -58,8 +60,9 @@ function CuisineList(props){
    return(
      <React.Fragment>
     <Row>
-      <ul>
-        {cuisineList.map(cuisine =>  <button onClick={()=> getCuisine(cuisine)}> {cuisine} </button>)}
+      <ul className="buttonsList">
+        {cuisineList.map(cuisine =>  <button className="btn"
+                        onClick={()=> getCuisine(cuisine)}> {cuisine} </button>)}
       </ul>
      </Row>
       <div class="grid">
