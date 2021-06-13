@@ -122,7 +122,11 @@ h1{
 .footer *{
   margin: 0 0.5em ;
 }
-
+.clearfix {
+  padding:1em;
+  margin: 2em 0;
+  justify-content : center;
+}
 
 
 
