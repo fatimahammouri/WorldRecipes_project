@@ -5,3 +5,17 @@
     border: solid #333; 
     text-align: center;
 }
+
+.grid {
+  display: grid;
+  /* grid-template-columns: 3fr 3fr; */
+  grid-template-columns: repeat(auto-fill, calc(200px + 4em));
+  gap: 1em;
+  align-items: center; 
+  align-content: start;  /* block axis = y axis */
+  justify-content: space-between; /* inline axis = x axis */
+  
+  padding: 1em;
+ 
+}
+
