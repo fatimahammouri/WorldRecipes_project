@@ -18,4 +18,13 @@
   padding: 1em;
  
 }
+.buttonsList{
+  /* position: sticky; top: 0; */
+  display: flex;
+  flex-flow: wrap; 
+  overflow: hidden;
+  margin:1em;
+  padding:1em;
+  justify-content: space-between;
+}
 
