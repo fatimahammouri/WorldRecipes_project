@@ -57,7 +57,7 @@ main {
 }
 
 .btn{
-  text-transform: uppercase;
+  text-transform:capitalize;
   text-decoration: none;
   color:#c3c3c3;
   background-color: #333;	
