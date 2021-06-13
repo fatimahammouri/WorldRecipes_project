@@ -18,9 +18,9 @@ model.db.create_all()
 ########################################################################
 
 # seed Cuisines
-cuisines_list = [ 'italian', 'mexican', 'american', 'spanish','chinese', 
-                    'greek', 'indian', 'thai', 'japanese', 'korean',
-                     'latin american', 'middle eastern', 'vietnamese']
+cuisines_list = ['american',   'chinese', 'european', 'greek', 'indian',
+                'italian', 'japanese', 'korean', 'latin american',
+                'middle eastern', 'mexican', 'spanish', 'thai', 'vietnamese']
 
 for cuisine in cuisines_list:
     cuisine = crud.create_cuisine(cuisine)  

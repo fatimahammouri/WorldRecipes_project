@@ -59,15 +59,15 @@ function CuisineList(props){
     
    return(
      <React.Fragment>
-    <Row>
+    <div className="main">
       <ul className="buttonsList">
         {cuisineList.map(cuisine =>  <button className="btn"
                         onClick={()=> getCuisine(cuisine)}> {cuisine} </button>)}
       </ul>
-     </Row>
       <div class="grid">
         {currentRecipes.map(recipe =>  <Recipe {...recipe}/>  )}
       </div>
+    </div>
      </React.Fragment> 
       )
 

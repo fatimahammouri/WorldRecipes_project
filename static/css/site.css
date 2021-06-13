@@ -10,7 +10,6 @@ body{
   font-size: 1.4em;
 }
 
-
 #logo{
   margin: 0.05em 0.7em;
   float: left; 
@@ -91,29 +90,7 @@ h1{
   color: #3a9691;
 }
 
-.grid {
-  display: grid;
-  /* grid-template-columns: 3fr 3fr; */
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
-  align-items: center; 
-  align-content: start;  /* block axis = y axis */
-  justify-content: space-between; /* inline axis = x axis */
-}
-.text-center{
-  background:#333;
-  color: #c3c3c3; 
-	padding: 5px 15px;
-}
-.cardlink a {
-  border: 2px solid #3a9691;
-  color:  #3a9691;
-  position: relative;
-}
-.cardlink a:hover{
-  text-decoration: none;
-  color:  #c3c3c3; 
-}
+
 
 .footer{
   margin: 0 auto;
