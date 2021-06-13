@@ -96,13 +96,15 @@ function App(props){
                                 <ReactRouterDOM.Link to="/home" className="link">Home</ReactRouterDOM.Link>
                         </li>
                         <li className="navLitem">
-                                <ReactRouterDOM.Link to="/recipes_by_cuisine"  className="link">Recipes By Cuisines</ReactRouterDOM.Link>
+                                <ReactRouterDOM.Link to="/recipes_by_cuisine"  className="link">Recipes By Cuisine</ReactRouterDOM.Link>
                         </li>
+                        
+                        <li className="navLitem">
+                                <ReactRouterDOM.Link to="/recipes_by_type" className="link">Recipes By Type</ReactRouterDOM.Link>
+                        </li>
+
                         <li className="navLitem"> 
                                 <ReactRouterDOM.Link to="/create_recipes" className="link">Create Recipes</ReactRouterDOM.Link>
-                        </li>
-                        <li className="navLitem">
-                                <ReactRouterDOM.Link to="/recipes_by_type" className="link">Search recipes by Type</ReactRouterDOM.Link>
                         </li>
                         <li className="navLitem">
                                 <ReactRouterDOM.Link to="/about_me" className="link">About Me</ReactRouterDOM.Link>
