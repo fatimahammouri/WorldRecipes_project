@@ -17,18 +17,16 @@ function Types(props){
       
      return(
        <React.Fragment>
-        <Container fluid>
-          <Row>
-            <ul>
-              {typeList.map(rtype => <div className="typeBtns"> <button onClick={()=> getType(rtype)}> {rtype} </button></div>)}
+        
+            <ul className="buttonsList">
+              {typeList.map(rtype =>  <button className="btn"
+                            onClick={()=> getType(rtype)}> {rtype} </button>)}
             </ul>
-          </Row>
-          <Row>
+          
             <div class="grid">
               {currentRecipes.map(recipe =>  <Recipe {...recipe}/>  )}
             </div>
-          </Row>
-       </Container>
+          
        </React.Fragment> 
         )
   
