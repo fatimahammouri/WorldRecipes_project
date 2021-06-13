@@ -6,11 +6,11 @@ body{
   height: 100vh; 
   color: #C3C3C3;
   /* font-family: 'Dancing Script', cursive;
-  font-family: 'Great Vibes', cursive;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Great Vibes', cursive;*/
+  /* font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Roboto', sans-serif; */
   font-family: 'Source Serif Pro', serif;
-  font-family: 'Source Serif Pro', serif; */
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: 1.4em;
 }
 
@@ -89,7 +89,8 @@ ul.nav{
 
 h1{
   font-size: 2rem;
-  font-family: 'Dancing Script';
+  /* font-family: 'Dancing Script'; */
+  font-family: 'Great Vibes', cursive;
   font-weight: bold;
   color: #3a9691;
 }
