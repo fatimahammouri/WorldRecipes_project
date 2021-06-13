@@ -1,10 +1,10 @@
 
-  .card{
-    height:362px;
-    background: #333; 
-    padding: 1em;
-    border: solid #333; 
-    text-align: center;
+.card{
+  height:362px;
+  background: #333; 
+  padding: 1em;
+  border: solid #333; 
+  text-align: center;
 }
 
 .grid {
