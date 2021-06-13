@@ -8,10 +8,10 @@ Nav, Media, Row, Col, Modal, Alert, Toast, Card, Spinner} = ReactBootstrap;
 function Homepage(props){
     return(
         <div>
-        <div className="welcome-text" >
-                    <h1>Recipe W<span>orld</span></h1>
-                    <h3><a href="/recipes_by_cuisine">Explore recipes</a> </h3>
-        </div>  
+            <div className="welcome-text" >
+                <h1>Recipe W<span>orld</span></h1>
+                <a href="/recipes_by_cuisine">Explore recipes</a>   
+            </div>  
              
                 <Navbar expand="lg" bg="dark" variant="dark" fixed="bottom" className="footer">
                 <Nav className="mr-auto">
