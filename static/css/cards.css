@@ -49,6 +49,12 @@ main {
   color:  #c3c3c3; 
 }
 
+.grid{
+  /* overflow: auto;  */
+  margin:2em; 
+  overflow-y:auto; 
+}
+
 .btn{
   text-transform: uppercase;
   text-decoration: none;
