@@ -27,4 +27,16 @@
   padding:1em;
   justify-content: space-between;
 }
+main {
+  display: grid;
+  grid-template-rows: auto
+                      1fr;
+  height: 90vh;
+  overflow-y:hidden; 
+}
+/* .text-center{
+  background:#333;
+  color: #3a9691; 
+  padding: 5px 15px;
+} */
 
