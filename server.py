@@ -74,8 +74,14 @@ def add_recipe():
     ingredients = request.get_json().get("ingredients")
     instructions = request.get_json().get("instructions")
     image_file = request.get_json().get("imageFile")
-    print(image_file)
-
+    print("title",title)
+    print("cuisine",cuisine)
+    print("servings",servings)
+    print("ready_in_minutes",ready_in_minutes)
+    print("instructions",instructions)
+    
+    print("ingredients",ingredients) 
+    
     if image_file:
         result = cloudinary.uploader.upload(image_file,
                     api_key=CLOUDINARY_KEY,
@@ -104,7 +110,7 @@ def add_recipe():
             "title": new_recipe.title,
             "cuisine": new_recipe.cuisine,
             "servings": new_recipe.servings,
-            "ready_in_minutes": new_recipe.ready_in_minutes,
+            "readyInMinutes": new_recipe.ready_in_minutes,
             "ingredients": new_recipe.ingredients,
             "instructions": new_recipe.instructions,
             "image" : new_recipe.image
@@ -125,7 +131,7 @@ def get_recipes_json():
             "title": r.title,
             "cuisine": r.cuisine,
             "servings": r.servings,
-            "ready_in_minutes": r.ready_in_minutes,
+            "readyInMinutes": r.ready_in_minutes,
             "ingredients": r.ingredients,
             "instructions": r.instructions,
             "image": r.image

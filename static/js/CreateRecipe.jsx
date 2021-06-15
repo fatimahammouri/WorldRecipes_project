@@ -22,17 +22,7 @@ function CreateRecipes(props){
       }
     }  
 
-
-    function handleSubmitForm() {
-      console.log("submitting");
-      if(!fileInput) return;
-      addNewRecipe(fileInput);
-    }
-      
-
-    function addNewRecipe(base64EncodedImage) {
-      let imageFile =  base64EncodedImage
-
+    function updateIngredientsArray(){
       let allIngredientsArray=[]
       let inputList = document.querySelectorAll(".ingredientInputs");
 
@@ -41,7 +31,35 @@ function CreateRecipes(props){
         allIngredientsArray.push(value)
       }
 
+      console.log(allIngredientsArray)
       setIngredients(allIngredientsArray)
+    }
+      
+
+
+    function handleSubmitForm() {
+      console.log("submitting");
+      if(!fileInput) return;
+      addNewRecipe(fileInput);
+    }
+    
+
+    function addNewRecipe(base64EncodedImage, allIngredientsArray) {
+      let imageFile =  base64EncodedImage
+
+      // let allIngredientsArray=[]
+      // let inputList = document.querySelectorAll(".ingredientInputs");
+
+      // for (let input of inputList) {
+      //   let value = input.value;
+      //   allIngredientsArray.push(value)
+      // }
+      
+      // setIngredients(allIngredientsArray)
+      console.log("setTitle value:",title) 
+      console.log("setCuisine value:",cuisine) 
+      console.log("setServings value:",servings)
+      console.log("setIngredient value:",ingredients)  
 
       fetch("/add_recipe", 
         {
@@ -51,12 +69,18 @@ function CreateRecipes(props){
         }
 
       ) .then((response) => { 
-          response.json().then((jsonResponse) => {
+          response.json()
+          // console.log(response.json)
+        .then((jsonResponse) => {
           const recipe = jsonResponse.recipeAdded;
 
           const {  recipe_id, title, cuisine, servings, readyInMinutes, ingredients, instructions, image } = recipe;
-
-          props.addCard(recipe_id, title, cuisine, servings, readyInMinutes, ingredients, instructions, image);
+          console.log(recipe.title)
+          console.log(typeof ingredients)
+          
+          let ings = ingredients.replace(/[^a-zA-Z0-9 ,]/g, '').split(",")
+          console.log(ings)
+          props.addCard(recipe_id, title, cuisine, servings, readyInMinutes, ings, instructions, image);
         });
       });
     }
@@ -83,7 +107,8 @@ function CreateRecipes(props){
         onChange={(event) => setReadyInMinutes(event.target.value)}></input>
          
       <IngredientWidget />
-      
+      <button onClick={updateIngredientsArray}>Add All Ingredients</button>
+
       <label> instructions </label>
         <textarea id="instructionsInput" value={instructions} type="text"
         onChange={(event) => setInstructions(event.target.value)} />
@@ -117,10 +142,10 @@ function RecipeDb(props){
 function RecipeCardContainer() {
   const [cards, setCards] = React.useState([]);
 
-  function addCard(recipe_id, title, cuisine, servings, readyInMinutes, ingredients, instructions, image) 
+  function addCard(recipe_id, title, cuisine, servings, readyInMinutes, ings, instructions, image) 
   {
     const newCard = { recipe_id, title, cuisine, servings, readyInMinutes,
-                      ingredients, instructions, image}; 
+      ings, instructions, image}; 
     const currentCards = [...cards]; 
     setCards([...currentCards, newCard]);
   }
@@ -148,7 +173,7 @@ function RecipeCardContainer() {
         cuisine={currentCard.cuisine}
         servings={currentCard.servings}
         readyInMinutes={currentCard.readyInMinutes}
-        ingredients={currentCard.ingredients}
+        ingredients={currentCard.ings}
         instructions={currentCard.instructions}
         image={currentCard.image}
       />
