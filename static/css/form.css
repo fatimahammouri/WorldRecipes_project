@@ -48,8 +48,6 @@
     text-align: center;
 }
 
-
-
 .formbtn{
     background-color: #333;
     border: none;
@@ -57,7 +55,9 @@
     text-decoration: none;
     cursor: pointer;
     border-radius: 1em;
-     
+    font-weight: bold; 
+    margin-top: 1em;
+    padding: 0.5em;
   }
 .formbtn :hover{
     color:cadetblue;

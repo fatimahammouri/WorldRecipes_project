@@ -234,8 +234,11 @@ function IngredientWidget(props){
             
             {inputElements}
             
-            <button onClick={() =>{setNumberOfInputs(numberOfInputs + 1)}}> + </button>
-            <button onClick={() =>{setNumberOfInputs(numberOfInputs - 1)}} > - </button>
+            <button class="formbtn" style={{width:"3em"}}
+             onClick={() =>{setNumberOfInputs(numberOfInputs + 1)}}> + </button>
+             
+            <button class="formbtn" style={{width:"3em"}}
+            onClick={() =>{setNumberOfInputs(numberOfInputs - 1)}} > - </button>
             
           </div>)
 }
