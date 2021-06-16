@@ -30,7 +30,7 @@ function CreateRecipes(props){
         let value = input.value;
         allIngredientsArray.push(value)
       }
-
+      console.log(allIngredientsArray)
       setIngredients([...ingredients, allIngredientsArray])
     }
       
@@ -93,55 +93,56 @@ function CreateRecipes(props){
         <div class="recipes-form__row">
 
           <label className= "formlabel"> Recipe Title </label>
-            <input id="titleInput" value={title} className="forminput"
-            onChange={(event) => setTitle(event.target.value)}></input>
+            <input  id="titleInput" value={title} className="forminput"
+                    onChange={(event) => setTitle(event.target.value)}></input>
           
           <label className= "formlabel"> Recipe Cuisine </label>
-            <input id="cuisineInput" value={cuisine} className="forminput"
-            onChange={(event) => setCuisine(event.target.value)}></input>
+            <input  id="cuisineInput" value={cuisine} className="forminput"
+                    onChange={(event) => setCuisine(event.target.value)}></input>
           
           <label className= "formlabel"> Servings Number </label>
-            <input id="servingsInput" value={servings} 
-            type="number" min="0" className="forminput"
-            onChange={(event) => setServings(event.target.value)}></input>
+            <input  id="servingsInput" value={servings} 
+                    type="number" min="0" className="forminput"
+                    onChange={(event) => setServings(event.target.value)}></input>
           
           <label className= "formlabel"> Minutes to be ready </label>
-            <input id="readyInMinutes" value={readyInMinutes} 
-            type="number"  min="0" className="forminput"
-            onChange={(event) => setReadyInMinutes(event.target.value)}></input>
+            <input  id="readyInMinutes" value={readyInMinutes} 
+                    type="number"  min="0" className="forminput"
+                    onChange={(event) => setReadyInMinutes(event.target.value)}></input>
 
         </div>
       </div>
 
       <div class="recipes-form__section">
         <div class="recipes-form__row"> 
+
           <IngredientWidget />
+
           <button className="formbtn"
-          onClick={updateIngredientsArray}> <span> Add All Ingredients </span></button>
+                  onClick={updateIngredientsArray}> Add All Ingredients </button>
+
         </div> 
       </div>
+
       <div class="recipes-form__section">
         <div class="recipes-form__row">
 
           <label className= "formlabel"> instructions </label>
           <textarea id="instructionsInput" value={instructions}
-            type="text" className="forminput"
-          onChange={(event) => setInstructions(event.target.value)} />
-        </div>
-      </div>
-
+                    type="text" className="forminput"
+                    onChange={(event) => setInstructions(event.target.value)} />
+      
        
-    {/* <div class="recipes-form__section">
-        <div class="recipes-form__row">  */}
           <label className= "formlabel"> image </label>
           <input  type="file" className="forminput" style= {{backgroundColor:'#333'}}
-          onChange={handleFileInputChange}></input>
+                  onChange={handleFileInputChange}></input>
 
           <button className="formbtn"
-          onClick={handleSubmitForm}> <span>Create My Recipe</span> </button>
+                  onClick={handleSubmitForm}> Create My Recipe</button>
 
-        {/* </div> 
-      </div>  */}
+        </div>
+      </div>
+       
       
     </div>
   );
@@ -236,7 +237,7 @@ function IngredientWidget(props){
             
             <button class="formbtn" style={{width:"3em"}}
              onClick={() =>{setNumberOfInputs(numberOfInputs + 1)}}> + </button>
-             
+
             <button class="formbtn" style={{width:"3em"}}
             onClick={() =>{setNumberOfInputs(numberOfInputs - 1)}} > - </button>
             
