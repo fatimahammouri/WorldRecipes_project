@@ -89,37 +89,37 @@ function CreateRecipes(props){
   return (
     <React.Fragment>
 
-      <h2> Create a recipe </h2>
-        
-      <label> Recipe Title </label>
-        <input id="titleInput" value={title}
+      <label className= "formlabel"> Recipe Title </label>
+        <input id="titleInput" value={title} className="forminput"
         onChange={(event) => setTitle(event.target.value)}></input>
        
-      <label> Recipe Cuisine </label>
-        <input id="cuisineInput" value={cuisine}
+      <label className= "formlabel"> Recipe Cuisine </label>
+        <input id="cuisineInput" value={cuisine} className="forminput"
         onChange={(event) => setCuisine(event.target.value)}></input>
        
-      <label> Servings Number </label>
-        <input id="servingsInput" value={servings} type="number"
+      <label className= "formlabel"> Servings Number </label>
+        <input id="servingsInput" value={servings} 
+        type="number" min="0" className="forminput"
         onChange={(event) => setServings(event.target.value)}></input>
        
-      <label> Minutes to be ready </label>
-        <input id="readyInMinutes" value={readyInMinutes} type="number"
+      <label className= "formlabel"> Minutes to be ready </label>
+        <input id="readyInMinutes" value={readyInMinutes} 
+        type="number"  min="0" className="forminput"
         onChange={(event) => setReadyInMinutes(event.target.value)}></input>
          
       <IngredientWidget />
       <button onClick={updateIngredientsArray}>Add All Ingredients</button>
 
-      <label> instructions </label>
-        <textarea id="instructionsInput" value={instructions} type="text"
+      <label className= "formlabel"> instructions </label>
+        <textarea id="instructionsInput" value={instructions}
+         type="text" className="forminput"
         onChange={(event) => setInstructions(event.target.value)} />
        
-      <label> image </label>
-        <input  type="file" 
+      <label className= "formlabel"> image </label>
+        <input  type="file" className="forminput"
         onChange={handleFileInputChange}></input>
         
       <button onClick={handleSubmitForm}> Add my Recipe </button>
-  
     </React.Fragment>
   );
 }
@@ -199,16 +199,7 @@ function RecipeCardContainer() {
 
 function IngredientWidget(props){
   const [numberOfInputs, setNumberOfInputs] = React.useState(1);
-  // const callFunction = () => {
-  //   let allArray=[]
-  //   inputList = document.querySelectorAll(".ingredientInputs");
-  //   for (let i of inputList) {
-  //     let value = i.value;
-  //     allArray.push(value)
-  //   }
-  //   props.inputChange(allArray)
-  // }
-  // console.log(props);
+  
 
   const inputElements = [];
 
