@@ -125,6 +125,7 @@ def get_recipes_json():
     recipe_cards_list = []
 
     for r in recipe_cards:
+        print(r.ingredients)
         recipe_cards_list.append(
             {
             "recipe_id" : r.recipe_id,
@@ -138,7 +139,7 @@ def get_recipes_json():
             }
         )
 
-    return {"cards": recipe_cards_list}
+    return jsonify({"cards": recipe_cards_list})
 
 #################################################################################
 @app.route("/api/recipe/<rtype>")

@@ -31,11 +31,9 @@ function CreateRecipes(props){
         allIngredientsArray.push(value)
       }
 
-      console.log(allIngredientsArray)
-      setIngredients(allIngredientsArray)
+      setIngredients([...ingredients, allIngredientsArray])
     }
       
-
 
     function handleSubmitForm() {
       console.log("submitting");
@@ -76,14 +74,17 @@ function CreateRecipes(props){
 
           const {  recipe_id, title, cuisine, servings, readyInMinutes, ingredients, instructions, image } = recipe;
           console.log(recipe.title)
-          console.log(typeof ingredients)
+          console.log(typeof(ingredients))
           
           let ings = ingredients.replace(/[^a-zA-Z0-9 ,]/g, '').split(",")
-          console.log(ings)
+          
+          console.log("this is the ings",ings)
           props.addCard(recipe_id, title, cuisine, servings, readyInMinutes, ings, instructions, image);
         });
       });
     }
+
+    
 
   return (
     <React.Fragment>
@@ -124,16 +125,22 @@ function CreateRecipes(props){
 }
 
 function RecipeDb(props){
-  const {title, cuisine, servings, readyInMinutes, ingredients, instructions, image } = props;
+  const {title, cuisine, servings, readyInMinutes, ingredients=[], instructions, image } = props;
+  console.log(title, 'TITLE')
+  console.log(cuisine, 'CUISINE')
+  console.log(ingredients)
+
   return(
-    <Card style={{ width: '14rem' }}>
-      <Card.Img variant="top" src={image} />
-      <Card.Body>
-      <Card.Title>{title}</Card.Title>
+    <Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src={image} />
+  <Card.Body>
+    <Card.Title>{title}</Card.Title>
       <Card.Text> {servings} - {readyInMinutes} - {ingredients}</Card.Text>
-      <Button>{cuisine}</Button>
+      <ListGroup>
+        {ingredients.map((ingredient) => <ListGroupItem>{ingredient}</ListGroupItem>)}
+      </ListGroup>
       </Card.Body>
-    </Card> 
+</Card> 
 
   )
 }
@@ -153,6 +160,7 @@ function RecipeCardContainer() {
   React.useEffect(() => {
     fetch("/recipes_cards.json")
       .then((response) => response.json())
+      .then((data) => {console.log(data); return data})
       .then((data) => setCards(data.cards));
   }, []);
 
@@ -179,7 +187,7 @@ function RecipeCardContainer() {
       />
     );
   }
-
+  console.log(cards)
   return (
     <React.Fragment>
       <CreateRecipes addCard={addCard} />
