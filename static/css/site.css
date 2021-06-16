@@ -1,5 +1,7 @@
 body{
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/static/images/gab-pili-hcykktXYK0w-unsplash.jpg") ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   -webkit-background-size: cover;
 	background-size: cover; 
   position: relative;
