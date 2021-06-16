@@ -1,0 +1,16 @@
+
+.container{
+    margin:35px auto;
+    padding:28px;
+    max-width: 660px;
+    border:0;
+    box-sizing: border-box;
+    display: block;
+    text-align: left;
+    align-items: left; 
+    align-content: start;  /* block axis = y axis */
+    justify-content:left; /* inline axis = x axis */
+    border: solid 0.09em blanchedalmond; 
+    border-radius: 1em;
+}
+
