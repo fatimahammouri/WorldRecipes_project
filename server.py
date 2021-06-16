@@ -47,7 +47,7 @@ def all_recipes(cuisine):
                 'addRecipeInformation': True,
                 'instructionsRequired': True,
                 'cuisine' : cuisine,
-                'number' : 20}
+                'number' : 55}
     
     response = requests.get(url, params)
     data = response.json()
@@ -151,7 +151,7 @@ def type_recipes(rtype):
                 'addRecipeInformation': True,
                 'instructionsRequired': False,
                 'type' : rtype,
-                'number' : 15}
+                'number' : 55}
 
 
     response = requests.get(url, params)
