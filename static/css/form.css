@@ -14,3 +14,18 @@
     border-radius: 1em;
 }
 
+.recipes-form__section{
+    text-rendering: auto;
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    font-size: 100%;
+    padding: 14px 0 21px 0;
+    border-bottom: 1px solid #c3c3c3;
+    text-align: left;
+}
+.recipes-form__row{
+    position:relative;
+}
+
+
