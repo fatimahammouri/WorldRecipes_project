@@ -33,6 +33,7 @@ function CreateRecipes(props){
       }
       console.log("allIngredientsArray (from user inputs)",allIngredientsArray)
       setIngredients([...ingredients, allIngredientsArray])
+      inputList.forEach((input)=>{ input.value = ""; })
     }
       
 
@@ -74,8 +75,8 @@ function CreateRecipes(props){
           const recipe = jsonResponse.recipeAdded;
 
           const {  recipe_id, title, cuisine, servings, readyInMinutes, ingredients, instructions, image } = recipe;
-          console.log(recipe.title)
-          console.log(typeof(ingredients))
+          console.log("recipe.title",recipe.title)
+          console.log("ingredients type",typeof(ingredients))
           
           let ings = ingredients.replace(/[^a-zA-Z0-9 ,]/g, '').split(",")
           
@@ -138,7 +139,7 @@ function CreateRecipes(props){
           <input  type="file" className="forminput" style= {{backgroundColor:'#333'}}
                   onChange={handleFileInputChange}></input>
 
-          <button className="formbtn"
+          <button className="formbtn" style={{width:'100%'}}
                   onClick={handleSubmitForm}> Create My Recipe</button>
 
         </div>
@@ -217,7 +218,7 @@ function RecipeCardContainer() {
     <React.Fragment>
       <CreateRecipes addCard={addCard} />
       <h1 style={{textAlign: 'center'}}>Recipes cards</h1 >
-      
+
       <div class="grid">
         {recipesCards}
       </div>

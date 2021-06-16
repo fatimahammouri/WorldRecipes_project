@@ -1,18 +1,23 @@
 
 .container{
-    margin:35px auto;
-    padding:28px;
+    /* margin:35px auto;
+    
     max-width: 660px;
     border:0;
     box-sizing: border-box;
-    display: block;
+    display: block; */
     text-align: left;
     align-items: left; 
     align-content: start;  /* block axis = y axis */
     justify-content:left; /* inline axis = x axis */
-    border: solid 0.09em blanchedalmond; 
+    border: solid 1em #333; 
     border-radius: 1em;
+    padding:2em 2em;
+    margin:2em auto;
+    background: linear-gradient(rgb(63, 63, 63), rgba(19, 19, 19, 0.2));
+    /* filter: brightness(0.9) */
 }
+
 
 .recipes-form__section{
     text-rendering: auto;
@@ -30,7 +35,7 @@
 .forminput {
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
-    font-weight: 400;
+    font-weight: 500;
     background: #333;
     color: #c3c3c3;
     width: 100%;
@@ -60,5 +65,5 @@
     padding: 0.5em;
   }
 .formbtn :hover{
-    color:cadetblue;
+    color: rgb(237, 128, 12);
   }
