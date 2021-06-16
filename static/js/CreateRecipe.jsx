@@ -12,7 +12,8 @@ function CreateRecipes(props){
     // function to handle when the user inputs(uploads) an image
     const handleFileInputChange = (event) => {
         const file = event.target.files[0];    // grab the (one)file from that input
-        updateFile(file);                    // call function to preview the file
+        updateFile(file);
+        console.log(file)                    // call function to preview the file
     }
     const updateFile = (file) => {
       const reader = new FileReader();    // built-in JS API 
@@ -30,7 +31,7 @@ function CreateRecipes(props){
         let value = input.value;
         allIngredientsArray.push(value)
       }
-      console.log(allIngredientsArray)
+      console.log("allIngredientsArray (from user inputs)",allIngredientsArray)
       setIngredients([...ingredients, allIngredientsArray])
     }
       
@@ -215,8 +216,11 @@ function RecipeCardContainer() {
   return (
     <React.Fragment>
       <CreateRecipes addCard={addCard} />
-      <h2>Recipes cards</h2>
-      <div>{recipesCards}</div>
+      <h1 style={{textAlign: 'center'}}>Recipes cards</h1 >
+      
+      <div class="grid">
+        {recipesCards}
+      </div>
     </React.Fragment>
   );
 }
