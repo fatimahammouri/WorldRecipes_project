@@ -87,40 +87,63 @@ function CreateRecipes(props){
     
 
   return (
-    <React.Fragment>
+    <div className="container"> 
+        <h1 style={{textAlign: 'center'}}>Create A Recipe</h1>
+      <div class="recipes-form__section">
+        <div class="recipes-form__row">
 
-      <label className= "formlabel"> Recipe Title </label>
-        <input id="titleInput" value={title} className="forminput"
-        onChange={(event) => setTitle(event.target.value)}></input>
-       
-      <label className= "formlabel"> Recipe Cuisine </label>
-        <input id="cuisineInput" value={cuisine} className="forminput"
-        onChange={(event) => setCuisine(event.target.value)}></input>
-       
-      <label className= "formlabel"> Servings Number </label>
-        <input id="servingsInput" value={servings} 
-        type="number" min="0" className="forminput"
-        onChange={(event) => setServings(event.target.value)}></input>
-       
-      <label className= "formlabel"> Minutes to be ready </label>
-        <input id="readyInMinutes" value={readyInMinutes} 
-        type="number"  min="0" className="forminput"
-        onChange={(event) => setReadyInMinutes(event.target.value)}></input>
-         
-      <IngredientWidget />
-      <button onClick={updateIngredientsArray}>Add All Ingredients</button>
+          <label className= "formlabel"> Recipe Title </label>
+            <input id="titleInput" value={title} className="forminput"
+            onChange={(event) => setTitle(event.target.value)}></input>
+          
+          <label className= "formlabel"> Recipe Cuisine </label>
+            <input id="cuisineInput" value={cuisine} className="forminput"
+            onChange={(event) => setCuisine(event.target.value)}></input>
+          
+          <label className= "formlabel"> Servings Number </label>
+            <input id="servingsInput" value={servings} 
+            type="number" min="0" className="forminput"
+            onChange={(event) => setServings(event.target.value)}></input>
+          
+          <label className= "formlabel"> Minutes to be ready </label>
+            <input id="readyInMinutes" value={readyInMinutes} 
+            type="number"  min="0" className="forminput"
+            onChange={(event) => setReadyInMinutes(event.target.value)}></input>
 
-      <label className= "formlabel"> instructions </label>
-        <textarea id="instructionsInput" value={instructions}
-         type="text" className="forminput"
-        onChange={(event) => setInstructions(event.target.value)} />
+        </div>
+      </div>
+
+      <div class="recipes-form__section">
+        <div class="recipes-form__row"> 
+          <IngredientWidget />
+          <button className="formbtn"
+          onClick={updateIngredientsArray}> <span> Add All Ingredients </span></button>
+        </div> 
+      </div>
+      <div class="recipes-form__section">
+        <div class="recipes-form__row">
+
+          <label className= "formlabel"> instructions </label>
+          <textarea id="instructionsInput" value={instructions}
+            type="text" className="forminput"
+          onChange={(event) => setInstructions(event.target.value)} />
+        </div>
+      </div>
+
        
-      <label className= "formlabel"> image </label>
-        <input  type="file" className="forminput"
-        onChange={handleFileInputChange}></input>
-        
-      <button onClick={handleSubmitForm}> Add my Recipe </button>
-    </React.Fragment>
+    {/* <div class="recipes-form__section">
+        <div class="recipes-form__row">  */}
+          <label className= "formlabel"> image </label>
+          <input  type="file" className="forminput" style= {{backgroundColor:'#333'}}
+          onChange={handleFileInputChange}></input>
+
+          <button className="formbtn"
+          onClick={handleSubmitForm}> <span>Create My Recipe</span> </button>
+
+        {/* </div> 
+      </div>  */}
+      
+    </div>
   );
 }
 
@@ -204,10 +227,10 @@ function IngredientWidget(props){
   const inputElements = [];
 
   for (let i=0; i < numberOfInputs; i++){
-    inputElements.push(<input key={i} className="ingredientInputs" ></input>)
+    inputElements.push(<input key={i} className="ingredientInputs forminput" ></input>)
   }
   return (<div>
-            <label> Needed Ingredients </label>
+            <label className="formlabel"> Needed Ingredients </label>
             
             {inputElements}
             
