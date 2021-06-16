@@ -30,6 +30,13 @@
 .forminput {
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
+    font-weight: 400;
+    background: #333;
+    color: #c3c3c3;
+    width: 100%;
+    height: 45px;
+    padding: 10px 12px;
+    margin-bottom: 1em;
     
 }
  .container h1{
