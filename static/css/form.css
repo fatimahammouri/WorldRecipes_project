@@ -27,5 +27,13 @@
 .recipes-form__row{
     position:relative;
 }
+.forminput {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    
+}
+ .container h1{
+    text-align: center;
+}
 
 

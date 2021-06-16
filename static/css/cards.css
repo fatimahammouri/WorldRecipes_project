@@ -68,3 +68,45 @@ main {
   }
 
 
+
+
+
+
+
+.formbtn{
+  background-color: #333;
+  border: none;
+  color: #c3c3c3;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 1em;
+   
+}
+.formbtn :hover{
+  color:cadetblue;
+}
+
+.formbtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.formbtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.formbtn:hover span {
+  padding-right: 25px;
+}
+.formbtn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
