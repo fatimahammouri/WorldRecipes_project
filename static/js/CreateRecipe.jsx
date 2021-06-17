@@ -42,3 +42,74 @@ function IngredientWidget(props){
           onClick={() =>{setNumberOfInputs(numberOfInputs - 1)}} > - </button>    
     </div>)
 }
+
+
+function CreateRecipes(props){
+
+  const [title, setTitle] = React.useState("");
+  const [cuisine, setCuisine] = React.useState("");
+  const [servings, setServings] = React.useState(0);
+  const [readyInMinutes, setReadyInMinutes] = React.useState(0);
+  const [ingredients, setIngredients] = React.useState({});
+  const [instructions, setInstructions] = React.useState("");
+  const [fileInput, setFileInput] = React.useState();
+
+  // Handling user Input change events
+
+
+
+  return (
+    <div className="form-container"> 
+      <h1 style={{textAlign: 'center'}}>Create A Recipe</h1>
+
+      <div className="recipes-form__section">
+        <div className="recipes-form__row">
+          <label className= "formlabel"> Recipe Title </label>
+          <input  id="titleInput" value={title} className="forminput"
+                  onChange={(event) => setTitle(event.target.value)}></input>
+          
+          <label className= "formlabel"> Recipe Cuisine </label>
+          <input  id="cuisineInput" value={cuisine} className="forminput"
+                  onChange={(event) => setCuisine(event.target.value)}></input>
+          
+          <label className= "formlabel"> Servings Number </label>
+          <input  id="servingsInput" value={servings} 
+                  type="number" min="0" className="forminput"
+                  onChange={(event) => setServings(event.target.value)}></input>
+          
+          <label className= "formlabel"> Minutes to be ready </label>
+          <input  id="readyInMinutes" value={readyInMinutes} 
+                  type="number"  min="0" className="forminput"
+                  onChange={(event) => setReadyInMinutes(event.target.value)}></input>
+        </div>
+      </div>
+
+      <div className="recipes-form__section">
+        <div className="recipes-form__row"> 
+          <IngredientWidget />
+        </div> 
+      </div>
+
+      <div className="recipes-form__section">
+        <div className="recipes-form__row">
+          <label className= "formlabel"> instructions </label>
+          <textarea id="instructionsInput" value={instructions}
+                    type="text" className="forminput"
+                    onChange={(event) => setInstructions(event.target.value)} />
+      
+       
+          <label className= "formlabel"> image </label>
+          <input  type="file" className="forminput" style= {{backgroundColor:'#333'}}
+                  onChange={handleFileInputChange}></input>
+
+          <button className="formbtn" style={{width:'100%'}}
+                  onClick={handleSubmitForm}> Create My Recipe</button>
+
+        </div>
+      </div>
+       
+      
+    </div>
+  );
+}
+
