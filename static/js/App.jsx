@@ -90,7 +90,7 @@ function App(props){
                 <nav className={"navbar navbar-default"}>
                 <div className="container-fluid">
                     <ul className={"nav navbar-nav"}>
-                        <li class="navLitem"><h1 id="logo"> Recipe W<span>orld</span></h1>
+                        <li className="navLitem"><h1 id="logo"> Recipe W<span>orld</span></h1>
                         </li>
                         
                         <li className="navLitem">

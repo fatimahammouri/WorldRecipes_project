@@ -6,6 +6,7 @@ import requests
 import os
 import parse_api
 import cloudinary.uploader
+import json
 
 app = Flask(__name__)
 app.secret_key = "recipe"
@@ -65,23 +66,18 @@ def all_recipes(cuisine):
 
 @app.route("/add_recipe" , methods=["POST"])
 def add_recipe():
-    # data = request.get_json()
-    # title = data.title etc etc........ 
-    title = request.get_json().get("title")
-    cuisine = request.get_json().get("cuisine")
-    servings = request.get_json().get("servings")
-    ready_in_minutes = request.get_json().get("readyInMinutes")
-    ingredients = request.get_json().get("ingredients")
-    instructions = request.get_json().get("instructions")
-    image_file = request.get_json().get("imageFile")
-    print("title",title)
-    print("cuisine",cuisine)
-    print("servings",servings)
-    print("ready_in_minutes",ready_in_minutes)
-    print("instructions",instructions)
+    data = request.get_json()
+    # title = data.title etc etc........
     
-    print("ingredients",ingredients) 
-    
+    title = data.get("title")
+    cuisine = data.get("cuisine")
+    servings = data.get("servings")
+    ready_in_minutes = data.get("readyInMinutes")
+    ingredients = json.dumps(data.get("ingredients"))
+    instructions = data.get("instructions")
+    image_file = data.get("imageFile")
+    del data["imageFile"]
+    print(data)
     if image_file:
         result = cloudinary.uploader.upload(image_file,
                     api_key=CLOUDINARY_KEY,
@@ -97,7 +93,7 @@ def add_recipe():
                         cuisine=cuisine,
                         servings=servings, 
                         ready_in_minutes=ready_in_minutes,
-                        ingredients=ingredients,
+                        ingredients=ingredients, #json string "["",""]"
                         instructions=instructions,
                         image=image)
     db.session.add(new_recipe)
@@ -133,7 +129,7 @@ def get_recipes_json():
             "cuisine": r.cuisine,
             "servings": r.servings,
             "readyInMinutes": r.ready_in_minutes,
-            "ingredients": r.ingredients,
+            "ingredients": json.loads(r.ingredients),
             "instructions": r.instructions,
             "image": r.image
             }
