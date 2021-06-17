@@ -55,7 +55,18 @@ function CreateRecipes(props){
   const [fileInput, setFileInput] = React.useState();
 
   // Handling user Input change events
-
+  // Handle image file
+  const handleFileInputChange = (event) => {
+    const file = event.target.files[0];    
+    updateFile(file);
+    // console.log(file)                    
+  }
+  
+  const updateFile = (file) => {
+    const reader = new FileReader();    
+    reader.readAsDataURL(file); 
+    reader.onloadend = () => { setFileInput(reader.result); }
+  } 
 
 
   return (
