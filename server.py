@@ -76,8 +76,8 @@ def add_recipe():
     ingredients = json.dumps(data.get("ingredients"))
     instructions = data.get("instructions")
     image_file = data.get("imageFile")
-    del data["imageFile"]
-    print(data)
+    # del data["imageFile"]
+    # print(data)
     if image_file:
         result = cloudinary.uploader.upload(image_file,
                     api_key=CLOUDINARY_KEY,
