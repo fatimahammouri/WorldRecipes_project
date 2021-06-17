@@ -68,7 +68,22 @@ function CreateRecipes(props){
     reader.onloadend = () => { setFileInput(reader.result); }
   } 
 
+  // Handle the Form Submition
+  function handleSubmitForm() {
+    console.log("submitting the Form");
+    if(!fileInput) {
+      alert("No image was uploaded !!" )
+      return
+    };
+    addNewRecipe(fileInput);
+  }
 
+  function addNewRecipe(base64EncodedImage) {
+    let imageFile =  base64EncodedImage
+  }
+
+
+  
   return (
     <div className="form-container"> 
       <h1 style={{textAlign: 'center'}}>Create A Recipe</h1>
