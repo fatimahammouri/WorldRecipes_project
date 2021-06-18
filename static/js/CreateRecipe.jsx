@@ -85,13 +85,13 @@ function CreateRecipes(props){
     
     
     let formData = new FormData();
-    
+    let ingredientsArray = Object.values(ingredients) 
     formData.append("title" , title) 
     formData.append("cuisine" , cuisine)
     formData.append("instructions" , instructions)
     formData.append("servings" , servings)
     formData.append("image" , fileInput)
-    formData.append("ingredients" , JSON.stringify(ingredients)) 
+    formData.append("ingredients" , JSON.stringify(ingredientsArray)) 
     formData.append("ready_in_minutes" , readyInMinutes)
     console.log(formData.get("title"))
     console.log(formData.get("cuisine"))
@@ -110,8 +110,18 @@ function CreateRecipes(props){
         
       .then((jsonResponse) => {
         const recipe = jsonResponse.recipeAdded;
-        console.log(recipe)
-     
+        const recipe_id = recipe.recipe_id;
+        const title = recipe.title;
+        const cuisine = recipe.cuisine; 
+        const instructions = recipe.instructions ;
+        const servings = recipe.servings;
+        const image = recipe.image;
+        const ingredients = recipe.ingredients;
+        const readyInMinutes = recipe.readyInMinutes;
+        console.log(title)
+        console.log(cuisine)
+        console.log(ingredients, typeof(ingredients))
+        console.log(readyInMinutes)
     })
   });
   }

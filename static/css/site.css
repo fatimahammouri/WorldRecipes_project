@@ -1,5 +1,5 @@
 body{
-  background-color: #333 ;
+  background-color: #000 ;
   /* background-repeat: no-repeat;
   background-attachment: fixed; 
   -webkit-background-size: cover;
@@ -15,114 +15,91 @@ body{
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 1.4em;
 }
+#main{
+  height:100%;width:100%;
+  background-size: cover;
+  position: absolute;
+}
 
 
-
-video{
+#main video{
   width:100%;
-  height: 50%;
-  position:relative;
+  height: 100%;
+  position:absolute;
   right:0;
   top:0;
   left:0;
+  bottom:0;
   z-index: 5;
   object-fit: cover;
 }
 
-.navbar{
-  list-style-type: none;
-  
-  padding: 0.5em;
-  font-style: none;
-  margin: 0.05em 0;
-  font-family: 'Great Vibes', cursive;
-  font-size: 1.5em;
-}
-ul.nav{
-  flex-direction: row;
-  justify-content: space-between;
-  overflow: hidden;
-  text-align: center;
-}
-.navLitem , .navLitem h1{
-  /* flex: auto; */
-  display: block;
-  color: #C3C3C3;
-  margin: auto 1.2em;
-  text-decoration: none;
- 
+#main::after {
+  width:100%;
+  height:100%;
+  content: '';
+  position:absolute;
+  z-index:10;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,0.1)
 }
 
-.link{
-  color: #C3C3C3;
-}
-.link:hover{
-  text-decoration: none;
-  color:  #3a9691;
-}
-
-
-#logo{
-  /* top | right | bottom | left */
-  margin: auto ;
-  margin-right: 5em;
-  margin-left: 0;
-  float: left; 
-}
 .welcome-text  {
   position: absolute;
-  width: 300px;
-  height: 200px;
-  z-index: 15;
+  /* width: 300px;
+  height: 200px; */
+  z-index: 20;
   top: 50%;
   left: 50%;
   margin: -100px 0 0 -150px;
   justify-content : center;
+  text-align: center;
 }
 .welcome-text h1 {
 	/* text-align: center; */
-	color: #c3c3c3;
+	color: #fafafa;
 	font-size: 100px;
   width:344px;
   margin-left: auto;
   margin-right: auto;
 }
-.welcome-text h1 span {
-	color: #c3c3c3;
-}
+
 
 .welcome-text a {
-	background:#333; 
-	color: #c3c3c3;
+	/* background:#f9826c; */
+  background:#aa1111; 
+	color: #fafafa;
   text-decoration: none;
   border-radius: 0.50rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  /* margin-left: auto;
+  margin-right: auto; */
   padding: 0.5em;
   text-align: center;
   /* position: absolute;
   left: 45%;  */
-  justify-content : center; 
+  justify-content: center; 
+  
 }
 .welcome-text a:hover {
-	background:#333; 
-	color: #3a9691;
-	
-  /* transition-duration: 0.2s; */	
+	background:#000; 
+	color: #fafafa;
+  transition-duration: 0.7s;	
 }
 
 h1{
-  font-size: 2rem;
+  font-size: 1.5rem;
   /* font-family: 'Dancing Script'; */
-  font-family: 'Great Vibes', cursive;
+  /* font-family: 'Great Vibes', cursive; */
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   color: #3a9691;
 }
 
 
 
-.footer{
+/* .footer{
   margin: 0 ;
   background: none; 
 }
@@ -142,10 +119,22 @@ h1{
   padding:1em;
   margin: 2em 0;
   justify-content : center;
+} */
+
+#mainNav{
+  margin: 0 2em;
+  background-color: #000;
+  background-image: none;
+  color:#aa1111;
 }
-
-.mainNav{
-
-  background-color: rgba(18,21,23,.75);
+.logo{
+  margin-right: 2.2em;
+  font-size: 1.3em;
+  color:rgba(0,0,0,0.5)
+}
+.mr-auto .link{
+  margin:0 2em;
+  font-size: 1.2em;
+  color:#fafafa;
 }
 
