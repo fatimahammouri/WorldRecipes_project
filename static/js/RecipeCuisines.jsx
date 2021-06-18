@@ -58,17 +58,23 @@ function CuisineList(props){
   }
     
    return(
-     <React.Fragment>
-    <div className="main">
+    <Container flex>
+    
+      <div id="container-header">
+      <h2>Explore Recipes from Different Cuisines</h2>
+      </div>
+      
       <ul className="buttonsList">
+        
         {cuisineList.map(cuisine =>  <button className="btn"
                         onClick={()=> getCuisine(cuisine)}> {cuisine} </button>)}
       </ul>
+
       <div class="grid">
         {currentRecipes.map(recipe =>  <Recipe {...recipe}/>  )}
       </div>
-    </div>
-     </React.Fragment> 
+      
+      </Container>
       )
 
 }

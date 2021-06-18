@@ -6,7 +6,7 @@ Nav, Media, Row, Col, Modal, Alert, Toast, Card, Spinner, ListGroup, ListGroupIt
 
 function Homepage(props){
     return(
-        <div id="main">
+        <div id="main-homepage">
 
             <video  autoPlay loop muted preload="auto">
                 <source src="/static/images/video.mp4" type="video/mp4"  ></source>
@@ -62,7 +62,9 @@ function Homepage(props){
 // we'll start by creating App - Main componant 
 function App(props){
     return(
-        <ReactRouterDOM.BrowserRouter>            
+        
+        <ReactRouterDOM.BrowserRouter> 
+                     
                 <Navbar className="mainNav"  expand="lg" bg="dark" variant="dark" fixed="top" className="header">
                     <Navbar.Brand href="/home" className="logo">
                     Recipe World
@@ -73,7 +75,8 @@ function App(props){
                         <Nav.Link href="/create_recipes" className="link">Create Recipe</Nav.Link>
                     </Nav>    
                    
-                </Navbar>        
+                </Navbar>  
+                      
         
         <ReactRouterDOM.Switch>
             
@@ -93,17 +96,11 @@ function App(props){
                 <Types />
             </ReactRouterDOM.Route>
 
-            {/* <ReactRouterDOM.Route exact path="/about_me">
-                <AboutMe />
-            </ReactRouterDOM.Route> */}
-            {/* <ReactRouterDOM.Route exact path="/users_recipes">
-                <RecipeCardContainer />
-            </ReactRouterDOM.Route> */}
 
         </ReactRouterDOM.Switch>
         
         </ReactRouterDOM.BrowserRouter> 
-       
+        
     );
 }
 

@@ -25,17 +25,21 @@
   display: flex;
   flex-flow: wrap; 
   overflow: hidden;
-  margin:1em;
+  margin:3em;
   padding:1em;
   justify-content: space-between;
+  border: 1em solid orangered;
 }
-main {
+/* main {
   display: grid;
   grid-template-rows: auto
                       1fr;
   height: 90vh;
-  overflow-y:hidden; 
-}
+  overflow-y:hidden;
+  border: 1em solid orangered; 
+  justify-content: center;
+  grid-auto-flow: row;
+} */
 /* .text-center{
   background:#333;
   color: #3a9691; 
@@ -54,7 +58,8 @@ main {
 .grid{
   /* overflow: auto;  */
   margin:2em; 
-  overflow-y:auto; 
+  overflow-y:auto;
+  border: 1em solid orangered; 
 }
 
 .btn{
@@ -68,4 +73,17 @@ main {
   margin:1em;
   }
 
-
+#header{
+  position: absolute;
+  overflow-y:auto; 
+  margin: 2em;
+  padding: 2em;
+  border: 1em solid orangered;
+}
+.container{
+  
+  padding: 0.5em;
+  justify-content: center;
+  align-items: stretch;
+  margin-top:5em;
+}
