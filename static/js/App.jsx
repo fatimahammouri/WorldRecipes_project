@@ -75,7 +75,7 @@ function App(props){
                         <Nav.Link href="/recipes_by_type" className="link">Recipes By Type</Nav.Link>
                         <Nav.Link href="/create_recipes" className="link">Create Recipe</Nav.Link>
                         <Nav.Link href="/about_me" className="link">About Me</Nav.Link>
-                
+                        <Nav.Link href="/users_recipes" className="link">recipes from our users</Nav.Link>
                     </Nav>
                 </Navbar>        
         
@@ -90,7 +90,7 @@ function App(props){
             </ReactRouterDOM.Route>
 
             <ReactRouterDOM.Route exact path="/create_recipes">
-                <RecipeCardContainer />
+                <CreateRecipes />
             </ReactRouterDOM.Route>
 
             <ReactRouterDOM.Route exact path="/recipes_by_type">
@@ -99,6 +99,9 @@ function App(props){
 
             <ReactRouterDOM.Route exact path="/about_me">
                 <AboutMe />
+            </ReactRouterDOM.Route>
+            <ReactRouterDOM.Route exact path="/users_recipes">
+                <RecipeCardContainer />
             </ReactRouterDOM.Route>
 
         </ReactRouterDOM.Switch>

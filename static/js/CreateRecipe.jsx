@@ -22,26 +22,27 @@ function RecipeDb(props){
 }
 
 
-function IngredientWidget(props){
-  const [numberOfInputs, setNumberOfInputs] = React.useState(1);
+// function IngredientWidget(props){
+//   const [numberOfInputs, setNumberOfInputs] = React.useState(1);
   
-  const inputElements = [];
-  for (let i=0; i < numberOfInputs; i++){
-    inputElements.push(<input key={i} className="ingredientInputs forminput" 
-    onChange={ (event) => setIngreidentList( { ...ingreidentList, [i]: event.target.value } )}
-    ></input>)
-  }
+//   const inputElements = [];
+//   for (let i=0; i < numberOfInputs; i++){
+//     inputElements.push(<input key={i} className="ingredientInputs forminput" 
+//     onChange={(event)=>setIngreidents( { ...ingreidents, [i]: event.target.value }) }
+//     ></input>)
+//   }
 
-  return (
-    <div>
-      <label className="formlabel"> Needed Ingredients </label>   
-        {inputElements}   
-        <button className="formbtn" style={{width:"3em"}}
-          onClick={() =>{setNumberOfInputs(numberOfInputs + 1)}}> + </button>
-        <button className="formbtn" style={{width:"3em"}}
-          onClick={() =>{setNumberOfInputs(numberOfInputs - 1)}} > - </button>    
-    </div>)
-}
+//   return (
+//     <div>
+//       <label className="formlabel"> Needed Ingredients </label>   
+//         {inputElements}   
+//         <button className="formbtn" style={{width:"3em"}}
+//           onClick={() =>{setNumberOfInputs(numberOfInputs + 1)}}> + </button>
+//         <button className="formbtn" style={{width:"3em"}}
+//           onClick={() =>{setNumberOfInputs(numberOfInputs - 1)}} > - </button>    
+//     </div>
+//     )
+// }
 
 
 function CreateRecipes(props){
@@ -53,36 +54,67 @@ function CreateRecipes(props){
   const [ingredients, setIngredients] = React.useState({});
   const [instructions, setInstructions] = React.useState("");
   const [fileInput, setFileInput] = React.useState();
+  const [numberOfInputs, setNumberOfInputs] = React.useState(1);
 
   // Handling user Input change events
   // Handle image file
+  // const handleIngredients = () => {
+  //   setIngredients({...ingredients, [i]: ingredients})
+  // }
   const handleFileInputChange = (event) => {
-    const file = event.target.files[0];    
+    const file = event.target.files[0];    // grab the (one)file from that input
     updateFile(file);
-    // console.log(file)                    
+    // console.log(file)                    // call function to preview the file
   }
-  
   const updateFile = (file) => {
-    const reader = new FileReader();    
-    reader.readAsDataURL(file); 
-    reader.onloadend = () => { setFileInput(reader.result); }
+    const reader = new FileReader();    // built-in JS API 
+    reader.readAsDataURL(file);        // converts the img file to a String
+    reader.onloadend = () => {
+      setFileInput(reader.result);
+    } 
   } 
-
-  // Handle the Form Submition
+  
   function handleSubmitForm() {
-    console.log("submitting the Form");
-    if(!fileInput) {
-      alert("No image was uploaded !!" )
-      return
-    };
+    console.log("submitting");
+    if(!fileInput) return;
     addNewRecipe(fileInput);
   }
 
+  
   function addNewRecipe(base64EncodedImage) {
     let imageFile =  base64EncodedImage
+    console.log("setTitle value:",title) 
+    console.log("setCuisine value:",cuisine) 
+    console.log("setServings value:",servings)
+    console.log("setIngredient value:",ingredients)  
+
+    fetch("/add_recipe", 
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json",},
+        body: JSON.stringify({ title, cuisine, servings, readyInMinutes, ingredients, instructions, imageFile}),
+      }
+
+    ) .then((response) => { 
+        response.json()
+        // console.log(response.json)
+      .then((jsonResponse) => {
+        const recipe = jsonResponse.recipeAdded;
+
+        const {  recipe_id, title, cuisine, servings, readyInMinutes, ingredients, instructions, image } = recipe;
+        console.log("recipe.title",recipe.title)
+        console.log("ingredients type",typeof(ingredients))
+        // props.addCard(recipe_id, title, cuisine, servings, readyInMinutes, ingredients, instructions, image);
+      });
+    });
   }
 
-
+  const inputElements = [];
+  for (let i=0; i < numberOfInputs; i++){
+    inputElements.push(<input key={i} className="ingredientInputs forminput" 
+    onChange={(event)=>setIngredients( { ...ingredients, [i]: event.target.value }) }
+    ></input>)
+  }
   
   return (
     <div className="form-container"> 
@@ -112,7 +144,12 @@ function CreateRecipes(props){
 
       <div className="recipes-form__section">
         <div className="recipes-form__row"> 
-          <IngredientWidget />
+          <label className="formlabel"> Needed Ingredients </label>   
+          {inputElements}   
+          <button className="formbtn" style={{width:"3em"}}
+            onClick={() =>{setNumberOfInputs(numberOfInputs + 1)}}> + </button>
+          <button className="formbtn" style={{width:"3em"}}
+            onClick={() =>{setNumberOfInputs(numberOfInputs - 1)}} > - </button>
         </div> 
       </div>
 
@@ -138,4 +175,5 @@ function CreateRecipes(props){
     </div>
   );
 }
+
 
