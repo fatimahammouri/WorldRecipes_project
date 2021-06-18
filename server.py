@@ -73,7 +73,7 @@ def add_recipe():
     ready_in_minutes= request.form.get("ready_in_minutes")
     ingredients = request.form.get("ingredients")
     instructions = request.form.get("instructions")
-    image = request.form.get("imageFile")
+    image = request.files.get("image")
     # del data["imageFile"]
     print(title)
     print(cuisine)

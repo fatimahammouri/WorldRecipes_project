@@ -63,26 +63,26 @@ function CreateRecipes(props){
   // }
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];    // grab the (one)file from that input
-    updateFile(file);
+    setFileInput(file);
     // console.log(file)                    // call function to preview the file
   }
-  const updateFile = (file) => {
-    const reader = new FileReader();    // built-in JS API 
-    reader.readAsDataURL(file);        // converts the img file to a String
-    reader.onloadend = () => {
-      setFileInput(reader.result);
-    } 
-  } 
+  // const updateFile = (file) => {
+  //   const reader = new FileReader();    // built-in JS API 
+  //   reader.readAsDataURL(file);        // converts the img file to a String
+  //   reader.onloadend = () => {
+  //     setFileInput(reader.result);
+  //   } 
+  // } 
   
   function handleSubmitForm() {
     console.log("submitting");
     if(!fileInput) return;
-    addNewRecipe(fileInput);
+    addNewRecipe();
   }
 
   
-  function addNewRecipe(base64EncodedImage) {
-    let imageFile =  base64EncodedImage
+  function addNewRecipe() {
+    
     
     let formData = new FormData();
     
@@ -90,7 +90,7 @@ function CreateRecipes(props){
     formData.append("cuisine" , cuisine)
     formData.append("instructions" , instructions)
     formData.append("servings" , servings)
-    formData.append("image" , imageFile)
+    formData.append("image" , fileInput)
     formData.append("ingredients" , JSON.stringify(ingredients)) 
     formData.append("ready_in_minutes" , readyInMinutes)
     console.log(formData.get("title"))
@@ -106,16 +106,14 @@ function CreateRecipes(props){
 
     ) .then((response) => { 
         console.log("res from server", response);
-        // console.log(response.json)
-      // .then((jsonResponse) => {
-      //   const recipe = jsonResponse.recipeAdded;
+        response.json()
         
-      //   const {  recipe_id, title, cuisine, servings, readyInMinutes, ingredients, instructions, image } = recipe;
-      //   console.log("recipe.title",recipe.title)
-      //   console.log("ingredients type",typeof(ingredients))
-      // props.addCard(recipe_id, title, cuisine, servings, readyInMinutes, ingredients, instructions, image);
-      // });
-    });
+      .then((jsonResponse) => {
+        const recipe = jsonResponse.recipeAdded;
+        console.log(recipe)
+     
+    })
+  });
   }
 
   const inputElements = [];
