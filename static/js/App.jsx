@@ -100,9 +100,9 @@ function App(props){
             <ReactRouterDOM.Route exact path="/about_me">
                 <AboutMe />
             </ReactRouterDOM.Route>
-            <ReactRouterDOM.Route exact path="/users_recipes">
+            {/* <ReactRouterDOM.Route exact path="/users_recipes">
                 <RecipeCardContainer />
-            </ReactRouterDOM.Route>
+            </ReactRouterDOM.Route> */}
 
         </ReactRouterDOM.Switch>
         

@@ -66,20 +66,21 @@ def all_recipes(cuisine):
 
 @app.route("/add_recipe" , methods=["POST"])
 def add_recipe():
-    data = request.get_json()
-    # title = data.title etc etc........
     
-    title = data.get("title")
-    cuisine = data.get("cuisine")
-    servings = data.get("servings")
-    ready_in_minutes = data.get("readyInMinutes")
-    ingredients = json.dumps(data.get("ingredients"))
-    instructions = data.get("instructions")
-    image_file = data.get("imageFile")
+    title = request.form.get("title")
+    cuisine = request.form.get("cuisine")
+    servings = request.form.get("servings")
+    ready_in_minutes= request.form.get("ready_in_minutes")
+    ingredients = request.form.get("ingredients")
+    instructions = request.form.get("instructions")
+    image = request.form.get("imageFile")
     # del data["imageFile"]
-    # print(data)
-    if image_file:
-        result = cloudinary.uploader.upload(image_file,
+    print(title)
+    print(cuisine)
+    print(ingredients)
+    print(image)
+    if image:
+        result = cloudinary.uploader.upload(image,
                     api_key=CLOUDINARY_KEY,
                     api_secret=CLOUDINARY_KEY_SECRET,
                     cloud_name='dplmlgxqq')
@@ -93,7 +94,7 @@ def add_recipe():
                         cuisine=cuisine,
                         servings=servings, 
                         ready_in_minutes=ready_in_minutes,
-                        ingredients=ingredients, #json string "["",""]"
+                        ingredients=ingredients, 
                         instructions=instructions,
                         image=image)
     db.session.add(new_recipe)
