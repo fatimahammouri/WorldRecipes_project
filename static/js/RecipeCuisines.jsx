@@ -63,7 +63,7 @@ function CuisineList(props){
       <div class="big-image">
         <div class="overlay">
           <h2>Recipes from different Cuisines</h2>
-          <p>Try a new Dish</p>
+          <p>Try a new Dish from your favourite cuisine</p>
         </div>
       </div>
       <Container flex>

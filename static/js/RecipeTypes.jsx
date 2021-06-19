@@ -20,7 +20,7 @@ function Types(props){
         <div class="big-image-type">
           <div class="overlay">
             <h2>Recipe Categories</h2>
-            <p> Pich your favourite category</p>
+            <p> Try a new recipe from your favourite category</p>
           </div>
         </div>
       <Container flex>
