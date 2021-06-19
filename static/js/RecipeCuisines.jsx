@@ -60,16 +60,19 @@ function CuisineList(props){
    return(
     <Container flex>
     
-      <div id="container-header">
-      <h2>Explore Recipes from Different Cuisines</h2>
+      <div class="big-image">
+        <div class="overlay">
+          <h2>Explore Recipes from Different Cuisines</h2>
+          <p>Choose a recipe from different Cuisines</p>
+        </div>
       </div>
-      
+      <Container flex>
       <ul className="buttonsList">
         
         {cuisineList.map(cuisine =>  <button className="btn"
                         onClick={()=> getCuisine(cuisine)}> {cuisine} </button>)}
       </ul>
-
+      </Container>
       <div class="grid">
         {currentRecipes.map(recipe =>  <Recipe {...recipe}/>  )}
       </div>
