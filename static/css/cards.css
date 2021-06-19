@@ -106,13 +106,15 @@
   width: 100vw;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.40);
-  color: white;
+  background: rgba(0, 0, 0, 0.35);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  
 }
+
 .big-image-type{
   height: 100%; 
    width: 100vw;

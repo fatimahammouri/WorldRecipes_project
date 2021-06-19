@@ -66,10 +66,13 @@ function App(props){
         <ReactRouterDOM.BrowserRouter> 
                      
                 <Navbar className="mainNav"  expand="lg" bg="dark" variant="dark" fixed="top" className="header">
-                    <Navbar.Brand href="/home" className="logo">
+                    <Nav>
+                    <Navbar.Brand href="/home" id="logo">
+
                     Recipe World
                     </Navbar.Brand>
-                    <Nav className="mr-auto">
+                    </Nav>
+                    <Nav >
                         <Nav.Link href="/recipes_by_cuisine" className="link">Recipes By Cuisine</Nav.Link>
                         <Nav.Link href="/recipes_by_type" className="link">Recipes By Type</Nav.Link>
                         <Nav.Link href="/create_recipes" className="link">Create Recipe</Nav.Link>
