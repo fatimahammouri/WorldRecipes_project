@@ -4,7 +4,7 @@ function RecipeDb(props){
   
 
   return(
-    <Card  className="card" style={{ width: '18rem' }}>
+    <Card  className="user-card" >
       <Card.Img variant="top" src={image} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
@@ -111,8 +111,7 @@ function CreateRecipes(props){
     <div className="form-container"> 
       <h1 style={{textAlign: 'center'}}>Create A Recipe</h1>
 
-      <div className="recipes-form__section">
-        <div className="recipes-form__row">
+      
           <label className= "formlabel"> Recipe Title </label>
           <input  id="titleInput" value={title} className="forminput"
                   onChange={(event) => setTitle(event.target.value)}></input>
@@ -130,22 +129,17 @@ function CreateRecipes(props){
           <input  id="readyInMinutes" value={readyInMinutes} 
                   type="number"  min="0" className="forminput"
                   onChange={(event) => setReadyInMinutes(event.target.value)}></input>
-        </div>
-      </div>
-
-      <div className="recipes-form__section">
-        <div className="recipes-form__row"> 
+       
+ 
           <label className="formlabel"> Needed Ingredients </label>   
           {inputElements}   
           <button className="formbtn" style={{width:"3em"}}
             onClick={() =>{setNumberOfInputs(numberOfInputs + 1)}}> + </button>
           <button className="formbtn" style={{width:"3em"}}
             onClick={() =>{setNumberOfInputs(numberOfInputs - 1)}} > - </button>
-        </div> 
-      </div>
+       
 
-      <div className="recipes-form__section">
-        <div className="recipes-form__row">
+      
           <label className= "formlabel"> instructions </label>
           <textarea id="instructionsInput" value={instructions}
                     type="text" className="forminput"
@@ -159,9 +153,6 @@ function CreateRecipes(props){
           <button className="formbtn" style={{width:'100%'}}
                   onClick={handleSubmitForm}> Create My Recipe</button>
 
-        </div>
-      </div>
-       
       
     </div>
   );
@@ -201,10 +192,18 @@ function RecipeCardContainer() {
 
   console.log(cards)
   return (
-    <React.Fragment>
+    <Container>
+      <Row>
+        <Col>
       <CreateRecipes addCard={addCard} />
+      </Col>
+      <Col>
+      <div>
       <h2>Recipes cards</h2>
-      <div>{recipesCards}</div>
-    </React.Fragment>
+      <div  className= "grid">{recipesCards}</div>
+      </div>
+      </Col>
+      </Row>
+    </Container>
   );
 }
