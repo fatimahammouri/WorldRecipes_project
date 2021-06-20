@@ -39,7 +39,7 @@ function CuisineList(props){
   }, [])
 
   React.useEffect(()=>{
-    getCuisine ("american")
+    getCuisine ("spanish")
     }, [])
 
   function getCuisine(cuisine){
