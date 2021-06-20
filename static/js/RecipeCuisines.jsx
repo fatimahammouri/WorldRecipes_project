@@ -17,7 +17,7 @@ function Recipe(props){
                 <Card.Text >
                 {/* <span >Serving Size { servings}</span>
                 <span>Cook Time  {readyInMinutes}</span> */}
-                <span class ="cardlink">
+                <span className ="cardlink">
                   <a  href={sourceUrl}> RECIPE SOURCE </a>
                 </span>
                 </Card.Text>
@@ -52,8 +52,8 @@ function CuisineList(props){
    return(
     <Container flex>
     
-      <div class="big-image">
-        <div class="overlay">
+      <div className="big-image">
+        <div className="overlay">
           <h2>Recipes from different Cuisines</h2>
           <p>Try a new Dish from your favourite cuisine</p>
         </div>
@@ -65,7 +65,7 @@ function CuisineList(props){
                         onClick={()=> getCuisine(cuisine)}> {cuisine} </button>)}
       </ul>
       </Container>
-      <div class="grid">
+      <div className="grid">
         {currentRecipes.map(recipe =>  <Recipe {...recipe}/>  )}
       </div>
       
