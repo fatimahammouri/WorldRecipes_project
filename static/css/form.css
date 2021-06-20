@@ -70,3 +70,9 @@
     
     width:100%
 }
+
+.list-group-item{
+    background-color: #343a40;
+    border-bottom: solid 0.05em #c3c3c3;
+    margin: 1px 1px;
+}

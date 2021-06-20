@@ -10,7 +10,7 @@ function RecipeDb(props){
         <Card.Title>{title}</Card.Title>
         <Card.Text> {instructions}</Card.Text>
         <ListGroup>
-        {/* {ingredients.map((ingredient) => <ListGroupItem>{ingredient}</ListGroupItem>)} */}
+        {ingredients.map((ingredient) => <ListGroupItem>{ingredient}</ListGroupItem>)}
           <ListGroupItem> Servings {servings} </ListGroupItem>
           <ListGroupItem>cooking Time {readyInMinutes}</ListGroupItem>
           
@@ -183,7 +183,7 @@ function RecipeCardContainer() {
         cuisine={currentCard.cuisine}
         servings={currentCard.servings}
         readyInMinutes={currentCard.readyInMinutes}
-        ingredients={currentCard.ings}
+        ingredients={(currentCard.ingredients).replace(/[^a-zA-Z0-9 ,]/g, '').split(",")}
         instructions={currentCard.instructions}
         image={currentCard.image}
       />
@@ -200,7 +200,7 @@ function RecipeCardContainer() {
       <Col>
       <div>
       <h2>Recipes cards</h2>
-      <div  className= "grid">{recipesCards}</div>
+      <div  className= "grid" style={{marginTop:"3em"}}>{recipesCards}</div>
       </div>
       </Col>
       </Row>
