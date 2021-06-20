@@ -13,8 +13,8 @@
     border: solid 1em #333; 
     border-radius: 1em;
     padding:2em 2em;
-    margin:2em auto;
-    background: linear-gradient(rgb(63, 63, 63), rgba(19, 19, 19, 0.2));
+    margin:4em auto;
+    background: #c3c3c3;
     /* filter: brightness(0.9) */
 }
 

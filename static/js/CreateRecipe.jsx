@@ -22,29 +22,6 @@ function RecipeDb(props){
 }
 
 
-// function IngredientWidget(props){
-//   const [numberOfInputs, setNumberOfInputs] = React.useState(1);
-  
-//   const inputElements = [];
-//   for (let i=0; i < numberOfInputs; i++){
-//     inputElements.push(<input key={i} className="ingredientInputs forminput" 
-//     onChange={(event)=>setIngreidents( { ...ingreidents, [i]: event.target.value }) }
-//     ></input>)
-//   }
-
-//   return (
-//     <div>
-//       <label className="formlabel"> Needed Ingredients </label>   
-//         {inputElements}   
-//         <button className="formbtn" style={{width:"3em"}}
-//           onClick={() =>{setNumberOfInputs(numberOfInputs + 1)}}> + </button>
-//         <button className="formbtn" style={{width:"3em"}}
-//           onClick={() =>{setNumberOfInputs(numberOfInputs - 1)}} > - </button>    
-//     </div>
-//     )
-// }
-
-
 function CreateRecipes(props){
 
   const [title, setTitle] = React.useState("");
@@ -66,13 +43,7 @@ function CreateRecipes(props){
     setFileInput(file);
     // console.log(file)                    // call function to preview the file
   }
-  // const updateFile = (file) => {
-  //   const reader = new FileReader();    // built-in JS API 
-  //   reader.readAsDataURL(file);        // converts the img file to a String
-  //   reader.onloadend = () => {
-  //     setFileInput(reader.result);
-  //   } 
-  // } 
+   
   
   function handleSubmitForm() {
     console.log("submitting");
@@ -118,10 +89,13 @@ function CreateRecipes(props){
         const image = recipe.image;
         const ingredients = recipe.ingredients;
         const readyInMinutes = recipe.readyInMinutes;
-        console.log(title)
-        console.log(cuisine)
-        console.log(ingredients, typeof(ingredients))
-        console.log(readyInMinutes)
+        // console.log(title)
+        // console.log(cuisine)
+        // console.log(ingredients, typeof(ingredients))..[] string
+        // console.log(readyInMinutes)
+        let ings = ingredients.replace(/[^a-zA-Z0-9 ,]/g, '').split(",")
+        console.log(ings)  
+        props.addCard(recipe_id, title, cuisine, servings, readyInMinutes, ings, instructions, image);
     })
   });
   }
@@ -193,4 +167,43 @@ function CreateRecipes(props){
   );
 }
 
+function RecipeCardContainer() {
+  const [cards, setCards] = React.useState([]);
+  function addCard(recipe_id, title, cuisine, servings, readyInMinutes, ings, instructions, image) 
+  {
+    const newCard = { recipe_id, title, cuisine, servings, readyInMinutes,
+      ings, instructions, image}; 
+    const currentCards = [...cards]; 
+    setCards([...currentCards, newCard]);
+  }
+  React.useEffect(() => {
+    fetch("/recipes_cards.json")
+      .then((response) => response.json())
+      .then((data) => setCards(data.cards));
+  }, []);
 
+  const recipesCards = [];
+  for (const currentCard of cards) {
+    recipesCards.push(
+      <RecipeDb
+        key={currentCard.recipe_id}
+        title={currentCard.title}
+        cuisine={currentCard.cuisine}
+        servings={currentCard.servings}
+        readyInMinutes={currentCard.readyInMinutes}
+        ingredients={currentCard.ings}
+        instructions={currentCard.instructions}
+        image={currentCard.image}
+      />
+    );
+  }
+
+  console.log(cards)
+  return (
+    <React.Fragment>
+      <CreateRecipes addCard={addCard} />
+      <h2>Recipes cards</h2>
+      <div>{recipesCards}</div>
+    </React.Fragment>
+  );
+}
