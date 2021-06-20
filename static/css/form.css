@@ -61,5 +61,12 @@
     margin-top: 1em;
     padding: 0.5em;
   }
+#user-card{
+    height:100%;
+    color: #000;
+}
 
-
+#user-card{
+    
+    width:100%
+}

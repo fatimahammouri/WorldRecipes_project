@@ -2,7 +2,7 @@
 
 const Img = ReactBootstrap.Image;
 const {Container, Button, ButtonGroup, Navbar, Form, NavDropdown, Image, Popover, OverlayTrigger,
-Nav, Media, Row, Col, Modal, Alert, Toast, Card, Spinner, ListGroup, ListGroupItem} = ReactBootstrap;
+Nav, Media, Row, Col, Modal, Alert, Toast, CardGroup, Spinner, ListGroup, ListGroupItem} = ReactBootstrap;
 
 function Homepage(props){
     return(

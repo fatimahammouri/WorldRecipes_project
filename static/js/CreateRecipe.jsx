@@ -4,16 +4,16 @@ function RecipeDb(props){
   
 
   return(
-    <Card  className="user-card" >
+    <Card  id="user-card" >
       <Card.Img variant="top" src={image} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text> {instructions}</Card.Text>
         <ListGroup>
         {/* {ingredients.map((ingredient) => <ListGroupItem>{ingredient}</ListGroupItem>)} */}
-          <ListGroupItem> Servings Number:{servings} </ListGroupItem>
-          <ListGroupItem>cooking Time:{readyInMinutes}</ListGroupItem>
-          <ListGroupItem>ingredients:{ingredients}</ListGroupItem>
+          <ListGroupItem> Servings {servings} </ListGroupItem>
+          <ListGroupItem>cooking Time {readyInMinutes}</ListGroupItem>
+          
         </ListGroup>
       </Card.Body>
     </Card> 
