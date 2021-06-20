@@ -92,7 +92,7 @@ function App(props){
             </ReactRouterDOM.Route>
 
             <ReactRouterDOM.Route exact path="/create_recipes">
-                <CreateRecipes />
+                <RecipeCardContainer />
             </ReactRouterDOM.Route>
 
             <ReactRouterDOM.Route exact path="/recipes_by_type">

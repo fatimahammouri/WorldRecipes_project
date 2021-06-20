@@ -23,7 +23,7 @@ function RecipeDb(props){
 
 
 function CreateRecipes(props){
-
+  console.log(" here in create recipes com", props.addCard)
   const [title, setTitle] = React.useState("");
   const [cuisine, setCuisine] = React.useState("");
   const [servings, setServings] = React.useState(0);
@@ -175,7 +175,8 @@ function RecipeCardContainer() {
       ings, instructions, image}; 
     const currentCards = [...cards]; 
     setCards([...currentCards, newCard]);
-  }
+  };
+  console.log(addCard)
   React.useEffect(() => {
     fetch("/recipes_cards.json")
       .then((response) => response.json())
