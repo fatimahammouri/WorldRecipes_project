@@ -123,12 +123,12 @@ body{
 #logo{
   margin-right: 2.5em;
   color:#cb1a1a;
-  font-size: 1.7em;
-  font-family: 'Dancing Script', cursive;
+  font-size: 1.4em;
+  
 }
  .link{
-  margin:0 0.5em;
-  font-size: 1.1em;
+  /* margin:0 0.5em; */
+  font-size: 1em;
   color:#aa1111;
 }
 
