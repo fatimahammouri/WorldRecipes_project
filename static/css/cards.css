@@ -31,7 +31,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, calc(200px + 4em));
+  grid-template-columns: repeat(auto-fill, calc(250px + 2em));
   gap: 1em;
   align-items: center; 
   align-content: start;  /* block axis = y axis */
