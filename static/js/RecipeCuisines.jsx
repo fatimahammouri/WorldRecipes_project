@@ -14,15 +14,20 @@ function Recipe(props){
               
               <Card.Body >
                 <Card.Title>{title}</Card.Title>
-                <Card.Text >
-                {/* <span >Serving Size { servings}</span>
-                <span>Cook Time  {readyInMinutes}</span> */}
-                <span className ="cardlink">
+                
+                {/* <ListGroupItem className ="cardlink">  
                   <a  href={sourceUrl}> RECIPE SOURCE </a>
-                </span>
-                </Card.Text>
+                  </ListGroupItem> */}
+                
               </Card.Body>
-              
+                  <Card.Body className ="cardlink">
+                  <a href={sourceUrl} >
+                    Click for the Recipe details
+                  </a>
+                  
+                  </Card.Body>
+              <Card.Footer className="text-muted"> Servings Number    {servings}</Card.Footer>
+              <Card.Footer className="text-muted"> Cook Time  {readyInMinutes}</Card.Footer>
             </Card>
         
     )
