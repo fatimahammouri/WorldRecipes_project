@@ -4,7 +4,7 @@ function RecipeDb(props){
   
   console.log(props)
   return(
-    <Card  id="user-card" >
+    <Card  id="user-card" style={{color:"#dddddd"}}>
       <Card.Img variant="top" src={image} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
@@ -47,6 +47,7 @@ function CreateRecipes(props){
   
   function handleSubmitForm() {
     console.log("submitting");
+    alert("Your Recipe was successfully Created")
     if(!fileInput) return;
     addNewRecipe();
   }
@@ -109,29 +110,29 @@ function CreateRecipes(props){
   
   return (
     <div className="form-container"> 
-      <h1 style={{textAlign: 'center'}}>Create A Recipe</h1>
+      <h1 style={{textAlign: 'center'}}>Create Recipe</h1>
 
       
           <label className= "formlabel"> Recipe Title </label>
           <input  id="titleInput" value={title} className="forminput"
                   onChange={(event) => setTitle(event.target.value)}></input>
           
-          <label className= "formlabel"> Recipe Cuisine </label>
+          <label className= "formlabel"> Cuisine </label>
           <input  id="cuisineInput" value={cuisine} className="forminput"
                   onChange={(event) => setCuisine(event.target.value)}></input>
           
-          <label className= "formlabel"> Servings Number </label>
+          <label className= "formlabel"> This recipe serves </label>
           <input  id="servingsInput" value={servings} 
                   type="number" min="0" className="forminput"
                   onChange={(event) => setServings(event.target.value)}></input>
           
-          <label className= "formlabel"> Minutes to be ready </label>
+          <label className= "formlabel"> Cooking time  </label>
           <input  id="readyInMinutes" value={readyInMinutes} 
                   type="number"  min="0" className="forminput"
                   onChange={(event) => setReadyInMinutes(event.target.value)}></input>
        
  
-          <label className="formlabel"> Needed Ingredients </label>   
+          <label className="formlabel"> Add ingredients needed one at a time</label>   
           {inputElements}   
           <button className="formbtn" style={{width:"3em"}}
             onClick={() =>{setNumberOfInputs(numberOfInputs + 1)}}> + </button>
@@ -140,13 +141,13 @@ function CreateRecipes(props){
        
 
       
-          <label className= "formlabel"> instructions </label>
+          <label className= "formlabel"> Add you instructions </label>
           <textarea id="instructionsInput" value={instructions}
                     type="text" className="forminput"
                     onChange={(event) => setInstructions(event.target.value)} />
       
        
-          <label className= "formlabel"> image </label>
+          <label className= "formlabel"> Upload an image to your recipe</label>
           <input  type="file" className="forminput" style= {{backgroundColor:'#333'}}
                   onChange={handleFileInputChange}></input>
 

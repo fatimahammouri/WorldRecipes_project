@@ -49,9 +49,9 @@ function CuisineList(props){
   .then ((jresponse) => setCuisineList(jresponse.name))
   }, [])
 
-  React.useEffect(()=>{
-    getCuisine ("spanish")
-    }, [])
+  // React.useEffect(()=>{
+  //   getCuisine ("spanish")
+  //   }, [])
 
   function getCuisine(cuisine){
     
