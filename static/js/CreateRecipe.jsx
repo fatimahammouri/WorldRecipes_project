@@ -2,7 +2,7 @@
 function RecipeDb(props){
   const {title, cuisine, servings, readyInMinutes, ingredients, instructions, image } = props;
   
-
+  console.log(props)
   return(
     <Card  id="user-card" >
       <Card.Img variant="top" src={image} />
@@ -23,7 +23,7 @@ function RecipeDb(props){
 
 
 function CreateRecipes(props){
-  console.log(" here in create recipes com", props.addCard)
+  // console.log(" here in create recipes com", props.addCard)
   const [title, setTitle] = React.useState("");
   const [cuisine, setCuisine] = React.useState("");
   const [servings, setServings] = React.useState(0);
@@ -93,9 +93,9 @@ function CreateRecipes(props){
         // console.log(cuisine)
         // console.log(ingredients, typeof(ingredients))..[] string
         // console.log(readyInMinutes)
-        let ings = ingredients.replace(/[^a-zA-Z0-9 ,]/g, '').split(",")
-        console.log(ings)  
-        props.addCard(recipe_id, title, cuisine, servings, readyInMinutes, ings, instructions, image);
+        // let ings = ingredients.replace(/[^a-zA-Z0-9 ,]/g, '').split(",")
+        // console.log(ings)  
+        props.addCard(recipe_id, title, cuisine, servings, readyInMinutes, ingredients, instructions, image);
     })
   });
   }
@@ -160,18 +160,30 @@ function CreateRecipes(props){
 
 function RecipeCardContainer() {
   const [cards, setCards] = React.useState([]);
-  function addCard(recipe_id, title, cuisine, servings, readyInMinutes, ings, instructions, image) 
+  function addCard(recipe_id, title, cuisine, servings, readyInMinutes, ingredients, instructions, image) 
   {
-    const newCard = { recipe_id, title, cuisine, servings, readyInMinutes,
-      ings, instructions, image}; 
+    
+    const newCard = { 
+            "recipe_id" : recipe_id,
+            "title": title,
+            "cuisine": cuisine,
+            "servings": servings,
+            "readyInMinutes": readyInMinutes,
+            "ingredients": JSON.parse(ingredients),
+            "instructions": instructions,
+            "image": image
+  };
+  console.log("newCard==",newCard) 
     const currentCards = [...cards]; 
     setCards([...currentCards, newCard]);
   };
-  console.log(addCard)
+  // console.log(addCard)
   React.useEffect(() => {
     fetch("/recipes_cards.json")
       .then((response) => response.json())
-      .then((data) => setCards(data.cards));
+      .then((data) => {
+        console.log(data)
+        setCards(data.cards)});
   }, []);
 
   const recipesCards = [];
@@ -183,7 +195,7 @@ function RecipeCardContainer() {
         cuisine={currentCard.cuisine}
         servings={currentCard.servings}
         readyInMinutes={currentCard.readyInMinutes}
-        ingredients={(currentCard.ingredients).replace(/[^a-zA-Z0-9 ,]/g, '').split(",")}
+        ingredients={currentCard.ingredients}
         instructions={currentCard.instructions}
         image={currentCard.image}
       />

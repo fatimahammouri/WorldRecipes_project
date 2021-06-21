@@ -130,7 +130,7 @@ def get_recipes_json():
             "cuisine": r.cuisine,
             "servings": r.servings,
             "readyInMinutes": r.ready_in_minutes,
-            "ingredients": r.ingredients,
+            "ingredients": json.loads(r.ingredients),
             "instructions": r.instructions,
             "image": r.image
             }

@@ -75,8 +75,8 @@ function App(props){
 
                     Recipe World
                     </Navbar.Brand>
-                        <Nav.Link href="/recipes_by_cuisine" className="link">Recipes By Cuisine</Nav.Link>
-                        <Nav.Link href="/recipes_by_type" className="link">Recipes By Type</Nav.Link>
+                        <Nav.Link href="/recipes_by_cuisine" className="link">Search Cuisines</Nav.Link>
+                        <Nav.Link href="/recipes_by_type" className="link">Search Categories</Nav.Link>
                         <Nav.Link href="/create_recipes" className="link">Create Recipe</Nav.Link>
                     </Nav>
                     
