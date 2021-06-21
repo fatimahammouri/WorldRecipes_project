@@ -10,7 +10,7 @@ function RecipeDb(props){
         <Card.Title>{title}</Card.Title>
         <Card.Text> {instructions}</Card.Text>
         <ListGroup>
-        {ingredients.map((ingredient) => <ListGroupItem>{ingredient}</ListGroupItem>)}
+        {ingredients.map((ingredient) => <ListGroupItem key={ingredient}>{ingredient}</ListGroupItem>)}
           <ListGroupItem> Servings {servings} </ListGroupItem>
           <ListGroupItem>cooking Time {readyInMinutes}</ListGroupItem>
           
