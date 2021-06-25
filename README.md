@@ -1,6 +1,6 @@
 
 
-https://user-images.githubusercontent.com/43380670/123381086-1ebb8e80-d545-11eb-8df5-f003c6f0b20d.mov
+
 
 
 # Recipe World
@@ -28,23 +28,34 @@ After obtaining her BS in computer engineering, Fatima went on to work in qualit
 * Spoonacular
 ---
 ## Features
+
 ### Homepage
 
-![Screen Shot 2021-06-24 at 11 23 18 PM](https://user-images.githubusercontent.com/43380670/123379571-3134c880-d543-11eb-87cc-3db86db2dc47.png)
+https://user-images.githubusercontent.com/43380670/123381086-1ebb8e80-d545-11eb-8df5-f003c6f0b20d.mov
+
 
 ### Search by Cuisines
 
-![Screen Shot 2021-06-24 at 11 27 02 PM](https://user-images.githubusercontent.com/43380670/123380311-23337780-d544-11eb-8508-25fe15dfb17c.png)
-![Screen Shot 2021-06-24 at 11 26 37 PM](https://user-images.githubusercontent.com/43380670/123380337-2af31c00-d544-11eb-8469-75796d441365.png)
+https://user-images.githubusercontent.com/43380670/123382178-7d353c80-d546-11eb-83e0-ce7d9bb20032.mov
+
+
 
 ### Search by Categories
+ 
+https://user-images.githubusercontent.com/43380670/123381688-e5375300-d545-11eb-9ff7-f595296f5bca.mov
 
-![Screen Shot 2021-06-24 at 11 26 10 PM](https://user-images.githubusercontent.com/43380670/123380363-32b2c080-d544-11eb-964f-8c946b122d2f.png)
-![Screen Shot 2021-06-24 at 11 26 37 PM](https://user-images.githubusercontent.com/43380670/123380379-37777480-d544-11eb-8aa9-6dc9e081e8fa.png)
+
 
 ### Create Recipe
 
-![Screen Shot 2021-06-24 at 11 28 38 PM](https://user-images.githubusercontent.com/43380670/123380428-478f5400-d544-11eb-8005-a5cb4f66234d.png)
+https://user-images.githubusercontent.com/43380670/123383199-bd48ef00-d547-11eb-8a2e-2a5b27241e0e.mov
+
+https://user-images.githubusercontent.com/43380670/123383242-cb970b00-d547-11eb-9f23-e0d9e913fb59.mov
+
+
+
+
+
 
 
 
