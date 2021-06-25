@@ -22,7 +22,8 @@ Fatima Alhammouri || [Linkedin](https://www.linkedin.com/in/fatimaalhammouri/) |
 * CSS
 * React Router
 * React Bootstrap
-* Spoonacular
+* Spoonacular API
+* Cloudinary API
 ---
 ## Features
 
