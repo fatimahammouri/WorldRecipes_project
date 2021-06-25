@@ -25,17 +25,22 @@ After obtaining her BS in computer engineering, Fatima went on to work in qualit
 ---
 ## Features
 ### Homepage
+
+![Screen Shot 2021-06-24 at 11 23 18 PM](https://user-images.githubusercontent.com/43380670/123379571-3134c880-d543-11eb-87cc-3db86db2dc47.png)
+
 ### Search by Cuisines
+
+![Screen Shot 2021-06-24 at 11 27 02 PM](https://user-images.githubusercontent.com/43380670/123380311-23337780-d544-11eb-8508-25fe15dfb17c.png)
+![Screen Shot 2021-06-24 at 11 26 37 PM](https://user-images.githubusercontent.com/43380670/123380337-2af31c00-d544-11eb-8469-75796d441365.png)
+
 ### Search by Categories
+
+![Screen Shot 2021-06-24 at 11 26 10 PM](https://user-images.githubusercontent.com/43380670/123380363-32b2c080-d544-11eb-964f-8c946b122d2f.png)
+![Screen Shot 2021-06-24 at 11 26 37 PM](https://user-images.githubusercontent.com/43380670/123380379-37777480-d544-11eb-8aa9-6dc9e081e8fa.png)
+
 ### Create Recipe
 
-## Future State
-The project roadmap for Fridg has several features planned out for the next sprint:
+![Screen Shot 2021-06-24 at 11 28 38 PM](https://user-images.githubusercontent.com/43380670/123380428-478f5400-d544-11eb-8005-a5cb4f66234d.png)
 
-  * Add sorting and filters in search results for time, maximum/minimum ingredients, food group, etc.
-or add sorting options as dropdown menu in search bar
-  * add recipe search criteria for ingredients that users have on hand
-  * add feature o allow user to send recipes via texts messages
-  * rate the recipes and save favourite recipes
 
 
